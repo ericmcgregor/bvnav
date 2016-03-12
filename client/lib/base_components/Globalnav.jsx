@@ -1,34 +1,40 @@
+Nav = [
+  {name:"Ratings & Reviews",
+    link:'/rr',
+    subnav:[
+      {name:"Collect"},
+      {name:"Manage", link:"/rr/manage"},
+      {name:"Display"},
+      {name:"Notifications"},
+      {name:"Reports"}
+    ]
+  },
+  {name:"Q & A",
+    subnav:[]
+  },
+  {name:"Social",
+    subnav:[]
+  },
+  {name:"Sampling",
+    subnav:[]
+  },
+  {name:"Products",
+    subnav:[]
+  },
+  {name:"Advertising",
+    subnav:[
+      {name:"Campaigns"},
+      {name:"Audiences"},
+      {name:"Product Sets"},
+      {name:"Recommendations"}
+    ]
+  },
+]
+
 GlobalNav = React.createClass({
   getInitialState:function(){
     return({
-      nav:[
-        {name:"Ratings & Reviews",
-          subnav:[
-
-          ]
-        },
-        {name:"Q & A",
-          subnav:[]
-        },
-        {name:"Social",
-          subnav:[]
-        },
-        {name:"Sampling",
-          subnav:[]
-        },
-        {name:"Products",
-          subnav:[]
-        },
-        {name:"Advertising",
-          subnav:[
-            {name:"Campaigns"},
-            {name:"Audiences"},
-            {name:"Product Sets"},
-            {name:"Recommendations"}
-          ]
-        },
-
-      ]
+      nav:Nav
     })
   },
   renderDropdown:function(subnav, parent, index){
@@ -36,7 +42,7 @@ GlobalNav = React.createClass({
       <div id={"dropdown-"+index} className="list-group sub-nav collapse">
         {subnav.map((item, index)=>{
           return (
-            <a key={index} href={"/"+parent+"/"+item.name} className="list-group-item">{item.name}</a>
+            <a key={index} href={item.link} className="list-group-item">{item.name}</a>
           )
         })}
       </div>
