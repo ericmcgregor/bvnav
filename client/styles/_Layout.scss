@@ -1,0 +1,518 @@
+html, body, .wrapper {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  position:relative;
+}
+
+.viewport, body>#react-root {
+  display: flex;
+  flex-direction: column;
+  height:100vh;
+  flex:1 0 100vh;
+}
+
+
+// - Designed as the application window/container.
+// - Expands full width full height
+// - Relative positioning
+// - Overflow is hidden and there is no scrolling.
+// - It should default to building items as a row.  Since our layout goes left to right global navigation
+#portal_container {
+  display: flex;
+  flex-direction: row;
+  height:100vh;
+  position:relative;
+  overflow:hidden;
+
+  > #application_container {
+  }
+  > #portal_sidebar {
+  }
+}
+
+// - Fixed width
+// - Full height
+// - Overflow is hidden and it should scroll to support expanded items
+// - Two sizes, large and collapsed
+// - Should present items as a column
+#portal_sidebar {
+  //fixed at 190px
+  flex:0 0 190px;
+  min-width:190px;
+  max-width:190px;
+  height:100%;
+
+  @extend .scrollable;
+  display:flex;
+  flex-direction:column;
+  justify-content: stretch!important;
+  position:relative;
+  #portal_nav, > * {
+    position:relative;
+    flex:1 0 0px;
+  }
+
+  &.collapsed {
+    flex:0 0 80px;
+    min-width:80px;
+    max-width:80px;
+    .list-item-title {
+      display: none
+    }
+    .fa {
+      display: block
+    }
+  }
+  .fa {
+    display: none
+  }
+}
+
+// - Fluid width, full height
+// - Relative positioning
+// - Overflow is hidden, as this should hold nested scrollable pieces
+// - It should present items in a column
+//	- Items immediately inside this container should share vertical space.
+#application_container {
+  //exapnds to full width inside portal_container
+  flex:1 0 1px;
+  width:100%;
+  height:100%;
+
+  display:flex;
+  flex-direction:column;
+  position:relative;
+  //setup child layout properties
+  > #application_header {
+  }
+  > #task_container {
+  }
+}
+
+
+// - Fixed height row main application header
+#application_header {
+  /*fixed 55px height*/
+  flex:0 0 55px;
+  min-height:55px;
+  max-height:55px;
+  /*full width*/
+  width:100%;
+
+  position:relative;
+  border-bottom:1px solid #d2d2d2;
+}
+
+// - Designed to hold individual tasks and application task navigation
+// - Fluid height container
+// - Overflow is hidden, no scrolling.  Nested items will scroll
+// - Content is presented as a row
+#task_container {
+  /*full width*/
+  width:100%;
+  height:100%;
+
+  /*exapnds to full height*/
+  flex-grow:1;
+
+  display:flex;
+  flex-direction:row;
+  position:relative;
+
+  //setup child layout properties
+  > #task_content {
+  }
+  > #task_sidebar {
+  }
+}
+
+// - Fluid width
+// - Full height
+// - Overflow is hidden
+// - Scrollable
+//	- Items immediately inside this container should share vertical space.
+#task_content {
+  width:100%;
+  flex:1 0 1px;
+  overflow:auto;
+  position:relative;
+}
+
+
+
+// - Fixed width sidebar
+// - Full height
+// - scrollable
+// - Overflow is hidden
+#task_sidebar {
+  flex:0 0 280px;
+  min-width:280px;
+  max-width:280px;
+
+  display:flex;
+  flex-direction:column;
+  border-right:1px solid #d2d2d2;
+  position:relative;
+  #task_nav, > * {
+    position:relative;
+    flex:1 0 0px;
+  }
+}
+
+
+
+
+//
+// #task_content {
+//   .stretch.flex.tabs{
+//     .tab-content {
+//       .tab-pane {
+//         > * {
+//           display:flex;
+//           flex-direction:column;
+//           position:relative;
+//         }
+//       }
+//     }
+//   }
+// }
+
+
+
+
+.border {
+  border:1px solid black;
+}
+
+
+//should expand to full width full height
+//overflow is hidden and scrolling is down to children
+//immediate children should be 100% height
+//immediate div's should grow to 100% row width
+//immediate div's should default to a column layout
+//immediate div's should not have overflow
+.fixed-col-layout {
+  display:flex!important;
+  flex-direction:row!important;
+  overflow:hidden;
+  position:relative;
+  align-items: stretch;
+  height:100%;
+  > * {
+    flex:1 0 0px;
+    display:flex;
+    flex-direction:column;
+    position:relative;
+    overflow:hidden;
+  }
+
+}
+
+.fixed-col--scroll, .scrollable {
+  flex:1 0 0px;
+  overflow-y:auto!important;
+  overflow-x:hidden!important;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+}
+.scrollable--scrollbar {
+  flex:1 0 0px;
+  overflow-y:auto!important;
+  overflow-x:hidden!important;
+}
+
+.fixed-col-layout {
+  > .fixed-col--fluid {
+    flex:1 0 0px;
+  }
+  > .fixed-col--sm {
+    flex:0 0 280px;
+    min-width:280px;
+    max-width:280px;
+  }
+  > .fixed-col--md {
+    flex:0 0 380px;
+    min-width:380px;
+    max-width:380px;
+  }
+}
+
+
+
+
+
+.flex-align-center {
+  display:flex;
+  align-items:center!important;
+  align-content:center!important;
+  justify-content:center!important;
+}
+
+
+/* https://github.com/qwiglydee/bootstrap-flexbox */
+.flex-stretch-container {
+  position:relative;
+  flex:1;
+  overflow:auto;
+}
+
+.flex > .flex-shrink {
+  flex-grow:0!important;
+}
+
+.flex-scroll {
+  flex:1 1 auto;
+  height:1vh;
+  overflow-y:auto;
+}
+
+.stretch {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width:100%;
+}
+
+.flex {
+  display: flex;
+  align-items: stretch;
+  align-content: stretch;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+:not(.flex) > .flex-row {
+  width: 100%;
+}
+
+:not(.flex) > .flex-col {
+  height: 100%;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-side {
+  flex-grow: 0;
+  flex-shrink: 1;
+}
+
+.flex-main {
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.flex > .flex-row,
+.flex > .flex-col {
+  flex: 1 1 auto;
+}
+
+.cel-fl-1,
+.cel-fl-2,
+.cel-fl-3,
+.cel-fl-4,
+.cel-fl-5,
+.cel-fl-6,
+.cel-fl-7,
+.cel-fl-8,
+.cel-fl-9,
+.cel-fl-10,
+.cel-fl-11,
+.cel-fl-12 {
+  position: relative;
+  min-height: 1em;
+  box-sizing: border-box;
+}
+
+.cel-fl-12 {
+  flex: 12 12 100%;
+}
+
+.cel-fl-11 {
+  flex: 11 11 91.66666667%;
+}
+
+.cel-fl-10 {
+  flex: 10 10 83.33333333%;
+}
+
+.cel-fl-9 {
+  flex: 9 9 75%;
+}
+
+.cel-fl-8 {
+  flex: 8 8 66.66666667%;
+}
+
+.cel-fl-7 {
+  flex: 7 7 58.33333333%;
+}
+
+.cel-fl-6 {
+  flex: 6 6 50%;
+}
+
+.cel-fl-5 {
+  flex: 5 5 41.66666667%;
+}
+
+.cel-fl-4 {
+  flex: 4 4 33.33333333%;
+}
+
+.cel-fl-3 {
+  flex: 3 3 25%;
+}
+
+.cel-fl-2 {
+  flex: 2 2 16.66666667%;
+}
+
+.cel-fl-1 {
+  flex: 1 1 8.33333333%;
+}
+
+.flex.panel,
+.flex.tabs {
+  flex-direction: column;
+}
+
+.flex.panel > .panel-heading,
+.flex.panel > .panel-footer,
+.flex.tabs > .nav-tabs {
+  flex: 0 0 auto;
+}
+
+.flex.panel > .panel-body,
+.flex.panel > .list-group,
+.flex.panel-group > .panel > .panel-body,
+.flex.panel-group > .panel > .list-group,
+.flex.tabs > .tab-content {
+  flex: 1 1 auto;
+  overflow: auto;
+}
+
+.flex.tabs > .tab-content {
+  position: relative;
+}
+
+.flex.tabs > .tab-content > .tab-pane {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
+}
+
+.flex.modal-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex.modal-content > .modal-header,
+.flex.modal-content > .modal-footer {
+  flex: 0 0 auto;
+}
+
+.flex.modal-content > .modal-body {
+  flex: 1 1 auto;
+  overflow: auto;
+}
+
+.flex.panel-group {
+  flex-direction: column;
+}
+
+.flex.panel-group > .panel {
+  /*   flex: 0 0 auto;
+ */
+  display: flex;
+  flex-direction: column;
+}
+
+.flex.panel-group > .panel > .panel-heading,
+.flex.panel-group > .panel > .panel-footer {
+  flex: 0 0 auto;
+}
+
+.flex.panel-group > .panel > .panel-body,
+.flex.panel-group > .panel > .list-group {
+  flex: 1 1 auto;
+  overflow: auto;
+}
+
+.flex.modal {
+  display: none;
+}
+
+.flex.modal.in {
+  display: flex !important;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.flex.modal > .modal-dialog {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.flex.modal > .modal-dialog > .modal-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex.modal > .modal-dialog > .modal-content > .modal-header,
+.flex.modal > .modal-dialog > .modal-content > .modal-footer {
+  flex: 0 0 auto;
+}
+
+.flex.modal > .modal-dialog > .modal-content > .modal-body {
+  flex: 1 1 auto;
+  overflow: auto;
+}
+
+.flex.tabs > .tab-content > .tab-pane > *:only-child,
+.flex.panel > .panel-body > *:only-child,
+.flex.modal .modal-body > *:only-child {
+  height: 100%;
+  margin: 0;
+}
+
+
+
+
+
+#application_container_1 {
+  width:100%;
+  height:100%;
+  flex:1 0 1px;
+  border:1px solid black;
+  display:flex;
+  flex-direction:column;
+}
+#task_container_1 {
+  overflow:auto;
+  display:flex;
+  flex-direction:column;
+  overflow:auto;
+}
+
+#task_content_1 {
+  > * {
+  }
+}
+
+#application_header {
+  overflow:visible;
+}

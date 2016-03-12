@@ -1,0 +1,21 @@
+.detail-header {
+  flex:0 1 48px;
+  min-height:48px;
+  max-height:48px;
+  display:flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  padding:0 $spacer;
+
+  .detail-title {
+    // text-align:center;
+    margin:0;
+  }
+  .detail-options {
+    text-align:right;
+  }
+  > * {
+    height:100%;
+  }
+}
