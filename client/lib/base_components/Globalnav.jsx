@@ -1,6 +1,6 @@
 Nav = [
   {name:"Ratings & Reviews",
-    active:true,
+    active:'rr',
     link:'/rr',
     subnav:[
       {name:"Dashboard", link:"/rr/collect"},
@@ -25,11 +25,12 @@ Nav = [
     subnav:[]
   },
   {name:"Advertising",
+    active:"advertising",
     subnav:[
-      {name:"Campaigns"},
-      {name:"Audiences"},
-      {name:"Product Sets"},
-      {name:"Recommendations"}
+      {name:"Campaigns", link:"/advertising/campaigns"},
+      {name:"Audiences", link:"/advertising/audiences"},
+      {name:"Product Sets", link:"/advertising/productsets"},
+      {name:"Recommendations", link:"/advertising/recommendations"}
     ]
   },
 ]
@@ -75,7 +76,7 @@ GlobalNav = React.createClass({
     })
   },
   renderDropdown:function(subnav, parent, index){
-    let collapse = parent.active ? "in" : "";
+    let collapse = parent.active==FlowRouter.current().params.active ? "in" : "";
     return (
       <div id={"dropdown-"+index} className={"list-group sub-nav collapse "+collapse}>
         {subnav.map((item, index)=>{
@@ -99,8 +100,8 @@ GlobalNav = React.createClass({
               id="global-content-nav"
               className="list-group">
               {this.state.nav.map((item, index)=>{
-                let classname = item.active ? "" : "collapsed";
-                let expanded = item.active ? "true" : "false";
+                let classname = item.active==FlowRouter.current().params.active ? "" : "collapsed";
+                let expanded = item.active==FlowRouter.current().params.active ? "true" : "false";
                 return (
                   <div key={index}>
                   <a
