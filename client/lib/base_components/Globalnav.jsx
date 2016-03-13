@@ -1,11 +1,48 @@
 Nav = [
   {name:"Ratings & Reviews",
+    active:true,
+    link:'/rr',
+    subnav:[
+      {name:"Dashboard", link:"/rr/collect"},
+      {name:"Collect", link:"/rr/collect"},
+      {name:"Manage", link:"/rr/manage"},
+      {name:"Display"},
+      {name:"Amplify"},
+      {name:"Notifications"},
+      {name:"Reports"}
+    ]
+  },
+  {name:"Q & A",
+    subnav:[]
+  },
+  {name:"Social",
+    subnav:[]
+  },
+  {name:"Sampling",
+    subnav:[]
+  },
+  {name:"Products",
+    subnav:[]
+  },
+  {name:"Advertising",
+    subnav:[
+      {name:"Campaigns"},
+      {name:"Audiences"},
+      {name:"Product Sets"},
+      {name:"Recommendations"}
+    ]
+  },
+]
+
+Nav2 = [
+  {name:"Ratings & Reviews",
     link:'/rr',
     subnav:[
       {name:"Collect"},
-      {name:"Manage", link:"/rr/manage"},
-      {name:"Display"},
-      {name:"Notifications"},
+      {name:"Native Reviews"},
+      {name:"Network Reviews", link:"/rr/manage"},
+      {name:"By Product"},
+      {name:"Syndicate Reviews"},
       {name:"Reports"}
     ]
   },
@@ -38,8 +75,9 @@ GlobalNav = React.createClass({
     })
   },
   renderDropdown:function(subnav, parent, index){
+    let collapse = parent.active ? "in" : "";
     return (
-      <div id={"dropdown-"+index} className="list-group sub-nav collapse">
+      <div id={"dropdown-"+index} className={"list-group sub-nav collapse "+collapse}>
         {subnav.map((item, index)=>{
           return (
             <a key={index} href={item.link} className="list-group-item">{item.name}</a>
@@ -61,17 +99,19 @@ GlobalNav = React.createClass({
               id="global-content-nav"
               className="list-group">
               {this.state.nav.map((item, index)=>{
+                let classname = item.active ? "" : "collapsed";
+                let expanded = item.active ? "true" : "false";
                 return (
                   <div key={index}>
                   <a
                     href={"#dropdown-"+index}
-                    className="list-group-item dropdown-toggle"
+                    className={"list-group-item dropdown-toggle " + classname}
                     data-toggle="collapse"
                     aria-controls={"dropdown-"+index}
-                     aria-expanded="false">
+                    aria-expanded={expanded}>
                     {item.name}
                   </a>
-                  {item.subnav ? this.renderDropdown(item.subnav, item.name, index) : null}
+                  {item.subnav ? this.renderDropdown(item.subnav, item, index) : null}
                   </div>
                 )
               })}

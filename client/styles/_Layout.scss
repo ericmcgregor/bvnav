@@ -193,14 +193,16 @@ html, body, .wrapper {
 //immediate div's should default to a column layout
 //immediate div's should not have overflow
 .fixed-col-layout {
-  display:flex!important;
-  flex-direction:row!important;
+  display:flex;
+  flex-direction:row;
   overflow:hidden;
   position:relative;
-  align-items: stretch;
+  width:100%;
+  border:1px solid black;
   height:100%;
   > * {
-    flex:1 0 0px;
+    flex-grow:1;
+    border:1px solid black;
     display:flex;
     flex-direction:column;
     position:relative;
@@ -226,7 +228,8 @@ html, body, .wrapper {
 
 .fixed-col-layout {
   > .fixed-col--fluid {
-    flex:1 0 0px;
+    flex:1 1 1px;
+    width:100%;
   }
   > .fixed-col--sm {
     flex:0 0 280px;
@@ -234,12 +237,21 @@ html, body, .wrapper {
     max-width:280px;
   }
   > .fixed-col--md {
-    flex:0 0 380px;
+    flex:0 1 380px;
     min-width:380px;
     max-width:380px;
+    width:380px;
   }
 }
-
+.fixed-col--fluid {
+  flex:1 1 1px;
+  width:100%;
+}
+.fixed-col--md {
+  flex:0 0 380px;
+  // min-width:380px;
+  // width:380px;
+}
 
 
 

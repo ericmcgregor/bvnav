@@ -3,3 +3,12 @@
 @import "lib/base_components/styles/_ApplicationHeader.scss";
 @import "lib/base_components/styles/_ReportHeader.scss";
 @import "lib/base_components/styles/_PortalNav.scss";
+
+.data-table-header {
+  display:flex;
+  padding:$spacer 0;
+  justify-content: space-between;
+  .right {
+    align-self:center;
+  }
+}

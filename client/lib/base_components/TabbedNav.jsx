@@ -46,7 +46,7 @@ TabNav = React.createClass({
           })}
         </ul>
 
-        <div className="task-nav-options">
+        <div hiiden className="task-nav-options">
           <div
             className="btn-group btn-group-sm"
             role="group"

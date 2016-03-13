@@ -12,7 +12,7 @@ title, and other info
 }
 .report-header {
   margin:0 0 $spacer;
-  padding:$spacer;
+  // padding:$spacer;
   /*maintain auto height inside a flex-column.  do not fill or stretch*/
   /* treat child elemtns as row */
   display:flex;
@@ -40,7 +40,8 @@ title, and other info
         font-weight:500;
       }
       > div {
-        height:1rem;
+        min-height:1rem;
+        height:auto;
       }
     }
 
