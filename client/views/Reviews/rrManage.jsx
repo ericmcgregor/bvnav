@@ -77,96 +77,7 @@ let HeaderProps = {
 }
 
 
-let  myTableData = [
-  {name: 'Macy’s Columbus Day Promo', status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
-  {name: 'LG HA AO WM 2015', status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
-  {name: 'Finish Line Holiday Test 2015 3rd Party Data', status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
-  {name: 'Linksys Post Holiday Campaign (updated)', status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
-  {name: 'Finish Line Holiday Test 2015 1st Party All Products', status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
-  {name: 'Macy’s Columbus Day Promo', status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
-  {name: 'LG HA AO WM 2015', status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
-  {name: 'Finish Line Holiday Test 2015 3rd Party Data', status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
-  {name: 'Linksys Post Holiday Campaign (updated)', status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
-  {name: 'Finish Line Holiday Test 2015 1st Party All Products', status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
-]
 
-MyReviewContainer = class MyReviewContainer extends React.Component {
-  render() {
-    return (
-      <div className="flex flex-row">
-        <div className="flex-main p-r-3">
-          <div className="report-header">
-            <div className="report-details">
-              <h3 className="title">Moderate Reviews</h3>
-            </div>
-            <div className="report-actions">
-              <div
-                className="btn-group btn-group-sm"
-                role="group"
-                aria-label="Basic example">
-                <button
-                  type="button"
-                  className="btn btn-secondary">Migrate</button>
-                <button
-                  type="button"
-                  className="btn btn-secondary">Export</button>
-              </div>
-
-            </div>
-          </div>
-          <div>
-            <DataTable myTableData={myTableData} link="/rr/manage/native/detail" />
-          </div>
-        </div>
-        <div className="fixed-col--md">
-          <div className="card">
-            <div className="card-header">Moderation Info</div>
-              <div className="card-block">
-                <p className="lead m-b-0">User: Joe Pollard</p>
-              </div>
-              <table className="table m-b-0">
-                <tbody>
-                  <tr>
-                    <th>Moderated</th>
-                    <td>300</td>
-                  </tr>
-                  <tr>
-                    <th>Responses</th>
-                    <td>290</td>
-                  </tr>
-                  <tr>
-                    <th>Approved</th>
-                    <td>183</td>
-                  </tr>
-                  <tr>
-                    <th>Rejected</th>
-                    <td>11</td>
-                  </tr>
-                </tbody>
-              </table>
-          </div>
-
-          <div
-            className="alert "
-            role="alert">
-
-            <p className="lead">
-              <strong>
-              0  reivew collection campaigns
-              </strong>
-            </p>
-            <p>Learn how you can be better at getting reviews with our review marketing campaign.</p>
-            <hr />
-            <a href="/rr/collect" className="btn btn-info btn-sm">Start collecting reviews</a>
-          </div>
-
-
-        </div>
-
-      </div>
-    )
-  }
-}
 
 let nav = {
   primary:[
@@ -176,7 +87,8 @@ let nav = {
   ],
   secondary:[],
   content:[
-    <MyReviewContainer />
+    <ReviewList />,
+    <NetworkList />
   ]
 }
 

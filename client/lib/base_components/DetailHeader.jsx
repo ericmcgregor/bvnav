@@ -28,7 +28,15 @@ DetailHeader = React.createClass({
     }
 });
 
+
+
+
+
+
 ReportHeader = class ReportHeader extends React.Component{
+  constructor() {
+    super();
+  }
   renderForm(label, value) {
       return (
         <div className="form-group row">
@@ -119,4 +127,59 @@ ReportHeader.defaultProps = {
     after:()=>{}
   },
   additionalfields:()=>{}
+}
+
+
+
+
+
+
+PageHeaderComponent = class PageHeaderComponent extends ReportHeader {
+  constructor(props) {
+    super(props);
+    console.log(this.renderForm)
+
+  }
+  render(){
+    return(
+      <div className="report-header">
+        {this.props.children}
+      </div>
+    )
+  }
+}
+PageHeaderDetails = class PageHeaderDetails extends ReportHeader {
+  constructor(props) {
+    super(props);
+  }
+  renderForm(label, value) {
+      return (
+        <div className="form-group row">
+          <label className="col-sm-3 form-control-label">{label}:</label>
+          <div className="col-sm-9">
+            <p className="form-control-static">{value}</p>
+          </div>
+        </div>
+      )
+  }
+  render(){
+    console.log(this.renderForm)
+    return (
+      <div className="report-details">
+        {this.props.children}
+      </div>
+    )
+  }
+}
+PageHeaderActions = class PageHeaderActions extends ReportHeader {
+  constructor(props) {
+    super(props);
+  }
+  render(){
+    return (
+      <div className="report-actions">
+        {this.props.children}
+      </div>
+    )
+  }
 }

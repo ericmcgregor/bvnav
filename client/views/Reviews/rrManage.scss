@@ -2,3 +2,18 @@
   border:1px solid black;
   height:300px;
 }
+
+.colcontainer {
+  display:flex;
+  flex-direction:row;
+}
+.col1 {
+  flex:1 0 0;
+}
+
+.col2 {
+  flex:0 1 380px!important;
+  min-width:380px;
+  max-width:380px;
+  padding:0 0 0 40px;
+}
