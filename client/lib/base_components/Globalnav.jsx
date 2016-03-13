@@ -6,10 +6,10 @@ Nav = [
       {name:"Dashboard", link:"/rr/collect", current:"rr"},
       {name:"Collect", link:"/rr/collect", current:"rrcollect"},
       {name:"Manage", link:"/rr/manage", current:"rrmanage"},
-      {name:"Display"},
-      {name:"Amplify"},
-      {name:"Notifications"},
-      {name:"Reports"}
+      {name:"Display", link:"/rr/display", current:"rrdisplay"},
+      {name:"Amplify", link:"/rr/amplify", current:"rramplify"},
+      {name:"Notifications", link:"/rr/notifications", current:"rrnotifications"},
+      {name:"Reports", link:"/rr/reports", current:"rrreports"}
     ]
   },
   {name:"Q & A",
@@ -29,7 +29,7 @@ Nav = [
     subnav:[
       {name:"Campaigns", link:"/advertising/campaigns", current:"adcampaigns"},
       {name:"Audiences", link:"/advertising/audiences", current:"adaudiences"},
-      {name:"Product Sets", link:"/advertising/productsets", current:"adproducts"},
+      {name:"Product Sets", link:"/advertising/product-sets", current:"adproducts"},
       {name:"Recommendations", link:"/advertising/recommendations", current:"adrecommendations"}
     ]
   },

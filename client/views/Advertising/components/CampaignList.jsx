@@ -4,7 +4,7 @@ CampaignList = class CampaignList extends React.Component {
     <div className="container-fluid">
 
       <div className="row">
-        <div className="">
+        <div className="col1">
 
           <DataTableHeader />
           <table className="table table-bordered table-striped">
@@ -30,7 +30,7 @@ CampaignList = class CampaignList extends React.Component {
             </tbody>
           </table>
         </div>
-
+        <div className="col2"></div>
       </div>
     </div>
     )
