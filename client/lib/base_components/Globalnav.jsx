@@ -3,9 +3,9 @@ Nav = [
     active:'rr',
     link:'/rr',
     subnav:[
-      {name:"Dashboard", link:"/rr/collect"},
-      {name:"Collect", link:"/rr/collect"},
-      {name:"Manage", link:"/rr/manage"},
+      {name:"Dashboard", link:"/rr/collect", current:"rr"},
+      {name:"Collect", link:"/rr/collect", current:"rrcollect"},
+      {name:"Manage", link:"/rr/manage", current:"rrmanage"},
       {name:"Display"},
       {name:"Amplify"},
       {name:"Notifications"},
@@ -27,10 +27,10 @@ Nav = [
   {name:"Advertising",
     active:"advertising",
     subnav:[
-      {name:"Campaigns", link:"/advertising/campaigns"},
-      {name:"Audiences", link:"/advertising/audiences"},
-      {name:"Product Sets", link:"/advertising/productsets"},
-      {name:"Recommendations", link:"/advertising/recommendations"}
+      {name:"Campaigns", link:"/advertising/campaigns", current:"adcampaigns"},
+      {name:"Audiences", link:"/advertising/audiences", current:"adaudiences"},
+      {name:"Product Sets", link:"/advertising/productsets", current:"adproducts"},
+      {name:"Recommendations", link:"/advertising/recommendations", current:"adrecommendations"}
     ]
   },
 ]
@@ -77,11 +77,13 @@ GlobalNav = React.createClass({
   },
   renderDropdown:function(subnav, parent, index){
     let collapse = parent.active==FlowRouter.current().params.active ? "in" : "";
+    console.log(subnav.current)
     return (
       <div id={"dropdown-"+index} className={"list-group sub-nav collapse "+collapse}>
         {subnav.map((item, index)=>{
+          let current = item.current==FlowRouter.current().params.current ? "active" : "";
           return (
-            <a key={index} href={item.link} className="list-group-item">{item.name}</a>
+            <a key={index} href={item.link} className={"list-group-item "+current}>{item.name}</a>
           )
         })}
       </div>

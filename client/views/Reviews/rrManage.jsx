@@ -13,9 +13,9 @@ RRmanagea = class RRmanagea extends React.Component {
           <div id="task_container">
             <div id="task_content">
 
+              <div className="p-a-1">
               <div className="report-header">
                 <div className="report-details">
-
                   <div hidden className="container-fluid">
                     <div className="row">
                       <div className="col-md-4">
@@ -43,9 +43,14 @@ RRmanagea = class RRmanagea extends React.Component {
                       </div>
                     </div>
                   </div>
-                </div>
 
+                </div>
+                <div className="report-actions">
+
+                </div>
               </div>
+              </div>
+
 
               <TabbedNav>
                 <TabNav {...nav} />

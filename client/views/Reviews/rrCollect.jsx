@@ -13,6 +13,16 @@ RRcollect = class RRmanagea extends React.Component {
           <div id="task_container">
             <div id="task_content">
 
+              <div className="p-a-1">
+              <div className="report-header">
+                <div className="report-details">
+                </div>
+                <div className="report-actions">
+
+                </div>
+              </div>
+              </div>
+
               <TabbedNav>
                 <TabNav {...nav} />
                 <TabContent {...nav} />
@@ -46,10 +56,33 @@ let HeaderProps = {
 let nav = {
   primary:[
     {name:"Campaigns"},
-    {name:"Customers"},
+    {name:"Manage Customers"},
   ],
   secondary:[],
   content:[
-    <div></div>
+    <div>
+      <div className="jumbotron text-xs-center">
+        <h4 className="display-5">You currently do not have any review collection campaigns</h4>
+        <p className="lead">That's ok, we can help!</p>
+        <button className="btn btn-lg btn-success">Create Campaign</button>
+      </div>
+      <div hidden className="p-a-1">
+      <div className="report-header">
+        <div className="report-details">
+        </div>
+        <div className="report-actions">
+          <div
+            className="btn-group btn-group-sm"
+            role="group"
+            aria-label="Basic example">
+            <button
+              type="button"
+              className="btn btn-success">Create Campaign</button>
+          </div>
+
+        </div>
+      </div>
+      </div>
+    </div>
   ]
 }
