@@ -16,26 +16,25 @@ RRmanagea = class RRmanagea extends React.Component {
               <div className="report-header">
                 <div className="report-details">
 
-                  <div hidden  className="container-fluid">
+                  <div hidden className="container-fluid">
                     <div className="row">
-                      <div className="col-md-3">
-                        <div className="card card-inverse card-info text-xs-center">
-                          <div className="card-block">
-                            <blockquote className="card-blockquote">
-                              <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-                              </p>
-                              <footer>
-                                Someone famous in <cite title="Source Title">
-                                Source Title
-                              </cite>
-                            </footer>
-                          </blockquote>
+                      <div className="col-md-4">
+                        <div
+                          className="alert "
+                          role="alert">
+
+                          <p className="lead">
+                            <strong>
+                            0  reivew collection campaigns
+                            </strong>
+                          </p>
+                          <p>Learn how you can be better at getting reviews with our review marketing campaign.</p>
+                          <hr />
+                          <a href="/rr/collect" className="btn btn-info btn-sm">Start collecting reviews</a>
                         </div>
                       </div>
 
-                      </div>
-                      <div className="col-md-9" style={{alignSelf:"stretch", height:"100%"}}>
+                      <div hidden className="col-md-9" style={{alignSelf:"stretch", height:"100%"}}>
                         <div className="card">
                           <div className="card-block">
                             other content
