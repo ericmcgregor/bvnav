@@ -4,7 +4,7 @@ NetworkList = class NetworkList extends React.Component {
     <div className="container-fluid">
 
       <div className="row">
-        <div className="col1">
+        <div className="col-md-12">
           <div>
             <div className="jumbotron text-xs-center">
               <h4 className="display-5">You currently do not have Network Reviews or Syndication enabled</h4>
@@ -37,7 +37,7 @@ NetworkList = class NetworkList extends React.Component {
           </div>
         </div>
 
-        <div className="col2">
+        <div hidden className="col2">
 
         </div>
       </div>

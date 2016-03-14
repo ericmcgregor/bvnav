@@ -1,4 +1,4 @@
-RRamplify = class RRamplify extends React.Component {
+RRsyndicate = class RRamplify extends React.Component {
   render() {
     return (
       <div id="portal_container">

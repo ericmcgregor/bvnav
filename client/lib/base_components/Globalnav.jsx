@@ -1,5 +1,6 @@
 Nav = [
-  {name:"Ratings & Reviews",
+  {name:"Insights"},
+  {name:"Reviews",
     active:'rr',
     link:'/rr',
     subnav:[
@@ -7,12 +8,12 @@ Nav = [
       {name:"Collect", link:"/rr/collect", current:"rrcollect"},
       {name:"Manage", link:"/rr/manage", current:"rrmanage"},
       {name:"Display", link:"/rr/display", current:"rrdisplay"},
-      {name:"Amplify", link:"/rr/amplify", current:"rramplify"},
+      {name:"Syndicate", link:"/rr/syndicate", current:"rrsyndicate"},
       {name:"Notifications", link:"/rr/notifications", current:"rrnotifications"},
       {name:"Reports", link:"/rr/reports", current:"rrreports"}
     ]
   },
-  {name:"Q & A",
+  {name:"Questions",
     subnav:[]
   },
   {name:"Social",
@@ -21,9 +22,9 @@ Nav = [
   {name:"Sampling",
     subnav:[]
   },
-  {name:"Products",
-    subnav:[]
-  },
+  // {name:"Products",
+  //   subnav:[]
+  // },
   {name:"Advertising",
     active:"advertising",
     subnav:[
@@ -33,6 +34,11 @@ Nav = [
       {name:"Recommendations", link:"/advertising/recommendations", current:"adrecommendations"}
     ]
   },
+  {name:"Configure",
+    subnav:[
+      {name:"Product feed"}
+    ]
+  }
 ]
 
 Nav2 = [

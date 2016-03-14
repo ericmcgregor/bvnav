@@ -54,7 +54,7 @@ let nav = {
   ],
   secondary:[],
   content:[
-    <CampaignList />,
+    <LineItemList />,
     <div />
   ]
 }

@@ -1,10 +1,10 @@
-CampaignList = class CampaignList extends React.Component {
+LineItemList = class LineItemList extends React.Component {
   render() {
     return (
     <div className="container-fluid">
 
       <div className="row">
-        <div className="col1">
+        <div className="col-md-12">
 
           <DataTableHeader />
           <table className="table table-bordered table-striped">
@@ -30,7 +30,22 @@ CampaignList = class CampaignList extends React.Component {
             </tbody>
           </table>
         </div>
-        <div className="col2"></div>
+        <div hidden className="col2">
+          <div
+            className="alert "
+            role="alert">
+
+            <p className="lead">
+              <strong>
+              0  reivew collection campaigns
+              </strong>
+            </p>
+            <p>Learn how you can be better at getting reviews with our review marketing campaign.</p>
+            <hr />
+            <a href="/rr/collect" className="btn btn-info btn-sm">Start collecting reviews</a>
+          </div>
+
+        </div>
       </div>
     </div>
     )

@@ -50,12 +50,12 @@ FlowRouter.route('/rr/display', {
       ReactLayout.render(RRdisplay);
     }
 });
-FlowRouter.route('/rr/amplify', {
-    name:'rramplify',
+FlowRouter.route('/rr/syndicate', {
+    name:'rrsyndicate',
     action: function(params, queryParams) {
       params.active='rr'
-      params.current='rramplify'
-      ReactLayout.render(RRamplify);
+      params.current='rrsyndicate'
+      ReactLayout.render(RRsyndicate);
     }
 });
 FlowRouter.route('/rr/notifications', {
