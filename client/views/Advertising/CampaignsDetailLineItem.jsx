@@ -7,7 +7,7 @@ CampaignsDetailLineItem = class CampaignsDetailLineItem extends React.Component 
 
         <div id="application_container">
 
-          <ApplicationHeader titleLink="/advertising/campaigns" title="Advertising: Manage Campaigns"/>
+          <ApplicationHeader titleLink="/advertising/campaigns/detail" title="Advertising: Manage Campaigns: Line items: detail"/>
 
 
           <div id="task_container">
@@ -15,21 +15,21 @@ CampaignsDetailLineItem = class CampaignsDetailLineItem extends React.Component 
 
               <div className="p-a-1">
               <div className="report-header">
-                <div className="report-details">
+                <div className="report-details " style={{minWidth:"400px", flex:"0 1 400px", width:'400px'}}>
+
+                  <div className="form-group row">
+                    <label className="col-sm-3 form-control-label">Line Item:</label>
+                    <div className="col-sm-9">
+                      <p className="form-control-static">Campaign Line Item 1</p>
+                    </div>
+                  </div>
+
                   <div className="form-group row">
                     <label className="col-sm-3 form-control-label">Campaign:</label>
                     <div className="col-sm-9">
                       <p className="form-control-static">Macy's Black Firday</p>
                     </div>
                   </div>
-
-                  <div className="form-group row">
-                    <label className="col-sm-3 form-control-label">Client:</label>
-                    <div className="col-sm-9">
-                      <p className="form-control-static">Macy's</p>
-                    </div>
-                  </div>
-
 
                   <div className="form-group row">
                     <label className="col-sm-3 form-control-label">Flight Dates:</label>
@@ -65,6 +65,9 @@ CampaignsDetailLineItem = class CampaignsDetailLineItem extends React.Component 
                     </div>
                   </div>
 
+                </div>
+                <div className=" m-r-2" style={{minWidth:"600px", flex:"1 0 1px"}}>
+                  <GraphSpline data={LineItemData}/>
                 </div>
                 <div className="report-actions">
                   <div className="btn-group btn-group-sm" role="group">
@@ -106,7 +109,6 @@ CampaignsDetailLineItem = class CampaignsDetailLineItem extends React.Component 
     )
   }
 }
-
 
 let nav = {
   primary:[

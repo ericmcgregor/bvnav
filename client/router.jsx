@@ -100,7 +100,7 @@ FlowRouter.route('/advertising/campaigns/detail', {
       ReactLayout.render(CampaignsDetail);
     }
 });
-FlowRouter.route('/advertising/campaigns/detail/line-item', {
+FlowRouter.route('/advertising/campaigns/detail/line-item/123456', {
     name:'adcampaignslineitem',
     action: function(params, queryParams) {
       params.active='advertising'

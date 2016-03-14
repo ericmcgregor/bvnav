@@ -12,3 +12,24 @@
     align-self:center;
   }
 }
+
+
+g.c3-axis {
+  display:none;
+  // opacity:0.2!important;
+}
+
+div.spark {
+  height:20px;
+  width:250px;
+  overflow:hidden;
+  svg {
+    position:relative;
+    left:-20px;
+    > g {
+      height:100px!important;
+      .c3-zoom-rect {
+      }
+    }
+  }
+}

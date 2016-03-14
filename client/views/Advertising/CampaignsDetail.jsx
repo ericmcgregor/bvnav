@@ -64,6 +64,10 @@ CampaignsDetail = class CampaignsDetail extends React.Component {
 
                 </div>
 
+                <div className=" m-r-2" style={{minWidth:"800px", flex:"1 0 1px"}}>
+                  <GraphSpline data={LineItemData}/>
+                </div>
+
                 <div className="report-actions">
                   <div className="btn-group btn-group-sm" role="group">
                     <button
@@ -106,10 +110,12 @@ CampaignsDetail = class CampaignsDetail extends React.Component {
 }
 
 
+
 let nav = {
   primary:[
     {name:"Line Items (10)"},
     {name:"Creatives (8)"},
+    {name:"Brand Consideration"},
   ],
   secondary:[],
   content:[

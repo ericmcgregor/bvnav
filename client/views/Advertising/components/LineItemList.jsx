@@ -8,6 +8,23 @@ LineItemList = class LineItemList extends React.Component {
 
           <DataTableHeader />
           <table className="table table-bordered table-striped">
+            <thead>
+              {
+                myTableData.map((item, index)=>{
+                  if(index===0) {
+                    return (
+                      <tr key={index}>
+                        {Object.keys(item).map((key, index)=>{
+                          return(
+                            <th key={index}>{key}</th>
+                          )
+                        })}
+                      </tr>
+                    )
+                  }
+                })
+              }
+            </thead>
             <tbody>
                 {
                   myTableData.map((item, index)=>{
@@ -16,7 +33,12 @@ LineItemList = class LineItemList extends React.Component {
                         {Object.keys(item).map((key, index)=>{
                           if(index===0) {
                             return(
-                              <td key={index}><a href="/advertising/campaigns/detail/line-item">{item[key]}</a></td>
+                              <td key={index}><a href="/advertising/campaigns/detail/line-item/123456">{item[key]}</a></td>
+                            )
+                          }
+                          if(key==='activity') {
+                            return(
+                              <td style={{width:"200px"}} key={index}>{item[key]}</td>
                             )
                           }
                           return(
@@ -52,15 +74,24 @@ LineItemList = class LineItemList extends React.Component {
   }
 }
 
-let  myTableData = [
-  {name: 'Campaign Line Item 1', status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
-  {name: 'Campaign Line Item 2', status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
-  {name: 'Campaign Line Item 3', status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
-  {name: 'Campaign Line Item 4', status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
-  {name: 'Campaign Line Item 5', status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
-  {name: 'Campaign Line Item 6', status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
-  {name: 'Campaign Line Item 7', status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
-  {name: 'Campaign Line Item 8', status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
-  {name: 'Campaign Line Item 9', status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
-  {name: 'Campaign Line Item 10', status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
+
+
+let  myData = [
+  {name: 'Line Item 1', status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
+  {name: 'Line Item 2', status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
+  {name: 'Line Item 3', status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
+  {name: 'Line Item 4', status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
+  {name: 'Line Item 5', status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
+  {name: 'Line Item 6', status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
+  {name: 'Line Item 7', status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
+  {name: 'Line Item 8', status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
+  {name: 'Line Item 9', status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
+  {name: 'Line Item 10', status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
 ]
+let myTableData = myData.map((item, index)=>{
+  let SmallData = Object.create(LineItemData);
+  SmallData.height=45;
+  SmallData.chartID='graph'+index
+  item.activity = <div className="spark"><GraphSpline data={SmallData}/></div>
+  return item;
+})

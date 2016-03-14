@@ -40,7 +40,7 @@ CreativesList = class CreativesList extends React.Component {
                             )
                           }
                           return(
-                            <td key={index}>{item[key]}</td>
+                            <td style={{verticalAlign:"middle"}} key={index}>{item[key]}</td>
                           )
                         })}
                       </tr>
@@ -73,6 +73,13 @@ CreativesList = class CreativesList extends React.Component {
 }
 
 let  myTableData = [
+  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", impresions:"100", click:"89"},
+  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", impresions:"100", click:"89"},
+  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", impresions:"100", click:"89"},
+  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", impresions:"100", click:"89"},
+  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", impresions:"100", click:"89"},
+  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", impresions:"100", click:"89"},
+  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", impresions:"100", click:"89"},
   {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", impresions:"100", click:"89"},
 
 ]
