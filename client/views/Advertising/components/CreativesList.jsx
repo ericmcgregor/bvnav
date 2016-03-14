@@ -1,4 +1,7 @@
-LineItemList = class LineItemList extends React.Component {
+CreativesList = class CreativesList extends React.Component {
+  componentDidMount() {
+    Holder.run()
+  }
   render() {
     return (
     <div className="container-fluid">
@@ -8,15 +11,32 @@ LineItemList = class LineItemList extends React.Component {
 
           <DataTableHeader />
           <table className="table table-bordered table-striped">
+            <thead>
+              {
+                myTableData.map((item, index)=>{
+                  if(index===0) {
+                    return (
+                      <tr key={index}>
+                        {Object.keys(item).map((key, index)=>{
+                          return(
+                            <th key={index}>{key}</th>
+                          )
+                        })}
+                      </tr>
+                    )
+                  }
+                })
+              }
+            </thead>
             <tbody>
                 {
                   myTableData.map((item, index)=>{
                     return (
                       <tr key={index}>
                         {Object.keys(item).map((key, index)=>{
-                          if(index===0) {
+                          if(key==='img') {
                             return(
-                              <td key={index}><a href="/advertising/campaigns/detail/line-item">{item[key]}</a></td>
+                              <td style={{width:"60px"}} key={index}><img src={item[key]} /></td>
                             )
                           }
                           return(
@@ -53,14 +73,6 @@ LineItemList = class LineItemList extends React.Component {
 }
 
 let  myTableData = [
-  {name: 'Campaign Line Item 1', status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
-  {name: 'Campaign Line Item 2', status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
-  {name: 'Campaign Line Item 3', status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
-  {name: 'Campaign Line Item 4', status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
-  {name: 'Campaign Line Item 5', status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
-  {name: 'Campaign Line Item 6', status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
-  {name: 'Campaign Line Item 7', status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
-  {name: 'Campaign Line Item 8', status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
-  {name: 'Campaign Line Item 9', status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
-  {name: 'Campaign Line Item 10', status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
+  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", impresions:"100", click:"89"},
+
 ]

@@ -1,4 +1,4 @@
-CampaignsDetail = class CampaignsDetail extends React.Component {
+CampaignsDetailLineItem = class CampaignsDetailLineItem extends React.Component {
   render() {
     return (
       <div id="portal_container">
@@ -49,11 +49,14 @@ CampaignsDetail = class CampaignsDetail extends React.Component {
                             data-toggle="dropdown"
                             aria-haspopup="true"
                             aria-expanded="false">
-                            Active
+                            Pending
                           </button>
                           <div
                             className="dropdown-menu dropdown-menu-right"
                             aria-labelledby="btnGroupDrop1">
+                            <a className="dropdown-item" href="#">
+                              Active
+                            </a>
                             <a className="dropdown-item" href="#">
                               Complete
                             </a>
@@ -63,7 +66,6 @@ CampaignsDetail = class CampaignsDetail extends React.Component {
                   </div>
 
                 </div>
-
                 <div className="report-actions">
                   <div className="btn-group btn-group-sm" role="group">
                     <button
@@ -108,12 +110,14 @@ CampaignsDetail = class CampaignsDetail extends React.Component {
 
 let nav = {
   primary:[
-    {name:"Line Items (10)"},
-    {name:"Creatives (8)"},
+    {name:"Details"},
+    {name:"Conversion Report"},
+    {name:"Audiences (0)"},
+    {name:"Product Sets (0)"},
   ],
   secondary:[],
   content:[
-    <LineItemList />,
-    <CreativesList />,
+    <div />,
+    <div />
   ]
 }

@@ -83,7 +83,6 @@ GlobalNav = React.createClass({
   },
   renderDropdown:function(subnav, parent, index){
     let collapse = parent.active==FlowRouter.current().params.active ? "in" : "";
-    console.log(subnav.current)
     return (
       <div id={"dropdown-"+index} className={"list-group sub-nav collapse "+collapse}>
         {subnav.map((item, index)=>{

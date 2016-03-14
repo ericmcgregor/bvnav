@@ -100,6 +100,14 @@ FlowRouter.route('/advertising/campaigns/detail', {
       ReactLayout.render(CampaignsDetail);
     }
 });
+FlowRouter.route('/advertising/campaigns/detail/line-item', {
+    name:'adcampaignslineitem',
+    action: function(params, queryParams) {
+      params.active='advertising'
+      params.current='adcampaigns'
+      ReactLayout.render(CampaignsDetailLineItem);
+    }
+});
 
 FlowRouter.route('/advertising/audiences', {
     name:'adaudiences',
