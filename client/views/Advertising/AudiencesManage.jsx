@@ -31,7 +31,7 @@ AudiencesManage = class AudiencesManage extends React.Component {
               </div>
               </div>
 
-              <div className="p-a-1">
+              <div className="p-x-1">
                 <AudienceList />
               </div>
 

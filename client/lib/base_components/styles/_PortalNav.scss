@@ -4,5 +4,14 @@
       padding: .65rem 1.15rem;
       font-size: $font-size-sm;
     }
+    .list-group-item.dropdown-toggle  {
+      &::after {
+        display:none;
+      }
+    }
+    .divider {
+      border-top:1px solid $bvNavy80;
+      margin:$spacer $spacer/2;
+    }
   }
 }

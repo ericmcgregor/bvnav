@@ -77,7 +77,7 @@ CampaignsDetail = class CampaignsDetail extends React.Component {
                       data-toggle="dropdown"
                       aria-haspopup="true"
                       aria-expanded="false">
-                      Export
+                      Export Campaign
                     </button>
                     <div
                       className="dropdown-menu dropdown-menu-right"
@@ -119,7 +119,22 @@ let nav = {
   ],
   secondary:[],
   content:[
-    <LineItemList />,
+    <div>
+      <div className="report-header">
+        <div className="report-details">
+
+        </div>
+
+
+        <div className="report-actions">
+          <div className="btn-group btn-group-sm" role="group">
+            <button className="btn btn-success btn-sm">Add Line Item</button>
+          </div>
+        </div>
+      </div>
+
+      <LineItemList />
+    </div>,
     <CreativesList />,
   ]
 }

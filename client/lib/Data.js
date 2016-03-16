@@ -1,3 +1,141 @@
+Nav = [
+  {name:"Home",
+    active:'home',
+    link:'/',
+    dividerBottom:true
+  },
+  {name:"Reviews",
+    active:'rr',
+    link:'/rr',
+    subnav:[
+      {name:"Dashboard", link:"/rr", current:"rr"},
+      {name:"Collect", link:"/rr/collect", current:"rrcollect"},
+      {name:"Manage", link:"/rr/manage", current:"rrmanage"},
+      {name:"Syndicate", link:"/rr/syndicate", current:"rrsyndicate"},
+      //{name:"Notifications", link:"/rr/notifications", current:"rrnotifications"},
+      // {name:"Alerts", link:"/rr/alerts", current:"rralerts"},
+      {name:"Configure", link:"/rr/display", current:"rrdisplay"},
+      // {name:"Reports", link:"/rr/reports", current:"rrreports"}
+    ]
+  },
+  {name:"Stories",
+    subnav:[
+      {name:"Dashboard"},
+      {name:"Manage"},
+    ]
+  },
+  {name:"Questions",
+    subnav:[
+      {name:"Dashboard"},
+      {name:"Manage"},
+      {name:"Configure"},
+    ]
+  },
+  {name:"Social",
+    subnav:[
+      {name:"Dashboard"},
+      {name:"Content"},
+      {name:"Search"},
+      {name:"Groups"},
+      {name:"Tags"},
+      {name:"Filters"},
+    ]
+  },
+  {name:"Sampling",
+    subnav:[
+      {name:"Email Templates"},
+      {name:"Members"},
+      {name:"Products"},
+      {name:"Vendors"},
+    ]
+  },
+  {name:"Recommendations", link:"/recommendations", active:"recommendations"},
+
+  {name:"Advertising",
+    active:"advertising",
+    subnav:[
+      {name:"Campaigns", link:"/advertising/campaigns", current:"adcampaigns"},
+      {name:"Advertisers", link:"/advertising/clients", current:"adclients"},
+      {name:"Creatives", link:"/advertising/creatives", current:"adcreatives"},
+    ],
+    dividerBottom:true
+  },
+  {name:"Products", link:"/products", active:"products",
+    subnav:[
+      {name:"Families"},
+      {name:"Migrate"},
+      {name:"Product Sets"},
+      {name:"Reports"},
+    ]
+  },
+  {name:"Audiences",
+    subnav:[
+      {name:"Manage"},
+      {name:"Contributors"},
+    ]
+  },
+  {name:"Account",
+  dividerTop:true,
+    subnav:[
+      {name:"Configure"},
+      {name:"Validate"},
+      {name:"Profile"},
+      {name:"Users"},
+      {name:"Roles"},
+      {name:"Billing"},
+    ]
+  }
+]
+
+
+
+
+
+
+Nav2 = [
+  {name:"Ratings & Reviews",
+    link:'/rr',
+    subnav:[
+      {name:"Collect"},
+      {name:"Native Reviews"},
+      {name:"Network Reviews", link:"/rr/manage"},
+      {name:"By Product"},
+      {name:"Syndicate Reviews"},
+      {name:"Reports"}
+    ]
+  },
+  {name:"Q & A",
+    subnav:[]
+  },
+  {name:"Social",
+    subnav:[]
+  },
+  {name:"Sampling",
+    subnav:[]
+  },
+  {name:"Products",
+    subnav:[]
+  },
+  {name:"Advertising",
+    subnav:[
+      {name:"Campaigns"},
+      {name:"Audiences"},
+      {name:"Product Sets"},
+      {name:"Recommendations"}
+    ]
+  },
+]
+
+
+
+
+
+
+
+
+
+
+
 
 
 dailyStats = [

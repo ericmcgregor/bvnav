@@ -7,7 +7,7 @@ RRsyndicate = class RRamplify extends React.Component {
 
         <div id="application_container">
 
-          <ApplicationHeader title="Ratings & Reviews: Amplify" />
+          <ApplicationHeader title="Ratings & Reviews: Syndicate" />
 
 
           <div id="task_container">
