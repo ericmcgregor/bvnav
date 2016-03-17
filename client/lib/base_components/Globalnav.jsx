@@ -35,11 +35,11 @@ GlobalNav = React.createClass({
                 let classname = item.active==FlowRouter.current().params.active ? "" : "collapsed";
                 let expanded = item.active==FlowRouter.current().params.active ? "true" : "false";
                 return (
-                  <div>
+                  <div key={index}>
 
                     {item.dividerTop ? <div className="divider"></div> : null}
 
-                    <div key={index}>
+                    <div>
                     <a
                       href={"#dropdown-"+index}
                       className={"list-group-item dropdown-toggle " + classname}

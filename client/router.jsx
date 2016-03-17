@@ -1,3 +1,8 @@
+FlowRouter.triggers.enter([(context)=>{
+
+}])
+
+
 FlowRouter.route('/', {
     name:'home',
     action: function(params, queryParams) {
