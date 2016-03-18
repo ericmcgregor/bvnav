@@ -32,94 +32,12 @@ RRcollect = class RRmanagea extends React.Component {
           </div>
         </div>
 
-        <BSModal />
-
+        <div id="modal_container"></div>
       </div>
     )
   }
 }
 
-BSModal = class BSModal extends React.Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      modal:false,
-      modalContent:null
-    }
-  }
-  componentDidMount(){
-    Tracker.autorun(()=> {
-      console.log(Session.get('modalContent'))
-      this.setState({
-        modal:Session.get('modal'),
-        modalContent:Session.get('modalContent')
-      })
-    });
-  }
-  componentDidUpdate(){
-
-    if(this.state.modal){
-      $('#myModal').modal().on('hidden.bs.modal', function (e) {
-        Session.set({
-          modal:false,
-          modalContent:null
-        })
-      })
-    }
-  }
-  renderContent(){
-    console.log(this.state.modalContent)
-    if(this.state.modalContent) {
-      console.log(ReviewList)
-      return <ReviewList />
-    }
-  }
-  renderModal(){
-    return (
-      <div
-        className="modal fade"
-        id="myModal"
-        tabIndex={-1}
-        role="dialog"
-        aria-labelledby="myModalLabel"
-        aria-hidden="true">
-        <div className="modal-dialog" role="document">
-          <div className="modal-content">
-            <div className="modal-header">
-              <button
-                type="button"
-                className="close"
-                data-dismiss="modal"
-                aria-label="Close">
-                <span aria-hidden="true">×</span>
-              </button>
-              <h4 className="modal-title" id="myModalLabel">
-                Modal title
-              </h4>
-            </div>
-            <div className="modal-body">
-              {this.renderContent()}
-            </div>
-            <div className="modal-footer">
-              <button
-                type="button"
-                className="btn btn-secondary"
-                data-dismiss="modal">Close</button>
-              <button type="button" className="btn btn-primary">
-                Save changes
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    )
-  }
-  render() {
-    return (
-      this.state.modal ? this.renderModal() : null
-    )
-  }
-}
 
 let HeaderProps = {
   title: "",
@@ -152,7 +70,7 @@ let nav = {
             type="button"
             className="btn btn-success btn-lg"
             onClick={()=>{
-              Meteor.call('modal', <ReviewList />)
+              Meteor.call('modal', <ReviewList />, {title:"test"})
             }}>
             Create Campaign</button>
       </div>
