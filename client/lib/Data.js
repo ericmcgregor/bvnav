@@ -5,84 +5,95 @@ Nav = [
     dividerBottom:true
   },
   {name:"Reviews",
-    active:'rr',
-    link:'/rr',
+    active:'Reviews',
+    link:'/Reviews',
     subnav:[
-      {name:"Dashboard", link:"/rr", current:"rr"},
-      {name:"Collect", link:"/rr/collect", current:"rrcollect"},
-      {name:"Manage", link:"/rr/manage", current:"rrmanage"},
-      {name:"Syndicate", link:"/rr/syndicate", current:"rrsyndicate"},
+      {name:"Dashboard", link:"/Reviews/dashboard", current:"Reviews-Dashboard"},
+      {name:"Collect", link:"/Reviews/collect", current:"Reviews-Collect"},
+      {name:"Manage", link:"/Reviews/manage", current:"Reviews-Manage"},
+      {name:"Syndicate", link:"/Reviews/syndicate", current:"Reviews-Syndicate"},
       //{name:"Notifications", link:"/rr/notifications", current:"rrnotifications"},
-      // {name:"Alerts", link:"/rr/alerts", current:"rralerts"},
-      {name:"Configure", link:"/rr/display", current:"rrdisplay"},
-      // {name:"Reports", link:"/rr/reports", current:"rrreports"}
+      {name:"Alerts", link:"/Reviews/alerts", current:"Reviews-Alerts"},
+      {name:"Configure", link:"/Reviews/configure", current:"Reviews-Configure"},
+      {name:"Reports", link:"/Reviews/reports", current:"Reviews-Reports"}
     ]
   },
   {name:"Stories",
+  active:'Stories',
+
     subnav:[
-      {name:"Dashboard"},
-      {name:"Manage"},
+      {name:"Dashboard", link:"/Stories/Dashboard", current:"Stories-Dashboard"},
+      {name:"Manage", link:"/Stories/Manage", current:"Stories-Manage"},
     ]
   },
   {name:"Questions",
+    active:'Questions',
     subnav:[
-      {name:"Dashboard"},
-      {name:"Manage"},
-      {name:"Configure"},
+      {name:"Dashboard", link:"/Questions/Dashboard", current:"Questions-Dashboard"},
+      {name:"Manage", link:"/Questions/Manage", current:"Questions-Manage"},
+      {name:"Configure", link:"/Questions/Configure", current:"Questions-Configure"},
     ]
   },
   {name:"Social",
+    active:'Social',
     subnav:[
-      {name:"Dashboard"},
-      {name:"Content"},
-      {name:"Search"},
-      {name:"Groups"},
-      {name:"Tags"},
-      {name:"Filters"},
+      {name:"Dashboard", link:"/Social/Dashboard", current:"Social-Dashboard"},
+      {name:"Content", link:"/Social/Content", current:"Social-Content"},
+      {name:"Search", link:"/Social/Search", current:"Social-Search"},
+      {name:"Groups", link:"/Social/Groups", current:"Social-Groups"},
+      {name:"Tags", link:"/Social/Tags", current:"Social-Tags"},
+      {name:"Filters", link:"/Social/Filters", current:"Social-Filters"},
     ]
   },
   {name:"Sampling",
+    active:'Sampling',
     subnav:[
-      {name:"Email Templates"},
-      {name:"Members"},
-      {name:"Products"},
-      {name:"Vendors"},
+      {name:"Email Templates", link:"/Sampling/Templates", current:"Sampling-Templates"},
+      {name:"Members", link:"/Sampling/Members", current:"Sampling-Members"},
+      {name:"Products", link:"/Sampling/Products", current:"Sampling-Products"},
+      {name:"Vendors", link:"/Sampling/Vendors", current:"Sampling-Vendors"},
     ]
   },
   {name:"Recommendations", link:"/recommendations", active:"recommendations"},
 
   {name:"Advertising",
-    active:"advertising",
+    active:"Advertising",
     subnav:[
-      {name:"Campaigns", link:"/advertising/campaigns", current:"adcampaigns"},
-      {name:"Advertisers", link:"/advertising/clients", current:"adclients"},
-      {name:"Creatives", link:"/advertising/creatives", current:"adcreatives"},
+      {name:"Campaigns", link:"/advertising/Campaigns", current:"Advertising-Campaigns"},
+      {name:"Advertisers", link:"/advertising/Advertisers", current:"Advertising-Advertisers"},
+      {name:"Creatives", link:"/advertising/Creatives", current:"Advertising-Creatives"},
     ],
     dividerBottom:true
   },
-  {name:"Products", link:"/products", active:"products",
+  {name:"Products",
+  link:"/products",
+  active:"products",
     subnav:[
-      {name:"Families"},
-      {name:"Migrate"},
-      {name:"Product Sets"},
-      {name:"Reports"},
+      {name:"Families", link:"/products/Families", current:"products-Families"},
+      {name:"Migrate", link:"/products/Migrate", current:"products-Migrate"},
+      {name:"Product Sets", link:"/products/Sets", current:"products-Sets"},
+      {name:"Reports", link:"/products/Reports", current:"products-Reports"},
     ]
   },
   {name:"Audiences",
+  active:"Audiences",
+
     subnav:[
-      {name:"Manage"},
-      {name:"Contributors"},
+      {name:"Manage", link:"/audiences/Manage", current:"Audiences-Manage"},
+      {name:"Contributors", link:"/audiences/Contributors", current:"Audiences-Contributors"},
     ]
   },
   {name:"Account",
+  active:'account',
+  link:'/account',
   dividerTop:true,
     subnav:[
-      {name:"Configure"},
-      {name:"Validate"},
-      {name:"Profile"},
-      {name:"Users"},
-      {name:"Roles"},
-      {name:"Billing"},
+      {name:"Billing", link:"/account/billing", current:"account-billing"},
+      {name:"Configure", link:"/account/configure", current:"account-configure"},
+      {name:"Profile", link:"/account/profile", current:"account-profile"},
+      {name:"Roles", link:"/account/roles", current:"account-roles"},
+      {name:"Users", link:"/account/users", current:"account-users"},
+      {name:"Validate", link:"/account/validate", current:"account-validate"},
     ]
   }
 ]
@@ -92,42 +103,42 @@ Nav = [
 
 
 
-Nav2 = [
-  {name:"Ratings & Reviews",
-    link:'/rr',
-    subnav:[
-      {name:"Collect"},
-      {name:"Native Reviews"},
-      {name:"Network Reviews", link:"/rr/manage"},
-      {name:"By Product"},
-      {name:"Syndicate Reviews"},
-      {name:"Reports"}
-    ]
-  },
-  {name:"Q & A",
-    subnav:[]
-  },
-  {name:"Social",
-    subnav:[]
-  },
-  {name:"Sampling",
-    subnav:[]
-  },
-  {name:"Products",
-    subnav:[]
-  },
-  {name:"Advertising",
-    subnav:[
-      {name:"Campaigns"},
-      {name:"Audiences"},
-      {name:"Product Sets"},
-      {name:"Recommendations"}
-    ]
-  },
-]
-
-
-
+// Nav2 = [
+//   {name:"Ratings & Reviews",
+//     link:'/rr',
+//     subnav:[
+//       {name:"Collect"},
+//       {name:"Native Reviews"},
+//       {name:"Network Reviews", link:"/rr/manage"},
+//       {name:"By Product"},
+//       {name:"Syndicate Reviews"},
+//       {name:"Reports"}
+//     ]
+//   },
+//   {name:"Q & A",
+//     subnav:[]
+//   },
+//   {name:"Social",
+//     subnav:[]
+//   },
+//   {name:"Sampling",
+//     subnav:[]
+//   },
+//   {name:"Products",
+//     subnav:[]
+//   },
+//   {name:"Advertising",
+//     subnav:[
+//       {name:"Campaigns"},
+//       {name:"Audiences"},
+//       {name:"Product Sets"},
+//       {name:"Recommendations"}
+//     ]
+//   },
+// ]
+//
+//
+//
 
 
 

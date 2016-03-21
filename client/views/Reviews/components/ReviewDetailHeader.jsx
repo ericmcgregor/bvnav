@@ -1,37 +1,4 @@
-RRnativedetail = class RRnativedetail extends React.Component {
-  render() {
-    return (
-      <div id="portal_container">
-
-        <GlobalNav />
-
-        <div id="application_container">
-
-          <ApplicationHeader titleLink="/rr/manage" title="Ratings & Reviews > Manage Reviews > Native "/>
-
-
-          <div id="task_container">
-            <div id="task_content">
-
-              <div className="p-a-1">
-                <ReviewDetailHeader />
-              </div>
-
-              <TabbedNav>
-                <TabNav {...nav} />
-                <TabContent {...nav} />
-              </TabbedNav>
-
-            </div>
-          </div>
-        </div>
-
-      </div>
-    )
-  }
-}
-
-let ReviewDetailHeader = class ReviewDetailHeader extends React.Component {
+ReviewDetailHeader = class ReviewDetailHeader extends React.Component {
   renderForm(label, value) {
       return (
         <div className="form-group row">
@@ -44,7 +11,7 @@ let ReviewDetailHeader = class ReviewDetailHeader extends React.Component {
   }
   render() {
     return(
-      <div className="report-header">
+      <div className="report-header p-a-1">
         <div className="border m-r-2" style={{width:"150px"}}></div>
         <div className="report-details">
           {this.renderForm('Product', "Charter Club Striped Crochet-Trim Top Only at Macys (2449645)")}
@@ -93,17 +60,4 @@ let ReviewDetailHeader = class ReviewDetailHeader extends React.Component {
       </div>
     )
   }
-}
-let nav = {
-  primary:[
-    {name:"Review"},
-    {name:"Photos (0)"},
-    {name:"Videos (0)"},
-    {name:"Comments (0)"},
-    {name:"Responses (0)"},
-  ],
-  secondary:[],
-  content:[
-    <div />
-  ]
 }
