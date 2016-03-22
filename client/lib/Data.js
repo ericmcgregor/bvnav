@@ -24,6 +24,7 @@ Nav = [
     subnav:[
       {name:"Dashboard", link:"/Stories/Dashboard", current:"Stories-Dashboard"},
       {name:"Manage", link:"/Stories/Manage", current:"Stories-Manage"},
+      {name:"Reports", link:"/Stories/Reports", current:"Stories-Reports"},
     ]
   },
   {name:"Questions",
@@ -32,6 +33,7 @@ Nav = [
       {name:"Dashboard", link:"/Questions/Dashboard", current:"Questions-Dashboard"},
       {name:"Manage", link:"/Questions/Manage", current:"Questions-Manage"},
       {name:"Configure", link:"/Questions/Configure", current:"Questions-Configure"},
+      {name:"Reports", link:"/Questions/Reports", current:"Questions-Reports"},
     ]
   },
   {name:"Social",
@@ -41,8 +43,11 @@ Nav = [
       {name:"Content", link:"/Social/Content", current:"Social-Content"},
       {name:"Search", link:"/Social/Search", current:"Social-Search"},
       {name:"Groups", link:"/Social/Groups", current:"Social-Groups"},
+      {name:"Rights Management", link:"/Social/Rights", current:"Social-Rights"},
       {name:"Tags", link:"/Social/Tags", current:"Social-Tags"},
       {name:"Filters", link:"/Social/Filters", current:"Social-Filters"},
+      {name:"Reports", link:"/Social/Reports", current:"Social-Reports"},
+
     ]
   },
   {name:"Sampling",

@@ -4,7 +4,9 @@ FlowRouter.route('/products', {
       params.active='products'
       params.current='products'
       params.title="Products"
-      ReactLayout.render(HomeView);
+      ReactLayout.render(HomeView, {
+        title:"Products:"
+      });
     }
 });
 
@@ -14,7 +16,9 @@ FlowRouter.route('/products/Families', {
       params.active='products'
       params.current='products-Families'
       params.title="Products:Families"
-      ReactLayout.render(HomeView);
+      ReactLayout.render(HomeView, {
+        title:"Products:Families"
+      });
     }
 });
 FlowRouter.route('/products/Migrate', {
@@ -23,7 +27,9 @@ FlowRouter.route('/products/Migrate', {
       params.active='products'
       params.current='products-Migrate'
       params.title="Products:Migrate"
-      ReactLayout.render(HomeView);
+      ReactLayout.render(HomeView, {
+        title:"Products:Migrate"
+      });
     }
 });
 FlowRouter.route('/products/Sets', {
@@ -32,7 +38,9 @@ FlowRouter.route('/products/Sets', {
       params.active='products'
       params.current='products-Sets'
       params.title="Products:Sets"
-      ReactLayout.render(HomeView);
+      ReactLayout.render(HomeView, {
+        title:"Products:Sets"
+      });
     }
 });
 FlowRouter.route('/products/Reports', {

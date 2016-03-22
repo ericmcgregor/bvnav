@@ -4,7 +4,21 @@ FlowRouter.route('/Advertising/Campaigns', {
     action: function(params, queryParams) {
       params.active='Advertising'
       params.current='Advertising-Campaigns'
-      ReactLayout.render(CampaignsManage);
+      ReactLayout.render(HomeView, {
+        title:"Advertising:Advertisers",
+        nav:{
+          primary:[
+            {name:"Active (23)"},
+            {name:"Pending (11)"},
+            {name:"Completed (4)"},
+          ],
+          secondary:[],
+          content:[
+            <CampaignList />,
+            <div />
+          ]
+        }
+      });
     }
 });
     FlowRouter.route('/advertising/Campaigns/detail', {
@@ -12,15 +26,53 @@ FlowRouter.route('/Advertising/Campaigns', {
         action: function(params, queryParams) {
           params.active='Advertising'
           params.current='Advertising-Campaigns'
-          ReactLayout.render(CampaignsDetail);
+          ReactLayout.render(HomeView, {
+            title:"Advertising:Campaigns:Detail",
+            titleLink:"/advertising/campaigns",
+            pageHeader:<CampaignDetailHeader />,
+            nav:{
+              primary:[
+                {name:"Line Items (10)"},
+                {name:"Creatives (8)"},
+                {name:"Brand Consideration"},
+              ],
+              secondary:[],
+              content:[
+                <ContentView pageHeader={<LineItemHeader />} pageContent={<LineItemList />} />,
+                <CreativesList />,
+              ]
+            }
+          });
         }
     });
-        FlowRouter.route('/advertising/campaigns/detail/line-item/123456', {
+        FlowRouter.route('/advertising/campaigns/detail/line-item/:id', {
             name:'Advertising-Campaigns-Detail-Line',
             action: function(params, queryParams) {
               params.active='Advertising'
               params.current='Advertising-Campaigns'
-              ReactLayout.render(CampaignsDetailLineItem);
+
+              ReactLayout.render(HomeView, {
+                title:"Advertising:Campaigns:Detail:Line-Item",
+                titleLink:"/advertising/campaigns/detail",
+                pageHeader:<LineItemDetailHeader />,
+                nav:{
+                  primary:[
+                    {name:"Details"},
+                    {name:"Conversion Report"},
+                    {name:"Creatives (3)"},
+                    {name:"Audiences (0)"},
+                    {name:"Product Sets (0)"},
+                  ],
+                  secondary:[],
+                  content:[
+                    <div></div>,
+                    <div></div>,
+                    <ContentView pageHeader={<CreativesHeader />} pageContent={<CreativesList />} />,
+                  ]
+                }
+              });
+
+
             }
         });
 
@@ -30,7 +82,9 @@ FlowRouter.route('/advertising/Advertisers', {
     action: function(params, queryParams) {
       params.active='Advertising'
       params.current='Advertising-Advertisers'
-      ReactLayout.render(AudiencesManage);
+      ReactLayout.render(HomeView, {
+        title:"Advertising:Advertisers",
+      });
     }
 });
 
@@ -40,14 +94,10 @@ FlowRouter.route('/advertising/Creatives', {
     action: function(params, queryParams) {
       params.active='Advertising'
       params.current='Advertising-Creatives'
-      ReactLayout.render(AdProdcutsManage);
-    }
-});
-FlowRouter.route('/advertising/recommendations', {
-    name:'Advertising-',
-    action: function(params, queryParams) {
-      params.active='Advertising'
-      params.current='Advertising-'
-      ReactLayout.render(AdRecommendationsManage);
+      ReactLayout.render(HomeView, {
+        title:"Advertising:Creatives",
+         pageHeader:<CreativesHeader />,
+        pageContent:<CreativesList />,
+      });
     }
 });

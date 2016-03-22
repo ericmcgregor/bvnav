@@ -4,7 +4,9 @@ FlowRouter.route('/account', {
       params.active='account'
       params.current='account'
       params.title="Account"
-      ReactLayout.render(HomeView);
+      ReactLayout.render(HomeView, {
+        title:"Account:"
+      });
     }
 });
 
@@ -14,7 +16,9 @@ FlowRouter.route('/account/billing', {
       params.active='account'
       params.current='account-billing'
       params.title="Account:billing"
-      ReactLayout.render(HomeView);
+      ReactLayout.render(HomeView, {
+        title:"Account:Billing"
+      });
     }
 });
 FlowRouter.route('/account/configure', {
@@ -23,7 +27,9 @@ FlowRouter.route('/account/configure', {
       params.active='account'
       params.current='account-configure'
       params.title="Account:configure"
-      ReactLayout.render(HomeView);
+      ReactLayout.render(HomeView, {
+        title:"Account:Configure"
+      });
     }
 });
 FlowRouter.route('/account/profile', {
@@ -32,7 +38,9 @@ FlowRouter.route('/account/profile', {
       params.active='account'
       params.current='account-profile'
       params.title="Account:profile"
-      ReactLayout.render(HomeView);
+      ReactLayout.render(HomeView, {
+      title:"Account:Profile"
+    });
     }
 });
 FlowRouter.route('/account/roles', {
@@ -41,7 +49,9 @@ FlowRouter.route('/account/roles', {
       params.active='account'
       params.current='account-roles'
       params.title="Account:roles"
-      ReactLayout.render(HomeView);
+      ReactLayout.render(HomeView, {
+        title:"Account:Roles"
+      });
     }
 });
 FlowRouter.route('/account/users', {
@@ -50,7 +60,9 @@ FlowRouter.route('/account/users', {
       params.active='account'
       params.current='account-users'
       params.title="Account:users"
-      ReactLayout.render(HomeView);
+      ReactLayout.render(HomeView, {
+        title:"Account:Users"
+      });
     }
 });
 FlowRouter.route('/account/validate', {
@@ -59,6 +71,8 @@ FlowRouter.route('/account/validate', {
       params.active='account'
       params.current='account-validate'
       params.title="Account:validate"
-      ReactLayout.render(HomeView);
+      ReactLayout.render(HomeView, {
+        title:"Account:Validate"
+      });
     }
 });

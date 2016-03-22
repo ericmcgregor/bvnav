@@ -27,12 +27,15 @@ HomeView = class HomeView extends React.Component {
     if(this.props.pageContent) {
       return this.props.pageContent;
     }
-    return (
-      <TabbedNav>
-        <TabNav {...this.props.nav} />
-        <TabContent {...this.props.nav} />
-      </TabbedNav>
-    )
+    if(this.props.nav) {
+      return (
+        <TabbedNav>
+          <TabNav {...this.props.nav} />
+          <TabContent {...this.props.nav} />
+        </TabbedNav>
+      )
+    }
+    return null;
   }
   render() {
     return (
@@ -54,24 +57,24 @@ HomeView = class HomeView extends React.Component {
             </div>
           </div>
         </div>
-
+        <div id="modal_container"></div>
       </div>
     )
   }
 }
 HomeView.defaultProps = {
-  pageContent:null,
-  pageHeader:null,
-  nav: {
-    primary:[
-      {name:"Dashabaord"},
-      {name:"Activities"},
-      {name:"Getting Started"},
-    ],
-    secondary:[],
-    content:[
-      <div>
-      </div>
-    ]
-  }
+  // pageContent:<div></div>,
+  // pageHeader:null,
+  // nav: {
+  //   primary:[
+  //     {name:"Dashabaord"},
+  //     {name:"Activities"},
+  //     {name:"Getting Started"},
+  //   ],
+  //   secondary:[],
+  //   content:[
+  //     <div>
+  //     </div>
+  //   ]
+  // }
 }

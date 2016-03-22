@@ -37,10 +37,9 @@ FlowRouter.route('/Reviews/manage', {
           primary:[
             {name:"Native Reviews"},
             {name:"Network Reviews"},
-            {name:"Migrate Reviews"},
           ],
           content:[
-            <ReviewList />,
+            <ContentView pageHeader={<ManageNativeHeader />} pageContent={<ReviewList />} />,
             <NetworkList />
           ]
         }
@@ -56,6 +55,7 @@ FlowRouter.route('/Reviews/manage', {
 
         ReactLayout.render(HomeView, {
           title:"Reviews: Manage: Deteail",
+          titleLink:"/Reviews/manage",
           pageHeader:<ReviewDetailHeader />,
           nav: {
             primary:[
