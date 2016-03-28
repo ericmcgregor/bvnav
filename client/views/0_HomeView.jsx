@@ -7,21 +7,11 @@ HomeView = class HomeView extends React.Component {
   renderPageHeader() {
     if(this.props.pageHeader) {
       return (
-        <div className="p-a-1">
+        <div className="p-x-1">
           {this.props.pageHeader}
         </div>
       )
     }
-    return (
-      <div className="p-a-1">
-        <div className="report-header">
-          <div className="report-details">
-          </div>
-          <div className="report-actions">
-          </div>
-        </div>
-      </div>
-    )
   }
   renderContent() {
     if(this.props.pageContent) {

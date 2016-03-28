@@ -134,52 +134,94 @@ ReportHeader.defaultProps = {
 
 
 
-PageHeaderComponent = class PageHeaderComponent extends ReportHeader {
+PageHeaderComponent = class PageHeaderComponent extends React.Component{
   constructor(props) {
     super(props);
-    console.log(this.renderForm)
+  }
+  componentDidMount(){
 
-  }
-  render(){
-    return(
-      <div className="report-header">
-        {this.props.children}
-      </div>
-    )
-  }
-}
-PageHeaderDetails = class PageHeaderDetails extends ReportHeader {
-  constructor(props) {
-    super(props);
   }
   renderForm(label, value) {
       return (
         <div className="form-group row">
           <label className="col-sm-3 form-control-label">{label}:</label>
           <div className="col-sm-9">
-            <p className="form-control-static">{value}</p>
+            {typeof value === 'object' ? value : <p className="form-control-static">{value}</p>}
           </div>
         </div>
       )
   }
-  render(){
-    console.log(this.renderForm)
+  // details(){
+  //   return null
+  // }
+  // actions(){
+  //   return null
+  // }
+  // optional(){
+  //   return null
+  // }
+  renderDetails() {
+    if(!this.details || typeof this.details !== 'function') return;
     return (
-      <div className="report-details">
-        {this.props.children}
+      <div className="page-header-details">
+        {this.details()}
+      </div>
+    )
+  }
+  renderActions() {
+    if(!this.actions || typeof this.actions !== 'function') return;
+    return (
+      <div className="page-header-actions">
+        <div
+          className="btn-group btn-group-sm right"
+          role="group"
+          aria-label="Actions">
+          {this.actions()}
+        </div>
+      </div>
+    )
+  }
+  renderOptional(){
+    if(!this.optional || typeof this.optional !== 'function') return;
+    return (
+      <div className="page-header-optional">
+        {this.optional()}
+      </div>
+    )
+  }
+  renderLocation(){
+    return (
+      <div className="page-header-location flex flex-row">
+        <ol
+          className="breadcrumb">
+          {this.props.crumbs.map((item, index)=>{
+            return (
+              <li key={index} className={item.className}>
+                {item.link ? <a href={item.link}>{item.name}</a> : <span>{item.name}</span>}
+              </li>
+            )
+          })}
+        </ol>
+        {this.renderActions()}
+      </div>
+    )
+  }
+  render(){
+    console.log(this.props)
+    return(
+      <div className="page-header">
+
+        {this.renderLocation()}
+
+
+        <div className="flex flex-row">
+          {this.renderDetails()}
+          {this.renderOptional()}
+        </div>
       </div>
     )
   }
 }
-PageHeaderActions = class PageHeaderActions extends ReportHeader {
-  constructor(props) {
-    super(props);
-  }
-  render(){
-    return (
-      <div className="report-actions">
-        {this.props.children}
-      </div>
-    )
-  }
+PageHeaderComponent.defaultProps = {
+  crumbs:[]
 }

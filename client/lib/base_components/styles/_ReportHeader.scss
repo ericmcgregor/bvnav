@@ -5,6 +5,59 @@
 The top of the report that usually contains flight dates,
 title, and other info
 */
+
+div.page-header {
+  margin-bottom:$spacer;
+  .page-header-location {
+    // border-bottom:1px solid #d2d2d2;
+    margin-bottom:$spacer;
+    min-height:44px;
+  }
+  .breadcrumb {
+    flex:1 0 auto;
+    // border:1px solid black;
+    background:transparent;
+    padding-left:0;
+    margin:0;
+  }
+  div.page-header-details {
+    flex:1 0 450px;
+    min-width:450px;
+
+    .form-group {
+      font-size:1rem;
+      margin:0;
+      // height:auto;
+      label.form-control-label {
+        padding:0;
+        max-width:120px;
+      }
+      p.form-control-static {
+        padding:0;
+        font-weight:500;
+      }
+      > div {
+        min-height:1rem;
+        height:auto;
+      }
+    }
+  }
+  div.page-header-actions {
+    flex:0 1 25%;
+    min-width:200px;
+    max-width:25%;
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+  }
+  div.page-header-optional {
+    flex:0 1 33%;
+    max-width:33%;
+    min-width:33%;
+  }
+}
+
+
 #task_content > div.report-header {
   // flex-grow:0;
   // height:100%;

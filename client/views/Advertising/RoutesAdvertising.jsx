@@ -6,6 +6,7 @@ FlowRouter.route('/Advertising/Campaigns', {
       params.current='Advertising-Campaigns'
       ReactLayout.render(HomeView, {
         title:"Advertising:Advertisers",
+        pageHeader:<CampaignListHeader  {...params}/>,
         nav:{
           primary:[
             {name:"Active (23)"},
@@ -14,7 +15,7 @@ FlowRouter.route('/Advertising/Campaigns', {
           ],
           secondary:[],
           content:[
-            <CampaignList />,
+            <ContentView pageContent={<CampaignList />} />,
             <div />
           ]
         }
@@ -24,12 +25,13 @@ FlowRouter.route('/Advertising/Campaigns', {
     FlowRouter.route('/advertising/Campaigns/detail', {
         name:'Advertising-Campaigns-Detail',
         action: function(params, queryParams) {
+          params.crumbs=[{name:"Campaigns", link:"/advertising/campaigns"}, {name:"Detail", className:"active"}]
           params.active='Advertising'
           params.current='Advertising-Campaigns'
           ReactLayout.render(HomeView, {
-            title:"Advertising:Campaigns:Detail",
+            title:"Advertising",
             titleLink:"/advertising/campaigns",
-            pageHeader:<CampaignDetailHeader />,
+            pageHeader:<CampaignDetailHeader {...params}/>,
             nav:{
               primary:[
                 {name:"Line Items (10)"},
@@ -50,11 +52,16 @@ FlowRouter.route('/Advertising/Campaigns', {
             action: function(params, queryParams) {
               params.active='Advertising'
               params.current='Advertising-Campaigns'
+              params.crumbs=[
+                              {name:"Campaigns", link:"/advertising/campaigns"},
+                              {name:"Detail", link:"/advertising/campaigns/detail"},
+                              {name:"Line-Item", className:"active"}
+                            ]
 
               ReactLayout.render(HomeView, {
-                title:"Advertising:Campaigns:Detail:Line-Item",
+                title:"Advertising",
                 titleLink:"/advertising/campaigns/detail",
-                pageHeader:<LineItemDetailHeader />,
+                pageHeader:<LineItemDetailHeader  {...params}/>,
                 nav:{
                   primary:[
                     {name:"Details"},

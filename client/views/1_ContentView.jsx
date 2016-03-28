@@ -7,16 +7,6 @@ ContentView = class ContentView extends HomeView {
         </div>
       )
     }
-    return (
-      <div className="">
-        <div className="report-header">
-          <div className="report-details">
-          </div>
-          <div className="report-actions">
-          </div>
-        </div>
-      </div>
-    )
   }
   render(){
     return(
