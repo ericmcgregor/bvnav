@@ -5,8 +5,8 @@ FlowRouter.route('/Advertising/Campaigns', {
       params.active='Advertising'
       params.current='Advertising-Campaigns'
       ReactLayout.render(HomeView, {
-        title:"Advertising:Advertisers",
-        pageHeader:<CampaignListHeader  {...params}/>,
+        title:"Advertising",
+        pageHeader:<CampaignListHeader />,
         nav:{
           primary:[
             {name:"Active (23)"},

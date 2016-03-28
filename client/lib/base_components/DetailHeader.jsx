@@ -190,6 +190,7 @@ PageHeaderComponent = class PageHeaderComponent extends React.Component{
     )
   }
   renderLocation(){
+    if(!this.props.crumbs.length) return;
     return (
       <div className="page-header-location flex flex-row">
         <ol
@@ -217,6 +218,7 @@ PageHeaderComponent = class PageHeaderComponent extends React.Component{
         <div className="flex flex-row">
           {this.renderDetails()}
           {this.renderOptional()}
+          {this.props.crumbs.length ? null : this.renderActions()}
         </div>
       </div>
     )

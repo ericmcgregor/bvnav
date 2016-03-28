@@ -53,8 +53,12 @@ LineItemDetailHeader = class LineItemDetailHeader extends PageHeaderComponent {
     )
   }
   optional(){
+    console.log(LineItemData)
+    LineItemData.colors[0] = GraphSecondary;
+
     return (
-      <div>
+      <div className="graph-container">
+        <h5 className="heading">line-item performance</h5>
         <GraphSpline data={LineItemData} />
       </div>
     )

@@ -302,11 +302,32 @@ Daily = {
 }
 
 
+let campaignSales = Daily.sales.map((item, index)=>{
+  item = Math.floor((Math.random() * 70) + 1);
+  var number = Math.floor((Math.random() * 30) + 1);
+  var plusOrMinus = Math.random() < 0.5 ? -1 : 1;
+  number = number * plusOrMinus;
+  item = Math.round(item+number);
+  if(item < 0) {
+    item = 0;
+  }
+  return item;
+});
+
+CampaignData =   {
+      title:"Daily Campaign Sales",
+      height:170,
+      chartID:"sales",
+      dates: Daily.dates,
+      columns: [['Sales', ...campaignSales]],
+      colors:[GraphPrimary]
+  }
+
 LineItemData =   {
       title:"Daily Campaign Sales",
       height:170,
       chartID:"sales",
       dates: Daily.dates,
       columns: [['Sales', ...Daily.sales]],
-      colors:["rgba(151,187,205,1)"]
+      colors:[GraphSecondary]
   }

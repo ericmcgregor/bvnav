@@ -10,4 +10,9 @@ CampaignListHeader = class CampaignListHeader extends PageHeaderComponent {
       </div>
     )
   }
+  details(){
+    return (
+      <h3 className="title">Campaigns</h3>
+    )
+  }
 }

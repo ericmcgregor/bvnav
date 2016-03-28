@@ -52,9 +52,11 @@ CampaignDetailHeader = class CampaignDetailHeader extends PageHeaderComponent {
     )
   }
   optional(){
+    LineItemData.colors[0] = GraphPrimary;
     return (
-      <div>
-        <GraphSpline data={LineItemData} />
+      <div className="graph-container">
+        <h5 className="heading">campaign performance</h5>
+        <GraphSpline data={CampaignData} />
       </div>
     )
   }
