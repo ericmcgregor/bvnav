@@ -1,26 +1,22 @@
-LineItemHeader = class LineItemHeader extends React.Component {
-  render() {
+LineItemListHeader = class LineItemListHeader extends PageHeaderComponent {
+  details(){
     return (
-      <div className="report-header">
-        <div className="report-details">
-
-        </div>
-
-
-        <div className="report-actions">
-          <div className="btn-group btn-group-sm" role="group">
-            <button
-              className="btn btn-success btn-sm"
-              onClick={()=>{
-                Meteor.call('modal', <FormComponent />, {title:"New Line Item"})
-              }}>New Line Item</button>
-          </div>
-        </div>
-    </div>
+      <div></div>
     )
   }
-}
+  actions(){
+    return (
+      <div className="btn-group btn-group-sm" role="group">
+        <button
+          className="btn btn-success btn-sm"
+          onClick={()=>{
+            Meteor.call('modal', <FormComponent />, {title:"New Line Item"})
+          }}>New Line Item</button>
+      </div>
+    )
+  }
 
+}
 
 FormComponent = class FormComponent extends React.Component {
   constructor(props) {

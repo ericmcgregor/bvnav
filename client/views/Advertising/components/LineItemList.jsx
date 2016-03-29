@@ -77,16 +77,16 @@ LineItemList = class LineItemList extends React.Component {
 
 
 let  myData = [
-  {name: 'Line Item 1', type:"conversion", status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
-  {name: 'Line Item 2', type:"conversion", status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
-  {name: 'Line Item 3', type:"non-commerce", status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
-  {name: 'Line Item 4', type:"conversion", status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
-  {name: 'Line Item 5', type:"conversion", status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
-  {name: 'Line Item 6', type:"conversion", status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
-  {name: 'Line Item 7', type:"conversion", status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
-  {name: 'Line Item 8', type:"conversion", status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
-  {name: 'Line Item 9', type:"conversion", status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
-  {name: 'Line Item 10', type:"conversion", status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
+  {name: 'Line Item 1', type:"sales", status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
+  {name: 'Line Item 2', type:"sales", status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
+  {name: 'Line Item 3', type:"HVT", status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
+  {name: 'Line Item 4', type:"sales", status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
+  {name: 'Line Item 5', type:"sales", status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
+  {name: 'Line Item 6', type:"sales", status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
+  {name: 'Line Item 7', type:"sales", status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
+  {name: 'Line Item 8', type:"sales", status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
+  {name: 'Line Item 9', type:"sales", status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
+  {name: 'Line Item 10', type:"sales", status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
 ]
 let myTableData = myData.map((item, index)=>{
   let SmallData = Object.create(LineItemData);

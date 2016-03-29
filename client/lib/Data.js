@@ -108,45 +108,6 @@ Nav = [
 
 
 
-// Nav2 = [
-//   {name:"Ratings & Reviews",
-//     link:'/rr',
-//     subnav:[
-//       {name:"Collect"},
-//       {name:"Native Reviews"},
-//       {name:"Network Reviews", link:"/rr/manage"},
-//       {name:"By Product"},
-//       {name:"Syndicate Reviews"},
-//       {name:"Reports"}
-//     ]
-//   },
-//   {name:"Q & A",
-//     subnav:[]
-//   },
-//   {name:"Social",
-//     subnav:[]
-//   },
-//   {name:"Sampling",
-//     subnav:[]
-//   },
-//   {name:"Products",
-//     subnav:[]
-//   },
-//   {name:"Advertising",
-//     subnav:[
-//       {name:"Campaigns"},
-//       {name:"Audiences"},
-//       {name:"Product Sets"},
-//       {name:"Recommendations"}
-//     ]
-//   },
-// ]
-//
-//
-//
-
-
-
 
 
 
@@ -326,7 +287,7 @@ CampaignData =   {
 LineItemData =   {
       title:"Daily Campaign Sales",
       height:170,
-      chartID:"sales",
+      chartID:"line-item-data",
       dates: Daily.dates,
       columns: [['Sales', ...Daily.sales]],
       colors:[GraphSecondary]

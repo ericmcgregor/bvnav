@@ -36,12 +36,11 @@ FlowRouter.route('/Advertising/Campaigns', {
               primary:[
                 {name:"Line Items (10)"},
                 {name:"Creatives (8)"},
-                {name:"Brand Consideration"},
               ],
               secondary:[],
               content:[
-                <ContentView pageHeader={<LineItemHeader />} pageContent={<LineItemList />} />,
-                <CreativesList />,
+                <ContentView pageHeader={<LineItemListHeader />} pageContent={<LineItemList />} />,
+                <ContentView pageHeader={<CreativesListHeader />} pageContent={<CreativesList />} />
               ]
             }
           });
@@ -66,6 +65,7 @@ FlowRouter.route('/Advertising/Campaigns', {
                   primary:[
                     {name:"Conversion Report"},
                     {name:"Audience Snapshot"},
+                    {name:"Consideration Report"},
                     {name:"Creatives (3)"},
                     {name:"Product Sets (0)"},
                     {name:"Details"},
@@ -75,7 +75,6 @@ FlowRouter.route('/Advertising/Campaigns', {
                     <div><ROIreport /></div>,
                     <div><AudienceReport /></div>,
                     <div><ConsiderationReport /></div>,
-                    <div><NonCommerceRoi /></div>,
                     <ContentView pageHeader={<CreativesHeader />} pageContent={<CreativesList />} />,
                   ]
                 }

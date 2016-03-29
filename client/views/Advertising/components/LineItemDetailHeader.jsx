@@ -5,7 +5,6 @@ LineItemDetailHeader = class LineItemDetailHeader extends PageHeaderComponent {
         {this.renderForm('Line Item',"Line Item 1")}
         {this.renderForm('Campaign',"Macy's Black Firday")}
         {this.renderForm('Client',"Macy's")}
-        {this.renderForm('Flight Dates',"xx/xx/xx - xx/xx/xx")}
         {this.renderForm('Status',<div className="btn-group btn-group-sm" role="group">
                           <button
                             id="btnGroupDrop1"
@@ -54,11 +53,14 @@ LineItemDetailHeader = class LineItemDetailHeader extends PageHeaderComponent {
   }
   optional(){
     LineItemData.colors[0] = GraphSecondary;
-
+    // <div className="graph-container">
+    //   <h5 className="heading">line-item performance</h5>
+    //   <GraphSpline data={LineItemData} />
+    // </div>
     return (
-      <div className="graph-container">
-        <h5 className="heading">line-item performance</h5>
-        <GraphSpline data={LineItemData} />
+      <div>
+      {this.renderForm('Spend',"$"+ROIdata.totalAdSpend)}
+      {this.renderForm('Flight Dates',"xx/xx/xx - xx/xx/xx")}
       </div>
     )
   }

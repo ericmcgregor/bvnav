@@ -1,3 +1,55 @@
+svg {
+
+  .c3-axis-x > path.domain {
+    // visibility: hidden;
+  }
+
+  g.c3-axis {
+
+    text {
+      fill:$text-muted!important;
+      // font-size:18px;
+    }
+    path.domain,
+    .tick > line {
+      stroke:$text-muted!important;
+      opacity:0.3;
+    }
+
+  }
+  .c3-axis.c3-axis-x {}
+
+}
+
+
+
+.graph-container {
+  position:relative;
+  border:1px solid #d2d2d2;
+  height:150px;
+  overflow:hidden;
+  .heading {
+    position:absolute;
+    top:10px;
+    left:0;
+    text-align:center;
+    text-transform:uppercase;
+    font-size:.8rem;
+    width:100%;
+    color:#d2d2d2;
+  }
+}
+
+.spark {
+  svg {
+    g.c3-axis {
+      visibility: hidden!important;
+      display:none;
+    }
+  }
+}
+
+
 text.text-muted {
   fill:$text-muted;
 }
