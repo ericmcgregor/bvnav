@@ -66,16 +66,16 @@ FlowRouter.route('/Advertising/Campaigns', {
                     {name:"Conversion Report"},
                     {name:"Audience Snapshot"},
                     {name:"Consideration Report"},
-                    {name:"Creatives (3)"},
+                    {name:"Creatives (8)"},
                     {name:"Product Sets (0)"},
                     {name:"Details"},
                   ],
                   secondary:[],
                   content:[
-                    <div><ROIreport /></div>,
-                    <div><AudienceReport /></div>,
-                    <div><ConsiderationReport /></div>,
-                    <ContentView pageHeader={<CreativesHeader />} pageContent={<CreativesList />} />,
+                    <ContentView pageHeader={<ExportReportHeader />} pageContent={<NonCommerceRoi />} />,
+                    <ContentView pageHeader={<ExportReportHeader />} pageContent={<AudienceReport />} />,
+                    <ContentView pageHeader={<ExportReportHeader />} pageContent={<ConsiderationReport />} />,
+                    <ContentView pageHeader={<CreativesListHeader />} pageContent={<CreativesList />} />,
                   ]
                 }
               });

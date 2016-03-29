@@ -4,10 +4,7 @@ CreativesList = class CreativesList extends React.Component {
   }
   render() {
     return (
-    <div className="container-fluid">
-
-      <div className="row">
-        <div className="col-md-12">
+    <div className="">
 
           <DataTableHeader />
           <table className="table table-bordered table-striped">
@@ -65,39 +62,21 @@ CreativesList = class CreativesList extends React.Component {
                 }
             </tbody>
           </table>
-        </div>
-        <div hidden className="col2">
-          <div
-            className="alert "
-            role="alert">
 
-            <p className="lead">
-              <strong>
-              0  reivew collection campaigns
-              </strong>
-            </p>
-            <p>Learn how you can be better at getting reviews with our review marketing campaign.</p>
-            <hr />
-            <a href="/rr/collect" className="btn btn-info btn-sm">Start collecting reviews</a>
-          </div>
-
-        </div>
-      </div>
     </div>
     )
   }
 }
 
 let  myData = [
-  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", impresions:"100", clicks:"89", "ad spend":"", CTR:"", CPC:"", CPA:"", VTR:"", purchases:"", ROAS:""},
-  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", impresions:"100", clicks:"89", "ad spend":"", CTR:"", CPC:"", CPA:"", VTR:"", purchases:"", ROAS:""},
-  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", impresions:"100", clicks:"89", "ad spend":"", CTR:"", CPC:"", CPA:"", VTR:"", purchases:"", ROAS:""},
-  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", impresions:"100", clicks:"89", "ad spend":"", CTR:"", CPC:"", CPA:"", VTR:"", purchases:"", ROAS:""},
-  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", impresions:"100", clicks:"89", "ad spend":"", CTR:"", CPC:"", CPA:"", VTR:"", purchases:"", ROAS:""},
-  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", impresions:"100", clicks:"89", "ad spend":"", CTR:"", CPC:"", CPA:"", VTR:"", purchases:"", ROAS:""},
-  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", impresions:"100", clicks:"89", "ad spend":"", CTR:"", CPC:"", CPA:"", VTR:"", purchases:"", ROAS:""},
-
-
+  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", impresions:"100", clicks:"89", "ad spend":"$12,000", CTR:"0.5%", CPC:"$4.50", CPA:"$8.90", VTR:"0.9%", purchases:"32", ROAS:"$4.85"},
+  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", impresions:"100", clicks:"89", "ad spend":"$12,000", CTR:"0.5%", CPC:"$4.50", CPA:"$8.90", VTR:"0.9%", purchases:"32", ROAS:"$4.85"},
+  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", impresions:"100", clicks:"89", "ad spend":"$12,000", CTR:"0.5%", CPC:"$4.50", CPA:"$8.90", VTR:"0.9%", purchases:"32", ROAS:"$4.85"},
+  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", impresions:"100", clicks:"89", "ad spend":"$12,000", CTR:"0.5%", CPC:"$4.50", CPA:"$8.90", VTR:"0.9%", purchases:"32", ROAS:"$4.85"},
+  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", impresions:"100", clicks:"89", "ad spend":"$12,000", CTR:"0.5%", CPC:"$4.50", CPA:"$8.90", VTR:"0.9%", purchases:"32", ROAS:"$4.85"},
+  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", impresions:"100", clicks:"89", "ad spend":"$12,000", CTR:"0.5%", CPC:"$4.50", CPA:"$8.90", VTR:"0.9%", purchases:"32", ROAS:"$4.85"},
+  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", impresions:"100", clicks:"89", "ad spend":"$12,000", CTR:"0.5%", CPC:"$4.50", CPA:"$8.90", VTR:"0.9%", purchases:"32", ROAS:"$4.85"},
+  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", impresions:"100", clicks:"89", "ad spend":"$12,000", CTR:"0.5%", CPC:"$4.50", CPA:"$8.90", VTR:"0.9%", purchases:"32", ROAS:"$4.85"},
 ]
 
 let myTableData = myData.map((item, index)=>{

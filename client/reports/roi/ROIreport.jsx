@@ -35,10 +35,10 @@ ROIreport.defaultProps = {
   performanceOverview:[
     {name:'Impressions', num:ROIdata.impressions,                 className:"secondary"},
     {name:'Views', num:ROIdata.views.source,                      className:"secondary"},
+    {name:'Clicks', num:ROIdata.clicks,                  className:"secondary"},
     {name:'Conversions', num:ROIdata.conversions,                 className:"secondary"},
     {name:'eCPM', num:"$"+ROIdata.ecpm.toFixed(2),                className:"secondary"},
     {name:'eCPC', num:"$"+ROIdata.ecpc.toFixed(2),                className:"secondary"},
-    {name:'Spend', num:"$"+ROIdata.totalAdSpend,                  className:"primary"},
     {name:'Sales', num:"$"+ROIdata.onlineSales.source.toFixed(2),         className:"primary"},
     {name:'ROAS', num:"$"+ROIdata.roas.toFixed(2),                className:"primary"},
   ],
