@@ -10,7 +10,6 @@ BrandConsideration.notConsidered = BrandConsideration.categories.map((key, index
 BrandConsideration.considered = BrandConsideration.categories.map((key, index)=>{
   return AudienceData.brandConsiderationByPercentageOfPeople[key].brandConsideredWithOthersPercentage + AudienceData.brandConsiderationByPercentageOfPeople[key].onlyBrandConsideredPercentage;
 })
-console.log(SegmentData)
 
 AudienceDataFormatted = {
   //SEGMENTDATA

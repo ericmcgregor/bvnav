@@ -1,7 +1,6 @@
 CampaignShareOfSales = class CampaignShareOfSales extends React.Component{
 
   render(){
-    console.log(this.props)
     return (
       <div className="card report-card">
         <ReportCardHeader title="Share of Sales" />

@@ -180,7 +180,6 @@
     refresh(id, data);
 
     function refresh(id, data) {
-			console.log(data)
 			var vis = d3.select('#'+id);
 
       var bars = vis.selectAll("g.bar")

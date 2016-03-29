@@ -53,7 +53,6 @@ LineItemDetailHeader = class LineItemDetailHeader extends PageHeaderComponent {
     )
   }
   optional(){
-    console.log(LineItemData)
     LineItemData.colors[0] = GraphSecondary;
 
     return (
