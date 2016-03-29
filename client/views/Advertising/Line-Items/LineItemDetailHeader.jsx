@@ -5,7 +5,9 @@ LineItemDetailHeader = class LineItemDetailHeader extends PageHeaderComponent {
         {this.renderForm('Line Item',"Line Item 1")}
         {this.renderForm('Campaign',"Macy's Black Firday")}
         {this.renderForm('Client',"Macy's")}
-        {this.renderForm('Type',"HVT Conversion")}
+        {
+          FlowRouter.current().queryParams.hvt ? this.renderForm('Type',"HVT Conversion") : null
+        }
         {this.renderForm('Status',<div className="btn-group btn-group-sm" role="group">
                           <button
                             id="btnGroupDrop1"

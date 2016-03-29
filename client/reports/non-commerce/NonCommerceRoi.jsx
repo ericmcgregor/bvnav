@@ -21,7 +21,6 @@ NonCommerceRoi.defaultProps = {
     {name:'Clicks', num:"5,000",           className:"secondary"},
     {name:'eCPM', num:"$3.83",            className:"secondary"},
     {name:'eCPC', num:"$2.00",           className:"secondary"},
-    {name:'Spend', num:"$10,000",       className:"divider-left"},
     {name:'Conversions', num:"598",       className:""},
     {name:'cost per conversion', num:"$16.72",       className:""},
   ],
