@@ -1,0 +1,37 @@
+.shared, .bar, .label {
+  font-size: 1.1rem;
+  font-weight: 300;
+  font-family: inherit;
+}
+text.label {
+  font-size: 1.2rem;
+  font-weight: 300;
+  width:100%!important;
+  display:block;
+  font-family: inherit;
+
+}
+
+.liftNumber {
+  font-size:2rem;
+  font-weight: 300;
+}
+.lift-description {
+  font-size:.8rem;
+}
+.femalebar, .malebar {
+  fill: #a7b6c1;
+}
+.femalebar.winner {
+
+}
+.highlight rect.malebar, .highlight rect.femalebar {
+  /*fill: #a14538;*/
+}
+text.malebar, text.femalebar {
+  /*display: none;*/
+}
+.highlight text {
+  display: block;
+  /*fill: #000;*/
+}

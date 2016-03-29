@@ -1,0 +1,346 @@
+text.text-muted {
+  fill:$text-muted;
+}
+
+table.table {
+  tr.highlightPrimary {
+    td {
+      background:#65C8CF;
+      color:#fff;
+    }
+  }
+  tr.highlightNeutral {
+    td {
+      background:rgba(220,220,220,1)
+    }
+  }
+}
+/************************************************************
+*************************************************************
+*************************************************************
+THE MAIN REPORT CONTINAING ELEMENT
+*/
+.report-card {
+  .card-header {
+    margin-bottom:0;
+  }
+  > .table-container > .fixedDataTableLayout_main {
+    border:none!important;
+  }
+  h3.card-header {
+    font-size:$font-size-root;
+  }
+}
+
+
+/************************************************************
+*************************************************************
+*************************************************************
+The top of the report that usually contains flight dates,
+title, and other info
+*/
+.report-header {
+  margin:0 0 $spacer;
+  padding:$spacer;
+  display:flex;
+  height:100%;
+  flex:1 0 100%;
+  align-items: flex-start;;
+
+  .report-details {
+    flex:1 0 100px;
+
+    .title {
+      margin:0;
+      font-size:$lead-font-size;
+      font-weight:$lead-font-weight;
+    }
+
+    .form-group {
+      font-size:1rem;
+      margin:0;
+      // height:auto;
+      label.form-control-label {
+        padding:0;
+        max-width:120px;
+      }
+      p.form-control-static {
+        padding:0;
+        font-weight:500;
+      }
+      > div {
+        height:1rem;
+      }
+    }
+
+    .additional-fields {
+      p {
+        margin:0;
+      }
+    }
+
+  }
+
+
+
+  .report-actions {
+
+  }
+
+
+}
+
+
+
+
+
+
+/************************************************************
+*************************************************************
+*************************************************************
+The report overview row.  contains things like numbers
+with descriptions.  can be normal or "focus" sized
+*/
+$fontsize-xl: 2.5rem;
+$fontsize-lg: 1.7rem;
+$fontsize-sm: 1.25rem;
+.report-overview-row {
+  display:flex;
+  flex-direction:row;
+  align-items: flex-end;
+  border-bottom:1px solid #d2d2d2;
+
+  //all immediate children behave as a cell
+  > * {
+    align-self:stretch;
+    justify-content:center;
+    display:flex;
+    flex-direction: column;
+    align-content: flex-end;
+  }
+
+  &.align-top {
+    > * {
+      justify-content:flex-start;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    > * {
+      flex:1 0 1px;
+    }
+  }
+  @media (max-width: 1000px) {
+    align-items: flex-end;
+    flex-wrap: wrap;
+    > * {
+      flex:1 0 50%;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+
+/************************************************************
+*************************************************************
+*************************************************************
+overview-cell is the child container inside the overview rows.
+*/
+div.overview-cell {
+  text-align:center;
+  padding:$spacer;
+
+  .block-number {
+    font-size:$fontsize-lg;
+    font-weight:$lead-font-weight;
+    margin:0;
+  }
+  .block-name {
+    margin:0;
+  }
+  .block-description {
+    font-size:$font-size-sm;
+    @extend .text-muted;
+    margin:0;
+  }
+
+
+  //modifiers
+
+  &.primary {
+
+  }
+  &.secondary {
+    .block-number {
+      @extend .text-muted;
+    }
+  }
+  &.divider-left {
+    border-left:1px solid #d2d2d2;
+  }
+  &.divider-right {
+    border-right:1px solid #d2d2d2;
+  }
+
+  //responsive sizes
+  @include media-breakpoint-up(xl) {
+    .block-number {
+      font-size: $fontsize-lg;
+    }
+  }
+  @include media-breakpoint-down(lg) {
+    .block-number {
+      font-size: $fontsize-sm;
+    }
+  }
+
+}
+
+
+.overview-cell--focus {
+  @media (min-width: 1700px) {
+    display:flex;
+    flex-direction:row;
+    .block-number{
+      padding-right:$spacer;
+      flex:1 0 50%;
+      text-align:right!important;
+    }
+    .block-description {
+      flex:0 1 50%;
+      text-align:left!important;
+      align-self: center;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    .block-number {
+      font-size: $fontsize-xl!important;
+    }
+  }
+  @include media-breakpoint-down(lg) {
+    .block-number {
+      font-size: $fontsize-lg!important;
+    }
+  }
+}
+
+
+
+
+//CHARTS
+
+
+/************************************************************
+*************************************************************
+*************************************************************
+Chart Summary
+*/
+$chart-summary-detail-width:250px;
+.chart-summary-row {
+  display:flex;
+  align-items: center;
+  width:100%;
+  margin-bottom:$spacer;
+
+  .summary-detail {
+    flex:0 1 $chart-summary-detail-width;
+    min-width:$chart-summary-detail-width;
+    max-width:$chart-summary-detail-width;
+  }
+  .summary-chart {
+    flex:0 1 100%;
+  }
+  .summary-detail-item {
+    display:flex;
+    h3, h4, h5, h6 {
+      @extend .lead;
+      font-size:1.1rem;
+    }
+    > * {
+      padding-right:$spacer;
+      &:first-child {
+        flex:0 1 100%;
+        text-align:right;
+        padding-right:$spacer
+      }
+      &:last-child {
+        width:120px;
+      }
+    }
+  }
+}
+
+
+
+/************************************************************
+*************************************************************
+*************************************************************
+Chart Summary Column
+*/
+.chart-summary-column {
+  margin-bottom:$spacer;
+
+  .summary-detail {
+    display:flex;
+
+    > .summary-detail-item {
+      padding:0 $spacer;
+      margin:$spacer/2 0;
+
+      > h3,h4,h5 {
+        margin:0;
+      }
+
+      &:first-child {
+        border-right:1px solid #d2d2d2;
+        padding-left:0;
+      }
+
+    }
+  }
+}
+
+
+
+
+/************************************************************
+*************************************************************
+*************************************************************
+Chart Container Component
+this is what actually holds the carts
+*/
+div.chart-container {
+  overflow:hidden;
+
+  h3,h4,h5,h6 {
+    @extend .text-muted;
+    font-size:$font-size-sm;
+    text-transform:uppercase;
+    margin:0 0 $spacer/2;
+  }
+  .chart-header {
+    display:flex;
+    align-items: center;
+    .chart-title {
+      flex:1 0 auto;
+    }
+    .chart-header-options {
+      align-self:flex-end;
+    }
+  }
+  .chart-body {
+    svg {
+      width:100%;
+    }
+  }
+  table {
+    >tbody.last-sm {
+      >tr {
+        td:last-child {
+          width:180px;
+        }
+      }
+    }
+  }
+}

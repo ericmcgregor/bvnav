@@ -64,16 +64,18 @@ FlowRouter.route('/Advertising/Campaigns', {
                 pageHeader:<LineItemDetailHeader  {...params}/>,
                 nav:{
                   primary:[
-                    {name:"Details"},
                     {name:"Conversion Report"},
+                    {name:"Audience Snapshot"},
                     {name:"Creatives (3)"},
-                    {name:"Audiences (0)"},
                     {name:"Product Sets (0)"},
+                    {name:"Details"},
                   ],
                   secondary:[],
                   content:[
-                    <div></div>,
-                    <div></div>,
+                    <div><ROIreport /></div>,
+                    <div><AudienceReport /></div>,
+                    <div><ConsiderationReport /></div>,
+                    <div><NonCommerceRoi /></div>,
                     <ContentView pageHeader={<CreativesHeader />} pageContent={<CreativesList />} />,
                   ]
                 }

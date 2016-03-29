@@ -19,14 +19,14 @@ Package.onUse(function(api) {
   	'fourseven:scss@3.4.1',
     'jquery',
   ]);
-
-  api.add_files('Chart.js', "client");
+  //test
+  // api.add_files('Chart.js', "client");
   api.add_files('tether.js', "client");
-  api.add_files('d3.js', "client");
-  api.add_files('c3.js', "client");
-  api.add_files('pyramid.js', "client");
-  api.add_files('pyramid.css', "client");
-  api.add_files('c3.css', "client");
+  // api.add_files('d3.js', "client");
+  // api.add_files('c3.js', "client");
+  // api.add_files('pyramid.js', "client");
+  // api.add_files('pyramid.css', "client");
+  // api.add_files('c3.css', "client");
   api.add_files('bvbootstrap/node_modules/bootstrap/dist/js/bootstrap.js', "client");
 
   api.add_files([
