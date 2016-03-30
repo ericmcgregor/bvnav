@@ -208,10 +208,9 @@ PageHeaderComponent = class PageHeaderComponent extends React.Component{
     )
   }
   render(){
-    console.log(this.props)
     return(
       <div className="page-header">
-
+        <div className="print-bv-report icon-bv color"></div>
         {this.renderLocation()}
 
 

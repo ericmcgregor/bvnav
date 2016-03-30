@@ -1,7 +1,4 @@
-CreativesList = class CreativesList extends React.Component {
-  componentDidMount() {
-    Holder.run()
-  }
+LineItemList = class LineItemList extends React.Component {
   render() {
     return (
     <div className="container-fluid">
@@ -34,20 +31,9 @@ CreativesList = class CreativesList extends React.Component {
                     return (
                       <tr key={index}>
                         {Object.keys(item).map((key, index)=>{
-                          if(key==='img') {
+                          if(index===0) {
                             return(
-                              <td style={{width:"60px"}} key={index}><img src={item[key]} /></td>
-                            )
-                          }
-                          if(key==='name') {
-                            return(
-                              <td style={{verticalAlign:"middle"}} key={index}>
-                                <a href="#"
-                                  onClick={()=>{
-                                    Meteor.call('modal', <div>edit creative form</div>, {title:"Edit Creative"})
-                                  }}>{item[key]}</a>
-
-                              </td>
+                              <td key={index}><a href="/advertising/campaigns/detail/line-item/123456">{item[key]}</a></td>
                             )
                           }
                           if(key==='activity') {
@@ -56,7 +42,7 @@ CreativesList = class CreativesList extends React.Component {
                             )
                           }
                           return(
-                            <td style={{verticalAlign:"middle"}} key={index}>{item[key]}</td>
+                            <td key={index}>{item[key]}</td>
                           )
                         })}
                       </tr>
@@ -88,18 +74,20 @@ CreativesList = class CreativesList extends React.Component {
   }
 }
 
+
+
 let  myData = [
-  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", impresions:"100", clicks:"89", "ad spend":"", CTR:"", CPC:"", CPA:"", VTR:"", purchases:"", ROAS:""},
-  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", impresions:"100", clicks:"89", "ad spend":"", CTR:"", CPC:"", CPA:"", VTR:"", purchases:"", ROAS:""},
-  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", impresions:"100", clicks:"89", "ad spend":"", CTR:"", CPC:"", CPA:"", VTR:"", purchases:"", ROAS:""},
-  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", impresions:"100", clicks:"89", "ad spend":"", CTR:"", CPC:"", CPA:"", VTR:"", purchases:"", ROAS:""},
-  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", impresions:"100", clicks:"89", "ad spend":"", CTR:"", CPC:"", CPA:"", VTR:"", purchases:"", ROAS:""},
-  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", impresions:"100", clicks:"89", "ad spend":"", CTR:"", CPC:"", CPA:"", VTR:"", purchases:"", ROAS:""},
-  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", impresions:"100", clicks:"89", "ad spend":"", CTR:"", CPC:"", CPA:"", VTR:"", purchases:"", ROAS:""},
-
-
+  {name: 'Line Item 1', type:"sales", status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
+  {name: 'Line Item 2', type:"sales", status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
+  {name: 'Line Item 3', type:"HVT", status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
+  {name: 'Line Item 4', type:"sales", status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
+  {name: 'Line Item 5', type:"sales", status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
+  {name: 'Line Item 6', type:"sales", status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
+  {name: 'Line Item 7', type:"sales", status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
+  {name: 'Line Item 8', type:"sales", status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
+  {name: 'Line Item 9', type:"sales", status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
+  {name: 'Line Item 10', type:"sales", status:"In Progress", spend:"$100,000", start:"Jan 21, 2016", end:"Feb 21, 2016"},
 ]
-
 let myTableData = myData.map((item, index)=>{
   let SmallData = Object.create(LineItemData);
   SmallData.height=45;

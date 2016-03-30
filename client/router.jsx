@@ -1,5 +1,7 @@
 FlowRouter.triggers.enter([(context)=>{
-
+  $(()=>{
+    $('.nav-tabs a:first').tab('show')
+  })
 }])
 
 

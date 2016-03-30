@@ -3,6 +3,7 @@
 @import "lib/base_components/styles/_ApplicationHeader.scss";
 @import "lib/base_components/styles/_ReportHeader.scss";
 @import "lib/base_components/styles/_PortalNav.scss";
+@import "reports/_Reports.scss";
 
 .data-table-header {
   display:flex;
@@ -15,7 +16,7 @@
 
 
 g.c3-axis {
-  display:none;
+  // display:none;
   // opacity:0.2!important;
 }
 

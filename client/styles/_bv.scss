@@ -16,11 +16,27 @@ $font-size-xs:               .75rem;
 
 
 
-
+.print-bv-report {
+  display:none!important;
+}
 
 body#print {
   overflow:inherit!important;
   display:block!important;
+
+  .print-bv-report {
+    display:block!important;
+    position:absolute;
+    top:20px;
+    right:20px;
+  }
+  #application_header,
+  .page-header-location,
+  .task-nav-container,
+  .tab-content div.page-header:first-of-type {
+    display:none;
+  }
+
   >#react-root {
     overflow:inherit!important;
     display:block!important;
@@ -48,4 +64,6 @@ body#print {
       }
     }
   }
+
+
 }

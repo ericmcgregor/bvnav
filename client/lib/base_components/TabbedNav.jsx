@@ -37,7 +37,7 @@ TabNav = React.createClass({
             return (
               <li key={index} className="nav-item">
                 <a
-                  className={"nav-link "+active}
+                  className={"nav-link "}
                   data-toggle="tab"
                   href={"#tab-"+index}
                   role="tab">{item.name}</a>

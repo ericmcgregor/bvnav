@@ -5,7 +5,9 @@ LineItemDetailHeader = class LineItemDetailHeader extends PageHeaderComponent {
         {this.renderForm('Line Item',"Line Item 1")}
         {this.renderForm('Campaign',"Macy's Black Firday")}
         {this.renderForm('Client',"Macy's")}
-        {this.renderForm('Flight Dates',"xx/xx/xx - xx/xx/xx")}
+        {
+          FlowRouter.current().queryParams.hvt ? this.renderForm('Type',"HVT Conversion") : null
+        }
         {this.renderForm('Status',<div className="btn-group btn-group-sm" role="group">
                           <button
                             id="btnGroupDrop1"
@@ -33,33 +35,22 @@ LineItemDetailHeader = class LineItemDetailHeader extends PageHeaderComponent {
           <button
             id="btnGroupDrop1"
             type="button"
-            className="btn btn-secondary dropdown-toggle"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false">
-            Export Line Item
+            className="btn btn-secondary">
+            Edit Line Item
           </button>
-          <div
-            className="dropdown-menu dropdown-menu-right"
-            aria-labelledby="btnGroupDrop1">
-            <a className="dropdown-item" href="#">
-              PDF
-            </a>
-            <a className="dropdown-item" href="#">
-              Excel
-            </a>
-          </div>
         </div>
     )
   }
   optional(){
-    console.log(LineItemData)
     LineItemData.colors[0] = GraphSecondary;
-
+    // <div className="graph-container">
+    //   <h5 className="heading">line-item performance</h5>
+    //   <GraphSpline data={LineItemData} />
+    // </div>
     return (
-      <div className="graph-container">
-        <h5 className="heading">line-item performance</h5>
-        <GraphSpline data={LineItemData} />
+      <div>
+      {this.renderForm('Spend',"$"+ROIdata.totalAdSpend)}
+      {this.renderForm('Flight Dates',"xx/xx/xx - xx/xx/xx")}
       </div>
     )
   }

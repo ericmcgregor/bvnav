@@ -32,34 +32,22 @@ CampaignDetailHeader = class CampaignDetailHeader extends PageHeaderComponent {
           <button
             id="btnGroupDrop1"
             type="button"
-            className="btn btn-secondary dropdown-toggle"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false">
-            Export Campaign
+            className="btn btn-secondary">
+            Edit Campaign
           </button>
-          <div
-            className="dropdown-menu dropdown-menu-right"
-            aria-labelledby="btnGroupDrop1">
-            <a className="dropdown-item" href="#">
-              PDF
-            </a>
-            <a className="dropdown-item" href="#">
-              Excel
-            </a>
-          </div>
         </div>
     )
   }
-  optional(){
-    LineItemData.colors[0] = GraphPrimary;
-    return (
-      <div className="graph-container">
-        <h5 className="heading">campaign performance</h5>
-        <GraphSpline data={CampaignData} />
-      </div>
-    )
-  }
+  // optional(){
+  //   LineItemData.colors[0] = GraphPrimary;
+  //   <div className="graph-container">
+  //     <h5 className="heading">campaign performance</h5>
+  //     <GraphSpline data={CampaignData} />
+  //   </div>
+  //   return (
+  //
+  //   )
+  // }
 }
 
 // CampaignDetailHeader = class CampaignDetailHeader extends React.Component {
