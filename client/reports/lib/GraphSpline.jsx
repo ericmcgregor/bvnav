@@ -1,3 +1,5 @@
+import React from 'react';
+
 GraphSpline = class GraphSpline extends React.Component{
   componentDidMount() {
     var chart = c3.generate({

@@ -1,3 +1,4 @@
+import React from 'react';
 GraphPyramid = class GraphPyramid extends React.Component {
   componentDidMount(){
     let data1 = [

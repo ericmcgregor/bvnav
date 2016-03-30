@@ -1,3 +1,4 @@
+import React from 'react';
 AudienceShoppingBehavior = class AudienceShoppingBehavior extends React.Component{
   render(){
     return(

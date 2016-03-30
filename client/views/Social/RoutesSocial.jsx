@@ -1,3 +1,4 @@
+import React from 'react';
 FlowRouter.route('/Social', {
     name:'Social',
     action: function(params, queryParams) {

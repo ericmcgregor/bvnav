@@ -1,3 +1,4 @@
+import React from 'react';
 ApplicationHeader  = React.createClass({
   getDefaultProps:function(){
     return {

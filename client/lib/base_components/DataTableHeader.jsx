@@ -1,3 +1,4 @@
+import React from 'react';
 DataTableHeader = React.createClass({
   render: function() {
     if(this.props.header===false) {

@@ -1,3 +1,4 @@
+import React from 'react';
 LocationMap = class LocationMap extends React.Component {
   componentDidMount(){
     var bubbles = AudienceData.location.map((item, index)=>{

@@ -1,3 +1,4 @@
+import React from 'react';
 HomeView = class HomeView extends React.Component {
   renderApplicationHeader(){
     return (

@@ -1,3 +1,4 @@
+import React from 'react';
 TabContent = React.createClass({
   getInitialState(){
     return ({

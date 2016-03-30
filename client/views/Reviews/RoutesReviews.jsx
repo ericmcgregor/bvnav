@@ -1,3 +1,4 @@
+import React from 'react';
 
 FlowRouter.route('/Reviews/Dashboard', {
     name:'Reviews-Dashboard',

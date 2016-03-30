@@ -1,3 +1,4 @@
+import React from 'react';
 ReportCardHeader = class ReportCardHeader extends React.Component{
   render() {
     return (

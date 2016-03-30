@@ -1,3 +1,5 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
 Meteor.methods({
   modal: function(content, options){
 

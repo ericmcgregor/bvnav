@@ -1,3 +1,4 @@
+import React from 'react';
 AudienceDemographics = class AudienceDemographics extends React.Component{
   componentDidMount(){
     let data1 = [

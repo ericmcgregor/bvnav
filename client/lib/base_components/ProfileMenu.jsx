@@ -1,3 +1,4 @@
+import React from 'react';
 ProfileMenu = React.createClass({
   getDefaultProps:function(){
     return {

@@ -1,3 +1,4 @@
+import React from 'react';
 ReviewDetailHeader = class ReviewDetailHeader extends React.Component {
   renderForm(label, value) {
       return (

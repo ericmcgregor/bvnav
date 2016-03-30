@@ -1,3 +1,4 @@
+import React from 'react';
 AudienceList = class CampaignList extends React.Component {
   render() {
     return (

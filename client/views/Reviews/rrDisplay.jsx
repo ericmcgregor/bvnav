@@ -1,3 +1,4 @@
+import React from 'react';
 RRdisplay = class RRmanagea extends React.Component {
   render() {
     return (

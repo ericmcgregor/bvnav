@@ -1,3 +1,4 @@
+import React from 'react';
 CreativesList = class CreativesList extends React.Component {
   componentDidMount() {
     Holder.run()

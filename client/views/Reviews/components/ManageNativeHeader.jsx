@@ -1,3 +1,4 @@
+import React from 'react';
 ManageNativeHeader = class ManageNativeHeader extends React.Component {
   render() {
     return (

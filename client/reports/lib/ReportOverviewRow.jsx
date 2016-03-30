@@ -1,3 +1,4 @@
+import React from 'react';
 ReportOverviewRow = class ReportOverviewRow extends React.Component {
   render(){
     return(

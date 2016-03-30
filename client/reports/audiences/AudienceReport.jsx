@@ -1,3 +1,4 @@
+import React from 'react';
 AudienceReport = class AudienceReport extends React.Component{
   constructor(props){
     super(props)

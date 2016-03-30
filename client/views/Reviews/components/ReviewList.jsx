@@ -1,3 +1,4 @@
+import React from 'react';
 ReviewList = class ReviewList extends React.Component {
   render() {
     return (

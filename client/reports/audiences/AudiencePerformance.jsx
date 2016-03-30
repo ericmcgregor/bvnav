@@ -1,3 +1,4 @@
+import React from 'react';
 AudiencePerformance = class AudiencePerformance extends React.Component{
 
   renderthing(){

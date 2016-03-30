@@ -1,3 +1,4 @@
+import React from 'react';
 NewAudienceReportHeader = class NewAudienceReportHeader extends React.Component{
   constructor(props){
     super(props);

@@ -1,3 +1,4 @@
+import React from 'react';
 FlowRouter.route('/Sampling', {
     name:'Sampling',
     action: function(params, queryParams) {

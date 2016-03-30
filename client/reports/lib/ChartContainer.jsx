@@ -1,3 +1,4 @@
+import React from 'react';
 ChartContainer = class ChartContainer extends React.Component{
   renderTitle() {
     if(this.props.title){

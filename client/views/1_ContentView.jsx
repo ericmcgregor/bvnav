@@ -1,3 +1,4 @@
+import React from 'react';
 ContentView = class ContentView extends HomeView {
   renderPageHeader() {
     if(this.props.pageHeader) {

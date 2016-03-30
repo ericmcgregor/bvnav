@@ -1,3 +1,4 @@
+import React from 'react';
 CampaignPerformance = class CampaignPerformance extends React.Component{
   render(){
     return(

@@ -22,14 +22,11 @@ fortawesome:fontawesome
 mquandalle:bower
 kadira:flow-router
 http
-react
-react-runtime@=0.14.3
-react-runtime-dev@=0.14.3
-react-runtime-prod@=0.14.3
 kadira:react-layout
 u2622:persistent-session
-ildar:fixed-data-table
 ericmcgregor:bvstrap
 imsky:holder
 standard-minifier-css
 standard-minifier-js
+emdagon:c3js
+hyperborea:datamaps

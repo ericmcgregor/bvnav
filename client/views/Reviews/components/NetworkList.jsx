@@ -1,3 +1,4 @@
+import React from 'react';
 NetworkList = class NetworkList extends React.Component {
   render() {
     return (

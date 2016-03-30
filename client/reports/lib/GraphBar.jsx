@@ -1,3 +1,4 @@
+import React from 'react';
 GraphBar = class GraphBar extends React.Component{
   componentDidMount() {
     var chart = c3.generate({

@@ -1,3 +1,4 @@
+import React from 'react';
 ConsiderationReport = class ConsiderationReport extends React.Component{
     render() {
       return (

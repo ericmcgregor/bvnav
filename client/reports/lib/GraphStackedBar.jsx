@@ -1,3 +1,4 @@
+import React from 'react';
 
 GraphStackedBar = class GraphStackedBar extends React.Component{
   componentDidMount() {

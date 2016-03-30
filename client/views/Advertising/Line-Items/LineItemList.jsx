@@ -1,3 +1,4 @@
+import React from 'react';
 LineItemList = class LineItemList extends React.Component {
   render() {
     return (

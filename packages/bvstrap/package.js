@@ -19,9 +19,10 @@ Package.onUse(function(api) {
   	'fourseven:scss@3.4.1',
     'jquery',
   ]);
+  api.mainModule('main-module-client.js', 'client');
   //test
   // api.add_files('Chart.js', "client");
-  api.add_files('tether.js', "client");
+  // api.add_files('tether.js', "client");
   // api.add_files('d3.js', "client");
   // api.add_files('c3.js', "client");
   // api.add_files('pyramid.js', "client");

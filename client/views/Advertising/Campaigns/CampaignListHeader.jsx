@@ -1,3 +1,4 @@
+import React from 'react';
 CampaignListHeader = class CampaignListHeader extends PageHeaderComponent {
   actions(){
     return (

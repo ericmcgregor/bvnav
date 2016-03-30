@@ -1,3 +1,4 @@
+import React from 'react';
 ExportReportHeader = class ExportReportHeader extends PageHeaderComponent {
   details(){
     return (

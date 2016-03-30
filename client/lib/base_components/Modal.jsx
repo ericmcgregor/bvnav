@@ -1,3 +1,4 @@
+import React from 'react';
 
 BSModal = class BSModal extends React.Component {
   constructor(props){

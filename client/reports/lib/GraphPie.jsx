@@ -1,3 +1,4 @@
+import React from 'react';
 GraphPie = class GraphPie extends React.Component{
   componentWillMount() {
     if(!this.props.data.legend) {

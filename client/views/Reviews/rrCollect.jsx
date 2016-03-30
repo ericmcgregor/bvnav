@@ -1,3 +1,4 @@
+import React from 'react';
 RRcollect = class RRmanagea extends React.Component {
   render() {
     return (

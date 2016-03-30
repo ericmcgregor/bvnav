@@ -1,3 +1,4 @@
+import React from 'react';
 ROIreport = class ROIreport extends React.Component{
   render() {
     return (

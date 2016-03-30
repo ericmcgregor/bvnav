@@ -1,3 +1,4 @@
+import React from 'react';
 LineItemListHeader = class LineItemListHeader extends PageHeaderComponent {
   details(){
     return (

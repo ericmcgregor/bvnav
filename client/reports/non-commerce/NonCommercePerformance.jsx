@@ -1,3 +1,4 @@
+import React from 'react';
 NonCommercePerformance = class NonCommercePerformance extends React.Component{
   render(){
     return(

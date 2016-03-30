@@ -1,3 +1,4 @@
+import React from 'react';
 ChartSummary = class ChartSummary extends React.Component{
 
   render() {

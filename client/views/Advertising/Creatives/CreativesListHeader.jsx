@@ -1,3 +1,4 @@
+import React from 'react';
 CreativesListHeader = class CreativesListHeader extends PageHeaderComponent {
   details(){
     return (

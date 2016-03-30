@@ -1,3 +1,4 @@
+import React from 'react';
 FlowRouter.route('/audiences', {
     name:'audiences',
     action: function(params, queryParams) {

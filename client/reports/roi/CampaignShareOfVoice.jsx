@@ -1,3 +1,4 @@
+import React from 'react';
 CampaignShareOfVoice = class CampaignShareOfVoice extends React.Component{
 
   render(){

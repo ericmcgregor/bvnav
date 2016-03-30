@@ -1,3 +1,4 @@
+import React from 'react';
 MembersHeader = class MembersHeader extends React.Component {
   render() {
     return (

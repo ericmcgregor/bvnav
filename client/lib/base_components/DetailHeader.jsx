@@ -1,3 +1,4 @@
+import React from 'react';
 DetailHeader = React.createClass({
   getDefaultProps:function(){
     return {

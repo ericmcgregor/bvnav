@@ -1,3 +1,4 @@
+import React from 'react';
 CampaignShareOfSales = class CampaignShareOfSales extends React.Component{
 
   render(){

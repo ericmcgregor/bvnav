@@ -1,3 +1,4 @@
+import React from 'react';
 CampaignDetailHeader = class CampaignDetailHeader extends PageHeaderComponent {
   details(){
     return (

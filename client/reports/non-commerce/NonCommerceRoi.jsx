@@ -1,3 +1,4 @@
+import React from 'react';
 NonCommerceRoi = class NonCommerceRoi extends React.Component{
   additionalFields() {
     return (

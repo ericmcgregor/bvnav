@@ -1,3 +1,4 @@
+import React from 'react';
 ReportHeader = class ReportHeader extends React.Component{
   renderForm(label, value) {
       return (
