@@ -6,7 +6,7 @@ CampaignShareOfSales = class CampaignShareOfSales extends React.Component{
       <div className="card report-card">
         <ReportCardHeader title="Share of Sales" />
 
-        <GraphPyramid data={{chartID:'shareofsales'}} shared={"Sales"} with={29} without={21} lift={8.21}/>
+        <GraphPyramid data={{chartID:'shareofsales'}} shared={"Sales"} with={shareOfSales.viewedAd.percent} without={shareOfSales.notViewedAd.percent} lift={shareOfSales.lift}/>
 
         <div className="container-fluid">
           <div className="row">

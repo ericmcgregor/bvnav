@@ -15,6 +15,9 @@ NonCommerceRoi = class NonCommerceRoi extends React.Component{
     );
   }
 }
+
+var Data = formatROIData(ROIdata);
+
 NonCommerceRoi.defaultProps = {
   performanceOverview:[
     {name:'Impressions', num:"3,112,915", className:"secondary"},
@@ -29,34 +32,35 @@ NonCommerceRoi.defaultProps = {
     title:"Daily Campaign Non-Commerce Conversions",
     height:180,
     chartID:"noncomconversion",
-    dates: ['2013-01-01', '2013-01-02', '2013-01-03', '2013-01-04', '2013-01-05', '2013-01-06'],
-    columns: [['ROAS', 65, 59, 80, 81, 56, 35, 50]],
+    dates: Data.DailyStats.dates,
+    columns: [['ROAS', ...Data.DailyStats.conversions]],
     colors:[GraphPrimary]
-  },
-  DailyClickThrough:{
-    title:"Daily Click Through",
-    height:100,
-    chartID:"noncomCTR",
-    dates: ['2013-01-01', '2013-01-02', '2013-01-03', '2013-01-04', '2013-01-05', '2013-01-06'],
-    columns: [['Click Through', 65, 59, 80, 81, 56, 55, 70]],
-    colors:[GraphSecondary],
-    totalType:"Click Throughs",
-    total:"683",
-    rateType:"CTR",
-    rate:".02%",
   },
   DailyViewThrough:{
     title:"Daily View Through",
     height:100,
-    chartID:"noncomVTR",
+    chartID:"viewthrough",
     dates: ['2013-01-01', '2013-01-02', '2013-01-03', '2013-01-04', '2013-01-05', '2013-01-06'],
-    columns: [['View Through', 75, 59, 65, 81, 66, 75, 60]],
-    colors:[GraphSecondary],
+    columns: [['View Through', ...Data.DailyStats.vtr]],
+    colors:[GraphPrimary],
     totalType:"View Throughs",
-    total:"8,021",
+    total:Data.viewThroughs.source,
     rateType:"VTR",
-    rate:".26%",
+    rate:Data.vtr+"%",
   },
+  DailyClickThrough:{
+    title:"Daily Click Through",
+    height:100,
+    chartID:"clickthrough",
+    dates: ['2013-01-01', '2013-01-02', '2013-01-03', '2013-01-04', '2013-01-05', '2013-01-06'],
+    columns: [['Click Through', ...Data.DailyStats.ctr]],
+    colors:[GraphPrimary],
+    totalType:"Click Throughs",
+    total:Data.clicks,
+    rateType:"CTR",
+    rate:Data.ctr+"%",
+  },
+  AvgUserCGC:Data.AvgUserCGC,
 }
 
 

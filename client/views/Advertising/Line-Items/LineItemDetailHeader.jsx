@@ -3,9 +3,9 @@ LineItemDetailHeader = class LineItemDetailHeader extends PageHeaderComponent {
   details(){
     return (
       <div>
-        {this.renderForm('Line Item',"Line Item 1")}
-        {this.renderForm('Campaign',"Macy's Black Firday")}
-        {this.renderForm('Client',"Macy's")}
+        {this.renderForm('Line Item',ROIdata.name)}
+        {this.renderForm('Campaign',ROIdata.client+"Black Firday")}
+        {this.renderForm('Client',ROIdata.client)}
         {
           FlowRouter.current().queryParams.hvt ? this.renderForm('Type',"HVT Conversion") : null
         }
