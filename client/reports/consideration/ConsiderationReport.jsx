@@ -3,6 +3,13 @@ ConsiderationReport = class ConsiderationReport extends React.Component{
     render() {
       return (
         <div>
+          <div className="card report-card">
+            <ReportCardHeader title="Campaign Performance" />
+
+            <ReportOverviewRow data={this.props.performanceOverview} />
+
+          </div>
+
           <CampaignShareOfVoice {...this.props} />
 
           <CampaignEngagement {...this.props} />
@@ -18,11 +25,12 @@ var Data = formatROIData(ROIdata);
 
 ConsiderationReport.defaultProps = {
   performanceOverview:[
-    {name:'Impressions', num:ROIdata.impressions,                 className:"secondary"},
-    {name:'Views', num:ROIdata.views.source,                      className:"secondary"},
-    {name:'eCPM', num:"$"+ROIdata.ecpm.toFixed(2),                className:"secondary"},
-    {name:'eCPC', num:"$"+ROIdata.ecpc.toFixed(2),                className:"secondary"},
-    {name:'Spend', num:"$"+ROIdata.totalAdSpend,                  className:"primary"},
+    {name:'Impressions', num:Data.impressions,                 className:"secondary"},
+    {name:'Views', num:Data.views.source,                      className:"secondary"},
+    // {name:'Clicks', num:Data.clicks,                  className:"secondary"},
+    {name:'eCPM', num:"$"+Data.ecpm,                className:"secondary"},
+    {name:'eCPC', num:"$"+Data.ecpc,                className:"secondary"},
+    // {name:'Spend', num:"$"+ROIdata.totalAdSpend,                  className:"primary"},
   ],
   ShareOfVoiceData: {
     ...shareOfVoice,

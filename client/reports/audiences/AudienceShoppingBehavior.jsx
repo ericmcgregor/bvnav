@@ -6,10 +6,39 @@ AudienceShoppingBehavior = class AudienceShoppingBehavior extends React.Componen
         <ReportCardHeader title="Audience Breakdown" />
 
           <div className="card-block">
-            <ChartContainer title="Brand: Consideration by Pageviews">
-              <GraphStackedBar data={this.props.brandConsiderationData}/>
-            </ChartContainer>
+            <div className="row align-center">
+              <div className="col-xs-8">
+                <ChartContainer title="Brand: Consideration by Pageviews">
+                  <GraphStackedBar data={this.props.brandConsiderationData}/>
+                </ChartContainer>
+              </div>
+              <div className="col-xs-4">
+                <div className="card">
+                  <div className="card-header text-xs-center">Have viewed at least 1 time in past 30 days:</div>
+                  <div className="card-block">
+                      <dl className="text-xs-center m-b-0">
+                          <dd className="text-">Canon or Nikon</dd>
+                          <dd className="text-"><strong>or</strong></dd>
+                          <dd className="text-">Consumer Electronics - Cameras & Camcorders</dd>
+                      </dl>
+                  </div>
+                </div>
+                <div hidden className="card" style={{borderColor:GraphNeutral}}>
+                  <div className="card-block">
+                        <dl className="text-xs-center m-b-0">
+                          <dt>Have not viewed in past 30 days:</dt>
+                          <dd className="text-muted">ORION, Burris</dd>
+                          <dd className="text-muted">Home & Garden, Apparel & Accessories, Sports, Hunting/Shooting</dd>
+                      </dl>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
           </div>
+
+          <hr/>
 
           <div className="card-block">
             <div className="row">

@@ -50,7 +50,7 @@ LineItemDetailHeader = class LineItemDetailHeader extends PageHeaderComponent {
     // </div>
     return (
       <div>
-      {this.renderForm('Spend',"$"+ROIdata.totalAdSpend)}
+      {this.renderForm('Spend',"$"+addCommas(Math.round(ROIdata.totalAdSpend)))}
       {this.renderForm('Flight Dates',"xx/xx/xx - xx/xx/xx")}
       </div>
     )

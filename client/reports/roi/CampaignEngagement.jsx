@@ -21,22 +21,22 @@ CampaignEngagement = class CampaignPerformance extends React.Component{
                 <table className="table table-bordered">
                   <thead>
                     <tr>
-                      <th></th>
-                      <th>Average</th>
+                      <th>People Who Viewed Ad</th>
+                      <th className="text-xs-center">Average</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <td>Avg Reveiws Read</td>
-                      <td>{this.props.AvgUserCGC.read}</td>
+                      <td className="text-xs-center">{this.props.AvgUserCGC.read}</td>
                     </tr>
                     <tr>
                       <td>Avg Page Views</td>
-                      <td>{this.props.AvgUserCGC.pageviews}</td>
+                      <td className="text-xs-center">{this.props.AvgUserCGC.pageviews}</td>
                     </tr>
                     <tr>
                       <td>Avg Purchase Order</td>
-                      <td>{this.props.AvgUserCGC.order}</td>
+                      <td className="text-xs-center">{this.props.AvgUserCGC.order}</td>
                     </tr>
                   </tbody>
                 </table>

@@ -1,9 +1,27 @@
 import React from 'react';
 ROIreport = class ROIreport extends React.Component{
-  render() {
+  constructor(props){
+    super(props);
+    this.state = {
+      loaded:false,
+    }
+  }
+  componentDidMount(){
+    // Tracker.autorun(()=> {
+    //   this.setState({
+    //     loaded:Session.get('ROI') ? true : false,
+    //     ROIdata:Session.get('ROIdata'),
+    //     ROI:Session.get('ROI')
+    //   })
+    // });
+  }
+
+  renderContent(){
+    // if(!this.state.loaded===true) {
+    //   return (<div>...loading</div>);
+    // }
     return (
       <div>
-
 
         <CampaignPerformance {...this.props} />
 
@@ -15,11 +33,17 @@ ROIreport = class ROIreport extends React.Component{
 
         <CampaignEngagement {...this.props} />
 
-
       </div>
     );
   }
+
+  render() {
+    return this.renderContent()
+  }
 }
+
+
+let test = getROIdata('96f23baf-10cf-49de-bcd8-831ba78fbf60');
 
 
 var Data = formatROIData(ROIdata);
@@ -64,7 +88,8 @@ ROIreport.defaultProps = {
       chartID:"sales",
       dates: Data.DailyStats.dates,
       columns: [['Sales', ...Data.DailyStats.sales]],
-      colors:[GraphPrimary]
+      colors:[GraphPrimary],
+      formatY:function (d) { return "$" + addCommas(d); }
   },
   CompetitiveSales:Data.CompetitiveSales,
   // EngagementOverview:[
@@ -110,6 +135,7 @@ ROIreport.defaultProps = {
     total:Data.viewThroughs.source,
     rateType:"VTR",
     rate:Data.vtr+"%",
+    formatY:function (d) { return "%" + d.toFixed(3); }
   },
   DailyClickThrough:{
     title:"Daily Click Through",
@@ -122,6 +148,7 @@ ROIreport.defaultProps = {
     total:Data.clicks,
     rateType:"CTR",
     rate:Data.ctr+"%",
+    formatY:function (d) { return "%" + d.toFixed(3); }
   },
   AvgUserCGC:Data.AvgUserCGC,
 }

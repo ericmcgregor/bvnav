@@ -14,7 +14,9 @@ $font-size-xs:               .75rem;
 @import "{ericmcgregor:bvstrap}/bvbootstrap/_custom-styles.scss";
 
 
-
+div.row.align-center, div.flex.align-center {
+  align-items: center;
+}
 
 .print-bv-report {
   display:none!important;

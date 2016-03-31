@@ -1,8 +1,20 @@
+getROIdata = (id) => {
 
+    return Meteor.call('GetROIdata', id, (err, result)=>{
+      console.log(result)
+      let data = formatROIData(result.report);
+
+      Session.set({
+        ROI:id,
+        ROIdata:data
+      });
+
+      return data;
+    });
+
+}
 
 formatROIData = (ROIdata) => {
-
-
 
   DailyStats = {
     dates:ROIdata.dailyStats.map((item, index)=>{
@@ -10,7 +22,7 @@ formatROIData = (ROIdata) => {
       return date[0];
     }),
     sales:ROIdata.dailyStats.map((item, index)=>{
-      return item.onlineSales;
+      return item.onlineSales.toFixed(0);
     }),
     ctr:ROIdata.dailyStats.map((item, index)=>{
       return item.ctr.toFixed(2);
@@ -109,7 +121,7 @@ formatROIData = (ROIdata) => {
     "clicks": addCommas(ROIdata.clicks),
     "conversions": addCommas(ROIdata.conversions),
     "onlineSales": {
-      "source": nFormatter(ROIdata.onlineSales.source),
+      "source": addCommas(Math.round(ROIdata.onlineSales.source)),
       "competitor": nFormatter(ROIdata.onlineSales.competitor)
     },
     "offlineSales": {
@@ -153,14 +165,14 @@ formatROIData = (ROIdata) => {
     DailyStats:DailyStats,
     CompetitiveSales:{
       MyProducts:{
-        online:nFormatter(ROIdata.onlineSales.source),
-        offline:nFormatter(ROIdata.offlineSales.source),
-        total:nFormatter(ROIdata.onlineSales.source+ROIdata.offlineSales.source)
+        online:"$"+nFormatter(ROIdata.onlineSales.source),
+        offline:"$"+nFormatter(ROIdata.offlineSales.source),
+        total:"$"+nFormatter(ROIdata.onlineSales.source+ROIdata.offlineSales.source)
       },
       CompetitiveProducts:{
-        online:nFormatter(ROIdata.onlineSales.competitor),
-        offline:nFormatter(ROIdata.offlineSales.competitor),
-        total:nFormatter(ROIdata.onlineSales.competitor+ROIdata.offlineSales.competitor)
+        online:"$"+nFormatter(ROIdata.onlineSales.competitor),
+        offline:"$"+nFormatter(ROIdata.offlineSales.competitor),
+        total:"$"+nFormatter(ROIdata.onlineSales.competitor+ROIdata.offlineSales.competitor)
       }
     },
     AvgUserCGC:{

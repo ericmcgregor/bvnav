@@ -3,7 +3,13 @@ import React from 'react';
 GraphStackedBar = class GraphStackedBar extends React.Component{
   componentDidMount() {
 
-
+      let order = "asc";
+      console.log(this.props.data.columns.considered)
+      console.log(this.props.data.columns.notConsidered)
+      if(this.props.data.columns.considered[0] > this.props.data.columns.notConsidered[0]) {
+        order = "desc";
+      }
+      console.log(order)
       var chart = c3.generate({
         bindto:"#"+this.props.data.chartID,
         size:{
@@ -22,7 +28,7 @@ GraphStackedBar = class GraphStackedBar extends React.Component{
           groups:[
               ['% Brand Not Considered', '% Brand Considered',]
           ],
-          order:'asc'
+          order:order
         },
         grid: {
             y: {

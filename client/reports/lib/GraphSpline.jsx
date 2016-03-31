@@ -16,12 +16,14 @@ GraphSpline = class GraphSpline extends React.Component{
           tick: {
             centered: true,
             // format: '%Y-%m-%d'
-            format:"%yyyy-%MM-%dd"
+            // format:"%yyyy-%MM-%dd"
+            values:[...this.props.data.dates]
           }
         },
         y:{
           tick: {
-            count: 3
+            count: 3,
+            format:this.props.data.formatY
           }
         }
       },
@@ -46,6 +48,6 @@ GraphSpline = class GraphSpline extends React.Component{
 }
 GraphSpline.defaultProps = {
   data: {
-    height:400
+    height:400,
   }
 }

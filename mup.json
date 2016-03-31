@@ -1,7 +1,7 @@
 {
   "servers": [
     {
-      "host": "ip-10-100-18-235.dev.us-east-1.nexus",
+      "host": "52.91.64.226",
       "username": "ubuntu",
       "pem": "~/.ssh/incubator"
     }
@@ -14,7 +14,7 @@
   "appName": "navigation-demo",
   "app": "~/Dev/bv/nav",
   "env": {
-    "ROOT_URL": "http://54.175.165.88"
+    "ROOT_URL": "http://52.91.64.226"
   },
   "deployCheckWaitTime": 15
 }

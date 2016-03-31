@@ -20,23 +20,23 @@ CampaignOnlineSales = class CampaignPerformance extends React.Component{
                       <thead>
                         <tr>
                           <th></th>
-                          <th>Online</th>
-                          <th>Offline</th>
-                          <th>Total Sales</th>
+                          <th className="text-xs-center">Online</th>
+                          <th className="text-xs-center">Offline</th>
+                          <th className="text-xs-center">Total Sales</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
                           <th>My Product</th>
-                          <td><strong>{this.props.CompetitiveSales.MyProducts.online}</strong></td>
-                          <td>{this.props.CompetitiveSales.MyProducts.offline}</td>
-                          <td>{this.props.CompetitiveSales.MyProducts.total}</td>
+                          <td className="text-xs-center"><strong>{this.props.CompetitiveSales.MyProducts.online}</strong></td>
+                          <td className="text-xs-center">{this.props.CompetitiveSales.MyProducts.offline}</td>
+                          <td className="text-xs-center">{this.props.CompetitiveSales.MyProducts.total}</td>
                         </tr>
                         <tr>
                           <th>Competitive Products</th>
-                          <td>{this.props.CompetitiveSales.CompetitiveProducts.online}</td>
-                          <td>{this.props.CompetitiveSales.CompetitiveProducts.offline}</td>
-                          <td>{this.props.CompetitiveSales.CompetitiveProducts.total}</td>
+                          <td className="text-xs-center">{this.props.CompetitiveSales.CompetitiveProducts.online}</td>
+                          <td className="text-xs-center">{this.props.CompetitiveSales.CompetitiveProducts.offline}</td>
+                          <td className="text-xs-center">{this.props.CompetitiveSales.CompetitiveProducts.total}</td>
                         </tr>
                       </tbody>
                     </table>

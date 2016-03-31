@@ -246,238 +246,380 @@ ROIdata = {
   "startTime": "2016-03-03T00:00:00.000Z",
   "endTime": "2016-03-31T00:00:00.000Z",
   "totalAdSpend": 50000,
-  "roas": 0.39263659999999995,
-  "ecpm": 5.160607923741903,
-  "ecpc": 446.42857142857144,
-  "vtr": 0.2543044372661535,
-  "ctr": 0.0011559761749181865,
-  "impressions": 9688781,
+  "roas": 0.41603759999999995,
+  "ecpm": 4.816429960005329,
+  "ecpc": 434.7826086956522,
+  "vtr": 0.25681204546748415,
+  "ctr": 0.0011077788908012256,
+  "impressions": 10381133,
   "views": {
-    "source": 7929065
+    "source": 8380819
   },
   "viewThroughs": {
-    "source": 24639,
-    "competitor": 64237
+    "source": 26660,
+    "competitor": 69426
   },
-  "clicks": 112,
-  "conversions": 439,
+  "clicks": 115,
+  "conversions": 472,
   "onlineSales": {
-    "source": 19631.829999999998,
-    "competitor": 32917.39000000001
+    "source": 20801.879999999997,
+    "competitor": 34130.520000000004
   },
   "offlineSales": {
-    "source": 29251.426699999996,
-    "competitor": 49046.91110000001
+    "source": 30994.801199999994,
+    "competitor": 50854.4748
   },
-  "postViewConversions": 439,
+  "postViewConversions": 472,
   "postClickConversions": 0,
-  "adExposedReviewImpressions": 166412,
-  "totalReviewImpressions": 9421786,
+  "adExposedReviewImpressions": 176861,
+  "totalReviewImpressions": 9618059,
   "shareOfSales": {
     "viewedAd": {
-      "source": 19631.829999999998,
-      "competitor": 32917.39000000001
+      "source": 20801.879999999997,
+      "competitor": 34130.520000000004
     },
     "notViewedAd": {
-      "source": 1033583.2199999999,
-      "competitor": 1956728.1100000003
+      "source": 1055461.7999999998,
+      "competitor": 1970183.2400000002
     }
   },
   "shareOfVoice": {
     "viewedAd": {
-      "source": 24639,
-      "competitor": 64237
+      "source": 26660,
+      "competitor": 69426
     },
     "notViewedAd": {
-      "source": 782366,
-      "competitor": 2231086
+      "source": 802821,
+      "competitor": 2282165
     }
   },
   "reviewsRead": {
     "viewedAd": {
-      "source": 6.754007873696173
+      "source": 6.633945986496625
     },
     "notViewedAd": {
-      "source": 11.829979830411853
+      "source": 11.760028698800854
     }
   },
   "averageOrderValue": {
     "viewedAd": {
-      "source": 44.71943052391799
+      "source": 44.07177966101694
     },
     "notViewedAd": {
-      "source": 49.69150096153845
+      "source": 49.49178467598236
     }
   },
   "averagePageViews": {
     "viewedAd": {
-      "source": 1.8119576408295337
+      "source": 1.8039109547330672
     },
     "notViewedAd": {
-      "source": 1.6484397716019468
+      "source": 1.6451216288491213
     }
   },
-  "dailyStats": [{
-    "date": "2016-03-03T00:00:00.000Z",
-    "vtr": 0,
-    "ctr": 0,
-    "onlineSales": 0,
-    "conversions": 0
-  }, {
-    "date": "2016-03-04T00:00:00.000Z",
-    "vtr": 0,
-    "ctr": 0,
-    "onlineSales": 0,
-    "conversions": 0
-  }, {
-    "date": "2016-03-05T00:00:00.000Z",
-    "vtr": 0,
-    "ctr": 0,
-    "onlineSales": 0,
-    "conversions": 0
-  }, {
-    "date": "2016-03-06T00:00:00.000Z",
-    "vtr": 0,
-    "ctr": 0,
-    "onlineSales": 0,
-    "conversions": 0
-  }, {
-    "date": "2016-03-07T00:00:00.000Z",
-    "vtr": 0,
-    "ctr": 0,
-    "onlineSales": 0,
-    "conversions": 0
-  }, {
-    "date": "2016-03-08T00:00:00.000Z",
-    "vtr": 0.03082089869489436,
-    "ctr": 0,
-    "onlineSales": 133.99,
-    "conversions": 2
-  }, {
-    "date": "2016-03-09T00:00:00.000Z",
-    "vtr": 0.08073356267031585,
-    "ctr": 0.004261595683477083,
-    "onlineSales": 350.26,
-    "conversions": 13
-  }, {
-    "date": "2016-03-10T00:00:00.000Z",
-    "vtr": 0.11752038852744433,
-    "ctr": 0,
-    "onlineSales": 1118.8,
-    "conversions": 18
-  }, {
-    "date": "2016-03-11T00:00:00.000Z",
-    "vtr": 0.1330405520492388,
-    "ctr": 0,
-    "onlineSales": 590.15,
-    "conversions": 16
-  }, {
-    "date": "2016-03-12T00:00:00.000Z",
-    "vtr": 0.21311747856605176,
-    "ctr": 0,
-    "onlineSales": 1092.26,
-    "conversions": 19
-  }, {
-    "date": "2016-03-13T00:00:00.000Z",
-    "vtr": 0.4039806089307713,
-    "ctr": 0,
-    "onlineSales": 951.36,
-    "conversions": 16
-  }, {
-    "date": "2016-03-14T00:00:00.000Z",
-    "vtr": 0.22724234727977544,
-    "ctr": 0,
-    "onlineSales": 1811.54,
-    "conversions": 24
-  }, {
-    "date": "2016-03-15T00:00:00.000Z",
-    "vtr": 0.26905117028230513,
-    "ctr": 0.00252799757312233,
-    "onlineSales": 1248.16,
-    "conversions": 24
-  }, {
-    "date": "2016-03-16T00:00:00.000Z",
-    "vtr": 0.25282114619290413,
-    "ctr": 0.0015834309782436584,
-    "onlineSales": 1905.6,
-    "conversions": 33
-  }, {
-    "date": "2016-03-17T00:00:00.000Z",
-    "vtr": 0.22709698822071583,
-    "ctr": 0,
-    "onlineSales": 750.66,
-    "conversions": 16
-  }, {
-    "date": "2016-03-18T00:00:00.000Z",
-    "vtr": 0.23380885881222166,
-    "ctr": 0.0022011294239644296,
-    "onlineSales": 153.52,
-    "conversions": 5
-  }, {
-    "date": "2016-03-19T00:00:00.000Z",
-    "vtr": 0.22853295108476632,
-    "ctr": 0,
-    "onlineSales": 481.83,
-    "conversions": 7
-  }, {
-    "date": "2016-03-20T00:00:00.000Z",
-    "vtr": 0.29834347087799723,
-    "ctr": 0,
-    "onlineSales": 642.12,
-    "conversions": 10
-  }, {
-    "date": "2016-03-21T00:00:00.000Z",
-    "vtr": 0.2812434204299393,
-    "ctr": 0.0019316168985572754,
-    "onlineSales": 549.82,
-    "conversions": 13
-  }, {
-    "date": "2016-03-22T00:00:00.000Z",
-    "vtr": 0.13087218392729402,
-    "ctr": 0.004459483318802092,
-    "onlineSales": 826.91,
-    "conversions": 25
-  }, {
-    "date": "2016-03-23T00:00:00.000Z",
-    "vtr": 0.15689852126092932,
-    "ctr": 0,
-    "onlineSales": 821.22,
-    "conversions": 26
-  }, {
-    "date": "2016-03-24T00:00:00.000Z",
-    "vtr": 0.3310415075120957,
-    "ctr": 0,
-    "onlineSales": 1029.62,
-    "conversions": 29
-  }, {
-    "date": "2016-03-25T00:00:00.000Z",
-    "vtr": 0.35179466889154576,
-    "ctr": 0,
-    "onlineSales": 1056.63,
-    "conversions": 24
-  }, {
-    "date": "2016-03-26T00:00:00.000Z",
-    "vtr": 0.3908350881031167,
-    "ctr": 0,
-    "onlineSales": 804.19,
-    "conversions": 21
-  }, {
-    "date": "2016-03-27T00:00:00.000Z",
-    "vtr": 0.4451935075368043,
-    "ctr": 0,
-    "onlineSales": 723.77,
-    "conversions": 21
-  }, {
-    "date": "2016-03-28T00:00:00.000Z",
-    "vtr": 0.43899194146239817,
-    "ctr": 0.0020036145205951537,
-    "onlineSales": 1126.89,
-    "conversions": 36
-  }, {
-    "date": "2016-03-29T00:00:00.000Z",
-    "vtr": 1.054248411645605,
-    "ctr": 0.0014960951915500543,
-    "onlineSales": 1462.53,
-    "conversions": 41
-  }]
+  "dailyStats": [
+    {
+      "date": "2016-03-03T00:00:00.000Z",
+      "vtr": 0,
+      "ctr": 0,
+      "onlineSales": 0,
+      "conversions": 0
+    },
+    {
+      "date": "2016-03-04T00:00:00.000Z",
+      "vtr": 0,
+      "ctr": 0,
+      "onlineSales": 0,
+      "conversions": 0
+    },
+    {
+      "date": "2016-03-05T00:00:00.000Z",
+      "vtr": 0,
+      "ctr": 0,
+      "onlineSales": 0,
+      "conversions": 0
+    },
+    {
+      "date": "2016-03-06T00:00:00.000Z",
+      "vtr": 0,
+      "ctr": 0,
+      "onlineSales": 0,
+      "conversions": 0
+    },
+    {
+      "date": "2016-03-07T00:00:00.000Z",
+      "vtr": 0,
+      "ctr": 0,
+      "onlineSales": 0,
+      "conversions": 0
+    },
+    {
+      "date": "2016-03-08T00:00:00.000Z",
+      "vtr": 0.03082089869489436,
+      "ctr": 0,
+      "onlineSales": 133.99,
+      "conversions": 2
+    },
+    {
+      "date": "2016-03-09T00:00:00.000Z",
+      "vtr": 0.08073356267031585,
+      "ctr": 0.004261595683477083,
+      "onlineSales": 350.26,
+      "conversions": 13
+    },
+    {
+      "date": "2016-03-10T00:00:00.000Z",
+      "vtr": 0.11752038852744433,
+      "ctr": 0,
+      "onlineSales": 1118.8,
+      "conversions": 18
+    },
+    {
+      "date": "2016-03-11T00:00:00.000Z",
+      "vtr": 0.1330405520492388,
+      "ctr": 0,
+      "onlineSales": 590.15,
+      "conversions": 16
+    },
+    {
+      "date": "2016-03-12T00:00:00.000Z",
+      "vtr": 0.21311747856605176,
+      "ctr": 0,
+      "onlineSales": 1092.26,
+      "conversions": 19
+    },
+    {
+      "date": "2016-03-13T00:00:00.000Z",
+      "vtr": 0.4039806089307713,
+      "ctr": 0,
+      "onlineSales": 951.36,
+      "conversions": 16
+    },
+    {
+      "date": "2016-03-14T00:00:00.000Z",
+      "vtr": 0.22724234727977544,
+      "ctr": 0,
+      "onlineSales": 1811.54,
+      "conversions": 24
+    },
+    {
+      "date": "2016-03-15T00:00:00.000Z",
+      "vtr": 0.26905117028230513,
+      "ctr": 0.00252799757312233,
+      "onlineSales": 1248.16,
+      "conversions": 24
+    },
+    {
+      "date": "2016-03-16T00:00:00.000Z",
+      "vtr": 0.25282114619290413,
+      "ctr": 0.0015834309782436584,
+      "onlineSales": 1905.6,
+      "conversions": 33
+    },
+    {
+      "date": "2016-03-17T00:00:00.000Z",
+      "vtr": 0.22709698822071583,
+      "ctr": 0,
+      "onlineSales": 750.66,
+      "conversions": 16
+    },
+    {
+      "date": "2016-03-18T00:00:00.000Z",
+      "vtr": 0.23380885881222166,
+      "ctr": 0.0022011294239644296,
+      "onlineSales": 153.52,
+      "conversions": 5
+    },
+    {
+      "date": "2016-03-19T00:00:00.000Z",
+      "vtr": 0.22853295108476632,
+      "ctr": 0,
+      "onlineSales": 481.83,
+      "conversions": 7
+    },
+    {
+      "date": "2016-03-20T00:00:00.000Z",
+      "vtr": 0.29834347087799723,
+      "ctr": 0,
+      "onlineSales": 642.12,
+      "conversions": 10
+    },
+    {
+      "date": "2016-03-21T00:00:00.000Z",
+      "vtr": 0.2812434204299393,
+      "ctr": 0.0019316168985572754,
+      "onlineSales": 549.82,
+      "conversions": 13
+    },
+    {
+      "date": "2016-03-22T00:00:00.000Z",
+      "vtr": 0.13087218392729402,
+      "ctr": 0.004459483318802092,
+      "onlineSales": 826.91,
+      "conversions": 25
+    },
+    {
+      "date": "2016-03-23T00:00:00.000Z",
+      "vtr": 0.15689852126092932,
+      "ctr": 0,
+      "onlineSales": 821.22,
+      "conversions": 26
+    },
+    {
+      "date": "2016-03-24T00:00:00.000Z",
+      "vtr": 0.3310415075120957,
+      "ctr": 0,
+      "onlineSales": 1029.62,
+      "conversions": 29
+    },
+    {
+      "date": "2016-03-25T00:00:00.000Z",
+      "vtr": 0.35179466889154576,
+      "ctr": 0,
+      "onlineSales": 1056.63,
+      "conversions": 24
+    },
+    {
+      "date": "2016-03-26T00:00:00.000Z",
+      "vtr": 0.3908350881031167,
+      "ctr": 0,
+      "onlineSales": 804.19,
+      "conversions": 21
+    },
+    {
+      "date": "2016-03-27T00:00:00.000Z",
+      "vtr": 0.4451935075368043,
+      "ctr": 0,
+      "onlineSales": 723.77,
+      "conversions": 21
+    },
+    {
+      "date": "2016-03-28T00:00:00.000Z",
+      "vtr": 0.43899194146239817,
+      "ctr": 0.0020036145205951537,
+      "onlineSales": 1126.89,
+      "conversions": 36
+    },
+    {
+      "date": "2016-03-29T00:00:00.000Z",
+      "vtr": 1.054248411645605,
+      "ctr": 0.0014960951915500543,
+      "onlineSales": 1462.53,
+      "conversions": 41
+    },
+    {
+      "date": "2016-03-30T00:00:00.000Z",
+      "vtr": 0.29190354039563693,
+      "ctr": 0.0004333056017748198,
+      "onlineSales": 1170.05,
+      "conversions": 33
+    }
+  ]
 }
+//
+// ROIdata = {
+//   "name": "MAR4_PROMO EASTER SALE DISPLAY_W6020051_11696",
+//   "campaignIds": [
+//     "235012540"
+//   ],
+//   "client": "Macys",
+//   "retailer": true,
+//   "categoryId": "",
+//   "startTime": "2016-03-24T00:00:00.000Z",
+//   "endTime": "2016-03-26T00:00:00.000Z",
+//   "totalAdSpend": 14793.681559584162,
+//   "roas": 26.6451882455607,
+//   "ecpm": 4.499999713940645,
+//   "ecpc": 18.91775135496696,
+//   "vtr": 3.5854764356339266,
+//   "ctr": 0.023787180778011154,
+//   "impressions": 3287485,
+//   "views": {
+//     "source": 2808951
+//   },
+//   "viewThroughs": {
+//     "source": 117872,
+//     "competitor": 0
+//   },
+//   "clicks": 782,
+//   "conversions": 3438,
+//   "onlineSales": {
+//     "source": 394180.43,
+//     "competitor": 0
+//   },
+//   "offlineSales": {
+//     "source": 677990.3396,
+//     "competitor": 0
+//   },
+//   "postViewConversions": 3438,
+//   "postClickConversions": 0,
+//   "adExposedReviewImpressions": 329720,
+//   "totalReviewImpressions": 12252921,
+//   "shareOfSales": {
+//     "viewedAd": {
+//       "source": 394180.43,
+//       "competitor": 0
+//     },
+//     "notViewedAd": {
+//       "source": 22911747.28,
+//       "competitor": 0
+//     }
+//   },
+//   "shareOfVoice": {
+//     "viewedAd": {
+//       "source": 117872,
+//       "competitor": 0
+//     },
+//     "notViewedAd": {
+//       "source": 3136249,
+//       "competitor": 0
+//     }
+//   },
+//   "reviewsRead": {
+//     "viewedAd": {
+//       "source": 2.797271616668929
+//     },
+//     "notViewedAd": {
+//       "source": 3.8017392751659704
+//     }
+//   },
+//   "averageOrderValue": {
+//     "viewedAd": {
+//       "source": 114.65399360093078
+//     },
+//     "notViewedAd": {
+//       "source": 117.90669706310693
+//     }
+//   },
+//   "averagePageViews": {
+//     "viewedAd": {
+//       "source": 4.2010121890369945
+//     },
+//     "notViewedAd": {
+//       "source": 3.082472190170289
+//     }
+//   },
+//   "dailyStats": [
+//     {
+//       "date": "2016-03-24T00:00:00.000Z",
+//       "vtr": 0.7153658252878912,
+//       "ctr": 0.023100098789784185,
+//       "onlineSales": 47282.12,
+//       "conversions": 483
+//     },
+//     {
+//       "date": "2016-03-25T00:00:00.000Z",
+//       "vtr": 4.505689045664922,
+//       "ctr": 0.013828875350249193,
+//       "onlineSales": 125133.26,
+//       "conversions": 1074
+//     },
+//     {
+//       "date": "2016-03-26T00:00:00.000Z",
+//       "vtr": 13.47229410109044,
+//       "ctr": 0.020882702766504144,
+//       "onlineSales": 221765.05,
+//       "conversions": 1881
+//     }
+//   ]
+// }

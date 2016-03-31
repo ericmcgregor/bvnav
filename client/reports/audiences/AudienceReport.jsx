@@ -44,11 +44,11 @@ AudienceReport = class AudienceReport extends React.Component{
     // id="88d9bc94-4e4b-406c-8020-87b94ef0ac88"
     // id="df845635-ead5-4380-a9c0-988a9f709348";
     // id="f472f281-9c49-421a-ad6f-82d7f59d295d";
-    // id="df845635-ead5-4380-a9c0-988a9f709348";
-    id="88d9bc94-4e4b-406c-8020-87b94ef0ac88";
+    id="df845635-ead5-4380-a9c0-988a9f709348";
+    // id="88d9bc94-4e4b-406c-8020-87b94ef0ac88";
 
     if(!Session.get('ABR') || Session.get('ABR').id !== id) {
-      Meteor.call('test', id, (err, result)=>{
+      Meteor.call('GetABRdata', id, (err, result)=>{
 
         AudienceDataFormatted = formatAudienceData(result.report, result.segment);
         console.log('setting session')

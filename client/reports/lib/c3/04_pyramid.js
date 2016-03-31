@@ -50,7 +50,7 @@
     var w = options.width,
         h = height,
         topMargin = 55,
-        labelSpace = 80,
+        labelSpace = 62,
         innerMargin = w/2+labelSpace,
         outerMargin = 15,
         gap = 2,

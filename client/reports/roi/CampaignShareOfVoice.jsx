@@ -10,7 +10,8 @@ CampaignShareOfVoice = class CampaignShareOfVoice extends React.Component{
         <div className="container-fluid">
           <div className="row">
             <div className="col-xs-6 p-x-3">
-                      <ChartContainer title="">
+              <div hidden className="p-r-1">
+                <ChartContainer title="">
                         <table className="table table-sm table-bordered">
                             <thead>
                               <tr>
@@ -48,9 +49,11 @@ CampaignShareOfVoice = class CampaignShareOfVoice extends React.Component{
                             </tbody>
                           </table>
                         </ChartContainer>
+                      </div>
             </div>
             <div className="col-xs-6 p-x-3">
-                      <ChartContainer title="">
+              <div hidden className="p-l-1">
+                <ChartContainer title="">
                         <table className="table table-sm table-bordered">
                             <thead>
                               <tr>
@@ -88,6 +91,7 @@ CampaignShareOfVoice = class CampaignShareOfVoice extends React.Component{
                             </tbody>
                           </table>
                         </ChartContainer>
+                      </div>
             </div>
           </div>
         </div>

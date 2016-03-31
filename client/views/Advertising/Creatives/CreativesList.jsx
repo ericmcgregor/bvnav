@@ -50,7 +50,7 @@ CreativesList = class CreativesList extends React.Component {
                           }
                           if(key==='activity') {
                             return(
-                              <td style={{width:"200px"}} key={index}>{item[key]}</td>
+                              <td style={{width:"150px"}} key={index}>{item[key]}</td>
                             )
                           }
                           return(
@@ -70,14 +70,14 @@ CreativesList = class CreativesList extends React.Component {
 }
 
 let  myData = [
-  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", impresions:"100", clicks:"89", "ad spend":"$12,000", CTR:"0.5%", CPC:"$4.50", CPA:"$8.90", VTR:"0.9%", purchases:"32", ROAS:"$4.85"},
-  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", impresions:"100", clicks:"89", "ad spend":"$12,000", CTR:"0.5%", CPC:"$4.50", CPA:"$8.90", VTR:"0.9%", purchases:"32", ROAS:"$4.85"},
-  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", impresions:"100", clicks:"89", "ad spend":"$12,000", CTR:"0.5%", CPC:"$4.50", CPA:"$8.90", VTR:"0.9%", purchases:"32", ROAS:"$4.85"},
-  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", impresions:"100", clicks:"89", "ad spend":"$12,000", CTR:"0.5%", CPC:"$4.50", CPA:"$8.90", VTR:"0.9%", purchases:"32", ROAS:"$4.85"},
-  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", impresions:"100", clicks:"89", "ad spend":"$12,000", CTR:"0.5%", CPC:"$4.50", CPA:"$8.90", VTR:"0.9%", purchases:"32", ROAS:"$4.85"},
-  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", impresions:"100", clicks:"89", "ad spend":"$12,000", CTR:"0.5%", CPC:"$4.50", CPA:"$8.90", VTR:"0.9%", purchases:"32", ROAS:"$4.85"},
-  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", impresions:"100", clicks:"89", "ad spend":"$12,000", CTR:"0.5%", CPC:"$4.50", CPA:"$8.90", VTR:"0.9%", purchases:"32", ROAS:"$4.85"},
-  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", impresions:"100", clicks:"89", "ad spend":"$12,000", CTR:"0.5%", CPC:"$4.50", CPA:"$8.90", VTR:"0.9%", purchases:"32", ROAS:"$4.85"},
+  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", ['line item']:"line item link", impresions:"100", clicks:"89", "ad spend":"$12,000", CTR:"0.5%", CPC:"$4.50", CPA:"$8.90", VTR:"0.9%", purchases:"32", ROAS:"$4.85"},
+  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", ['line item']:"line item link", impresions:"100", clicks:"89", "ad spend":"$12,000", CTR:"0.5%", CPC:"$4.50", CPA:"$8.90", VTR:"0.9%", purchases:"32", ROAS:"$4.85"},
+  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", ['line item']:"line item link", impresions:"100", clicks:"89", "ad spend":"$12,000", CTR:"0.5%", CPC:"$4.50", CPA:"$8.90", VTR:"0.9%", purchases:"32", ROAS:"$4.85"},
+  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", ['line item']:"line item link", impresions:"100", clicks:"89", "ad spend":"$12,000", CTR:"0.5%", CPC:"$4.50", CPA:"$8.90", VTR:"0.9%", purchases:"32", ROAS:"$4.85"},
+  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", ['line item']:"line item link", impresions:"100", clicks:"89", "ad spend":"$12,000", CTR:"0.5%", CPC:"$4.50", CPA:"$8.90", VTR:"0.9%", purchases:"32", ROAS:"$4.85"},
+  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", ['line item']:"line item link", impresions:"100", clicks:"89", "ad spend":"$12,000", CTR:"0.5%", CPC:"$4.50", CPA:"$8.90", VTR:"0.9%", purchases:"32", ROAS:"$4.85"},
+  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", ['line item']:"line item link", impresions:"100", clicks:"89", "ad spend":"$12,000", CTR:"0.5%", CPC:"$4.50", CPA:"$8.90", VTR:"0.9%", purchases:"32", ROAS:"$4.85"},
+  {img:"holder.js/50x50", name: 'Creative 1', id:"1234565", ['line item']:"line item link", impresions:"100", clicks:"89", "ad spend":"$12,000", CTR:"0.5%", CPC:"$4.50", CPA:"$8.90", VTR:"0.9%", purchases:"32", ROAS:"$4.85"},
 ]
 
 let myTableData = myData.map((item, index)=>{
