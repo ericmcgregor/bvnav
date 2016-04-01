@@ -1,9 +1,30 @@
-@import "styles/bv";
+@import "bvbootstrap/_variables";
+@import "bvbootstrap/_fonts";
+// @import "{ericmcgregor:bvstrap}/bvbootstrap/_layout";
+@import "styles/_Layout.scss";
+
+$font-size-root:             16px;
+$font-size-base: .85rem;
+$font-size-lg:               1.1rem;
+$font-size-sm:               .8rem;
+$font-size-xs:               .75rem;
+
+@import "bootstrap/scss/bootstrap";
+
+@import "bvbootstrap/_custom-styles.scss";
+
+
+
+
+
+
+// @import "styles/bv";
 // @import "styles/_Layout.scss";
-@import "lib/base_components/styles/_ApplicationHeader.scss";
-@import "lib/base_components/styles/_ReportHeader.scss";
-@import "lib/base_components/styles/_PortalNav.scss";
+@import "styles/components/_ApplicationHeader.scss";
+@import "styles/components/_ReportHeader.scss";
+@import "styles/components/_PortalNav.scss";
 @import "reports/_Reports.scss";
+
 
 .data-table-header {
   display:flex;

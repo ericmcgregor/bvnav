@@ -1,17 +1,19 @@
-@import "{ericmcgregor:bvstrap}/bvbootstrap/_variables";
-@import "{ericmcgregor:bvstrap}/bvbootstrap/_fonts";
-// @import "{ericmcgregor:bvstrap}/bvbootstrap/_layout";
-@import "_Layout.scss";
+// @import "{ericmcgregor:bvstrap}/bvbootstrap/_variables";
+// @import "{ericmcgregor:bvstrap}/bvbootstrap/_fonts";
+// // @import "{ericmcgregor:bvstrap}/bvbootstrap/_layout";
+// @import "_Layout.scss";
+//
+// $font-size-root:             16px;
+// $font-size-base: .85rem;
+// $font-size-lg:               1.1rem;
+// $font-size-sm:               .8rem;
+// $font-size-xs:               .75rem;
+//
+// @import "{ericmcgregor:bvstrap}/_bootstrap.scss";
+//
+// @import "{ericmcgregor:bvstrap}/bvbootstrap/_custom-styles.scss";
 
-$font-size-root:             16px;
-$font-size-base: .85rem;
-$font-size-lg:               1.1rem;
-$font-size-sm:               .8rem;
-$font-size-xs:               .75rem;
 
-@import "{ericmcgregor:bvstrap}/_bootstrap.scss";
-
-@import "{ericmcgregor:bvstrap}/bvbootstrap/_custom-styles.scss";
 
 
 div.row.align-center, div.flex.align-center {

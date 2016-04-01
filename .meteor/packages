@@ -17,14 +17,14 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 
 autopublish             # Publish all data to the clients (for prototyping)
 insecure                # Allow all DB writes from clients (for prototyping)
-fourseven:scss
+#fourseven:scss
 fortawesome:fontawesome
 mquandalle:bower
 kadira:flow-router
 http
 kadira:react-layout
 u2622:persistent-session
-ericmcgregor:bvstrap
+#ericmcgregor:bvstrap
 imsky:holder
 standard-minifier-css
 standard-minifier-js
