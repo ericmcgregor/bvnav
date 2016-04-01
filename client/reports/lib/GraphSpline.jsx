@@ -1,7 +1,13 @@
 import React from 'react';
 
 GraphSpline = class GraphSpline extends React.Component{
-  componentDidMount() {
+  componentDidUpdate(){
+    this.renderChart();
+  }
+  componentDidMount(){
+    this.renderChart();
+  }
+  renderChart() {
     var chart = c3.generate({
       bindto:"#"+this.props.data.chartID,
       size:{
@@ -40,6 +46,7 @@ GraphSpline = class GraphSpline extends React.Component{
         }
     });
   }
+
   render(){
     return (
       <div id={this.props.data.chartID}></div>

@@ -1,6 +1,6 @@
 import React from 'react';
 GraphPyramid = class GraphPyramid extends React.Component {
-  componentDidMount(){
+  renderChart(){
     let data1 = [
       {"sharedLabel": this.props.shared, "barData1": this.props.without, "barData2": this.props.with},
     ]
@@ -11,6 +11,13 @@ GraphPyramid = class GraphPyramid extends React.Component {
       lift:this.props.lift
     }
     Pyramid(this.props.data.chartID, data1, options1)
+  }
+  componentDidMount(){
+    this.renderChart()
+  }
+  componentDidUpdate(){
+    $('#'+this.props.data.chartID+'>svg').remove()
+    this.renderChart()
   }
   render() {
     return (

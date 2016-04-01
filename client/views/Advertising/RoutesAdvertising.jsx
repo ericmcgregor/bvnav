@@ -73,8 +73,9 @@ FlowRouter.route('/Advertising/Campaigns', {
                   ],
                   secondary:[],
                   content:[
-                    <ContentView pageHeader={<ExportReportHeader />} pageContent={FlowRouter.current().queryParams.hvt ? <NonCommerceRoi /> : <ROIreport />} />,
-                    <ContentView pageHeader={<ExportReportHeader />} pageContent={<AudienceReport />} />,
+                    <ContentView pageHeader={<ExportReportHeader />} pageContent={<AudienceReportClass />} />,
+                    <ContentView pageHeader={<ExportReportHeader />} pageContent={FlowRouter.current().queryParams.hvt ? <NonCommerceRoi /> : <ROIreportClass />} />,
+                    <ContentView pageHeader={<ExportReportHeader />} pageContent={<AudienceReportClass />} />,
                     <ContentView pageHeader={<ExportReportHeader />} pageContent={<ConsiderationReport />} />,
                     <ContentView pageHeader={<CreativesListHeader />} pageContent={<CreativesList />} />,
                   ]

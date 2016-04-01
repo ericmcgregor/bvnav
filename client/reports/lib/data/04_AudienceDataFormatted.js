@@ -1,141 +1,158 @@
+import {Meteor} from 'meteor/meteor';
+import {Tracker} from 'meteor/tracker';
+
+getABRdata = (id) => {
+
+    Meteor.call('GetABRdata', id, (error, result)=>{
+      if(error) {
+        console.log(error)
+        return;
+      }
+
+      let data = formatAudienceData(result.report, result.segment);
+
+      Session.setPersistent({
+        ABRid:id,
+        ABRdata:data
+      });
+
+    });
+
+}
+
+Meteor.startup(function () {
+    let id = Session.get('ABRid');
+    if(!id) {
+      Session.set('ABRid', 'df845635-ead5-4380-a9c0-988a9f709348')
+    }
+
+    Tracker.autorun(() => {
+      let idChange = Session.get('ABRid')
+
+      if(idChange && idChange !== id) {
+        getABRdata(Session.get('ABRid'));
+        id=idChange;
+      }
+    });
+
+});
+
+
+
+
 formatAudienceData = (AudienceData, SegmentData) => {
 
-BrandConsideration = {}
-BrandConsideration.categories = Object.keys(AudienceData.brandConsiderationByPercentageOfPeople).map((key, index)=>{
-  return key;
-})
-BrandConsideration.notConsidered = BrandConsideration.categories.map((key, index)=>{
-  return AudienceData.brandConsiderationByPercentageOfPeople[key].brandNotConsideredPercentage;
-})
-BrandConsideration.considered = BrandConsideration.categories.map((key, index)=>{
-  return AudienceData.brandConsiderationByPercentageOfPeople[key].brandConsideredWithOthersPercentage + AudienceData.brandConsiderationByPercentageOfPeople[key].onlyBrandConsideredPercentage;
-})
-
-AudienceDataFormatted = {
-  //SEGMENTDATA
-  "id": SegmentData.id,
-  "name": SegmentData.name,
-  "client": SegmentData.client,
-  "updated": SegmentData.updated,
-  "category": SegmentData.category,
-  "lastAudienceEstimate":{},
-
-  //AudienceData
-  "audience": nFormatter(AudienceData.audience),
-  "startDate": AudienceData.startDate,
-  "updated": AudienceData.updated,
-
-  "brandConsiderationByPercentageOfPeople":AudienceData.brandConsiderationByPercentageOfPeople,
-  "shareOfVoiceByNumberOfPeople":{},
-  "shareOfSalesByNumberOfPeople":{},
-  "topInterestsByPeople":{},
-  "topTier1InterestsByPeople":{},
-  "topTier2InterestsByPeople":{},
-  "behaviorByDeviceType":{},
-
-  AudienceLocationTable: AudienceData.location.sort((a, b)=>{
-    return parseFloat(b.size) - parseFloat(a.size);
+  BrandConsideration = {}
+  BrandConsideration.categories = Object.keys(AudienceData.brandConsiderationByPercentageOfPeople).map((key, index)=>{
+    return key;
   })
-  .slice(0, 5)
-  .map((item)=>{
-    item.displaySize = nFormatter(item.size);  return item;
-  }),
+  BrandConsideration.notConsidered = BrandConsideration.categories.map((key, index)=>{
+    return AudienceData.brandConsiderationByPercentageOfPeople[key].brandNotConsideredPercentage;
+  })
+  BrandConsideration.considered = BrandConsideration.categories.map((key, index)=>{
+    return AudienceData.brandConsiderationByPercentageOfPeople[key].brandConsideredWithOthersPercentage + AudienceData.brandConsiderationByPercentageOfPeople[key].onlyBrandConsideredPercentage;
+  })
 
-  brandConsiderationData:{
-    chartID:"brandconsideration",
-    height:200,
-    columns:{
-      considered:BrandConsideration.considered,
-      notConsidered:BrandConsideration.notConsidered
-    },
-    categories: BrandConsideration.categories
-  },
+  AudienceDataFormatted = {
+    //SEGMENTDATA
+    "id": SegmentData.id,
+    "name": SegmentData.name,
+    "client": SegmentData.client,
+    "updated": SegmentData.updated,
+    "category": SegmentData.category,
+    "lastAudienceEstimate":{},
 
-  AudienceDevicePageviewPie: {
-    height:150,
-    chartID:'AudienceDevicePageviewPie',
-    columns:{
-      Desktop:AudienceData.behaviorByDeviceType["Desktop"].peopleViewed,
-      Mobile:AudienceData.behaviorByDeviceType["Mobile/Tablet"].peopleViewed,
-    },
-    legend: {
-      hide: true
-    },
-  },
-  AudienceDevicePurchasePie: {
-    height:150,
-    chartID:'AudienceDevicePurchasePie',
-    columns:{
-      Desktop:AudienceData.behaviorByDeviceType["Desktop"].peoplePurchased,
-      Mobile:AudienceData.behaviorByDeviceType["Mobile/Tablet"].peoplePurchased,
-    },
-    legend: {
-      hide: true
-    },
-  },
+    //AudienceData
+    "audience": nFormatter(AudienceData.audience),
+    "startDate": AudienceData.startDate,
+    "updated": AudienceData.updated,
 
-  // AudienceDemoAgeData:{
-  //   height:200,
-  //   chartID:'AudienceDemoAgeData8',
-  //   categories: Object.keys(AudienceData.ageByPercentageOfPeople),
-  //   columns:Object.keys(AudienceData.ageByPercentageOfPeople).map((key, index)=>{return AudienceData.ageByPercentageOfPeople[key]})
-  // },
-  // AudienceDemoGenderData:{
-  //   height:200,
-  //   chartID:'AudienceDemoGenderData',
-  //   columns:{
-  //     male: AudienceData.genderByPercentageOfPeople["MALE"],
-  //     female:AudienceData.genderByPercentageOfPeople["FEMALE"],
-  //   }
-  // },
+    "brandConsiderationByPercentageOfPeople":AudienceData.brandConsiderationByPercentageOfPeople,
+    "shareOfVoiceByNumberOfPeople":{},
+    "shareOfSalesByNumberOfPeople":{},
+    "topInterestsByPeople":{},
+    "topTier1InterestsByPeople":{},
+    "topTier2InterestsByPeople":{},
+    "behaviorByDeviceType":{},
 
-}
-
-
-
-
-//FORMAT THE DATA NUMBERS
-var formatObject = (item)=>{
-
-  var parser = function(item, commas){
-    var result = {}
-    Object.keys(item).forEach((key, index)=>{
-      if(typeof item[key]==='object'){
-        result[key] = parser(item[key]);
-      } else {
-        result[key] = nFormatter(item[key])
-      }
+    AudienceLocationTable: AudienceData.location.sort((a, b)=>{
+      return parseFloat(b.size) - parseFloat(a.size);
     })
-    return result;
+    .slice(0, 5)
+    .map((item)=>{
+      item.displaySize = nFormatter(item.size);  return item;
+    }),
+
+    brandConsiderationData:{
+      chartID:"brandconsideration",
+      height:200,
+      columns:{
+        considered:BrandConsideration.considered,
+        notConsidered:BrandConsideration.notConsidered
+      },
+      categories: BrandConsideration.categories
+    },
+
+    AudienceDevicePageviewPie: {
+      height:150,
+      chartID:'AudienceDevicePageviewPie',
+      columns:{
+        Desktop:AudienceData.behaviorByDeviceType["Desktop"].peopleViewed,
+        Mobile:AudienceData.behaviorByDeviceType["Mobile/Tablet"].peopleViewed,
+      },
+      legend: {
+        hide: true
+      },
+    },
+    AudienceDevicePurchasePie: {
+      height:150,
+      chartID:'AudienceDevicePurchasePie',
+      columns:{
+        Desktop:AudienceData.behaviorByDeviceType["Desktop"].peoplePurchased,
+        Mobile:AudienceData.behaviorByDeviceType["Mobile/Tablet"].peoplePurchased,
+      },
+      legend: {
+        hide: true
+      },
+    },
   }
 
-  return parser(item);
+  //FORMAT THE DATA NUMBERS
+  var formatObject = (item)=>{
 
-}
+    var parser = function(item, commas){
+      var result = {}
+      Object.keys(item).forEach((key, index)=>{
+        if(typeof item[key]==='object'){
+          result[key] = parser(item[key]);
+        } else {
+          result[key] = nFormatter(item[key])
+        }
+      })
+      return result;
+    }
+    return parser(item);
+  }
 
+  let keysToFormat = [];
+  keysToFormat = [
+    "shareOfVoiceByNumberOfPeople",
+    "shareOfSalesByNumberOfPeople",
+    "topInterestsByPeople",
+    "topTier1InterestsByPeople",
+    "topTier2InterestsByPeople",
+    "behaviorByDeviceType",
+  ].forEach((key, index)=>{
+      let item = formatObject(AudienceData[key]);
+      AudienceDataFormatted[key] = item
+  })
 
-let keysToFormat = [];
+  Object.keys(SegmentData["lastAudienceEstimate"]).forEach((key, index)=>{
+    let item = addCommas(SegmentData["lastAudienceEstimate"][key]);
+    AudienceDataFormatted["lastAudienceEstimate"][key] = item
+  })
 
-keysToFormat = [
-  "shareOfVoiceByNumberOfPeople",
-  "shareOfSalesByNumberOfPeople",
-  "topInterestsByPeople",
-  "topTier1InterestsByPeople",
-  "topTier2InterestsByPeople",
-  "behaviorByDeviceType",
-].forEach((key, index)=>{
-    let item = formatObject(AudienceData[key]);
-    AudienceDataFormatted[key] = item
-})
-
-
-Object.keys(SegmentData["lastAudienceEstimate"]).forEach((key, index)=>{
-  let item = addCommas(SegmentData["lastAudienceEstimate"][key]);
-  AudienceDataFormatted["lastAudienceEstimate"][key] = item
-})
-
-
-return AudienceDataFormatted;
+  return AudienceDataFormatted;
 
 }
 

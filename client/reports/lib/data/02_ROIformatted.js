@@ -1,18 +1,40 @@
+import {Meteor} from 'meteor/meteor';
+import {Tracker} from 'meteor/tracker';
+
+
 getROIdata = (id) => {
 
-    return Meteor.call('GetROIdata', id, (err, result)=>{
-      console.log(result)
+    Meteor.call('GetROIdata', id, (error, result)=>{
+      if(error) {
+        console.log(error)
+        return;
+      }
+
       let data = formatROIData(result.report);
 
-      Session.set({
-        ROI:id,
+      Session.setPersistent({
+        ROIid:id,
         ROIdata:data
       });
 
-      return data;
     });
 
 }
+
+Meteor.startup(function () {
+    let id = Session.get('ROIid');
+
+    Tracker.autorun(() => {
+      let idChange = Session.get('ROIid')
+
+      if(idChange && idChange !== id) {
+        getROIdata(Session.get('ROIid'));
+        id=idChange;
+      }
+    });
+
+});
+
 
 formatROIData = (ROIdata) => {
 

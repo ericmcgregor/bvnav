@@ -1,7 +1,13 @@
 import React from 'react';
 
 GraphStackedBar = class GraphStackedBar extends React.Component{
-  componentDidMount() {
+  componentDidMount(){
+    this.renderChart();
+  }
+  componentDidUpdate(){
+    this.renderChart();
+  }
+  renderChart() {
 
       let order = "asc";
       console.log(this.props.data.columns.considered)

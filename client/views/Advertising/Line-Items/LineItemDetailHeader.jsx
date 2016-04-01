@@ -1,11 +1,13 @@
 import React from 'react';
-LineItemDetailHeader = class LineItemDetailHeader extends PageHeaderComponent {
+import { createContainer } from 'meteor/react-meteor-data';
+
+LineItemDetailHeaderClass = class LineItemDetailHeader extends PageHeaderComponent {
   details(){
     return (
       <div>
-        {this.renderForm('Line Item',ROIdata.name)}
-        {this.renderForm('Campaign',ROIdata.client+"Black Firday")}
-        {this.renderForm('Client',ROIdata.client)}
+        {this.renderForm('Line Item',this.props.name)}
+        {this.renderForm('Campaign',"Campaign Name")}
+        {this.renderForm('Client',this.props.client)}
         {
           FlowRouter.current().queryParams.hvt ? this.renderForm('Type',"HVT Conversion") : null
         }
@@ -44,18 +46,28 @@ LineItemDetailHeader = class LineItemDetailHeader extends PageHeaderComponent {
   }
   optional(){
     LineItemData.colors[0] = GraphSecondary;
-    // <div className="graph-container">
-    //   <h5 className="heading">line-item performance</h5>
-    //   <GraphSpline data={LineItemData} />
-    // </div>
     return (
       <div>
-      {this.renderForm('Spend',"$"+addCommas(Math.round(ROIdata.totalAdSpend)))}
+      {this.renderForm('Spend',"$"+this.props.totalAdSpend)}
       {this.renderForm('Flight Dates',"xx/xx/xx - xx/xx/xx")}
       </div>
     )
   }
 }
+
+LineItemDetailHeader = createContainer(({ params }) => {
+  let Data = Session.get('ROIdata');
+
+  if(!Data) {
+    return {
+      loaded:false
+    }
+  }
+
+  return {
+    ...Data
+  }
+}, LineItemDetailHeaderClass);
 
 
 // LineItemDetailHeader = class LineItemDetailHeader extends React.Component {
