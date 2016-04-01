@@ -24,7 +24,11 @@ TabContent = React.createClass({
       this.setState({active:$(e.target).attr('href')})
     })
     $(()=>{
-      $('.nav-tabs a:first').tab('show')
+      let t = 0;
+      if(FlowRouter.current().queryParams.tab) {
+        t = FlowRouter.current().queryParams.tab;
+      }
+      $('.nav-tabs a:eq('+t+')').tab('show')
     })
 
   },

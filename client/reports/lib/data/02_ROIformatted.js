@@ -23,6 +23,12 @@ getROIdata = (id) => {
 
 Meteor.startup(function () {
     let id = Session.get('ROIid');
+    if(!id) {
+      Session.set('ROIid', 'e0b60b51-a441-400d-baa7-f5404f7e2f09')
+    }
+    if(FlowRouter.current().queryParams.roi) {
+      Session.set('ROIid', FlowRouter.current().queryParams.roi)
+    }
 
     Tracker.autorun(() => {
       let idChange = Session.get('ROIid')
