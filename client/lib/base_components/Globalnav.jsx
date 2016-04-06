@@ -82,11 +82,12 @@ GlobalNav = class GlobalNav extends React.Component {
             {this.state.nav.map((item, index)=>{
               let classname = item.active==FlowRouter.current().params.active ? "" : "collapsed";
               let expanded = item.active==FlowRouter.current().params.active ? "true" : "false";
+              let link = item.subnav ? item.subnav[0].link : null
               return (
                 <div key={index}>
                   {item.dividerTop ? <div className="divider"></div> : null}
                   <div>
-                  <a href="" className="bordered-icon">
+                  <a href={link} className="bordered-icon">
 
                   </a>
                   </div>

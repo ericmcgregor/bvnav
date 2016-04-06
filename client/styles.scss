@@ -20,10 +20,11 @@ $font-size-xs:               .75rem;
 
 // @import "styles/bv";
 // @import "styles/_Layout.scss";
+@import "styles/_bv.scss";
 @import "styles/components/_ApplicationHeader.scss";
+@import "styles/components/_DetailHeader.scss";
 @import "styles/components/_ReportHeader.scss";
 @import "styles/components/_PortalNav.scss";
-@import "styles/components/_DetailHeader.scss";
 @import "reports/_Reports.scss";
 
 

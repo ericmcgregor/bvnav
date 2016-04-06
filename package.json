@@ -14,7 +14,6 @@
     "meteor-node-stubs": "^0.2.1",
     "bootstrap": "^4.0.0-alpha.2",
     "bvbootstrap": "git+ssh://git@github.com/bazaarvoice/bvbootstrap.git#v4",
-    "node-sass": "^3.4.2",
     "react": "^0.14.8",
     "react-addons-create-fragment": "^0.14.8",
     "react-addons-css-transition-group": "^0.14.8",
@@ -28,6 +27,7 @@
     "tether": "^1.2.0"
   },
   "devDependencies": {
+    "node-sass": "^3.4.2",
     "nodemon": "^1.9.1",
     "autoprefixer": "^6.3.5",
     "npm-run-all": "^1.7.0",

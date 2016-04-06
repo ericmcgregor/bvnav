@@ -5,7 +5,7 @@ LineItemDetailHeaderClass = class LineItemDetailHeader extends PageHeaderCompone
   details(){
     return (
       <div>
-        {this.renderForm('Line Item',this.props.name)}
+        {this.renderForm('Segment',this.props.name)}
         {this.renderForm('Campaign',"Campaign Name")}
         {this.renderForm('Client',this.props.client)}
         {

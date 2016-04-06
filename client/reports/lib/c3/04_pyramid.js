@@ -141,13 +141,13 @@
 
 						parent.append('tspan')
 						.attr("text-anchor", "end")
-						.text('In consideration for your brand compared to your');
+						.text('Your share of product sales as compared to similar');
 
 						parent.append('tspan')
 						.attr("x", w-innerMargin)
 						.attr("dy", 18)
 						.attr("text-anchor", "end")
-						.text(' competitors when leveraging Bazaarvoice Advertising.')
+						.text(' products, when leveraging Bazaarvoice Shopper Advertising.')
 
 
 

@@ -36,12 +36,14 @@ ROIreport = class ROIreport extends React.Component{
 
 ROIreportClass = createContainer(({ params }) => {
   let Data = Session.get('ROIdata');
-
+  console.log(Data)
   if(!Data) {
+    console.log('no data', Data)
     return {
       loaded:false
     }
   }
+
 
   return {
     params,
@@ -91,27 +93,27 @@ ROIreportClass = createContainer(({ params }) => {
         title:"Daily View Through",
         height:100,
         chartID:"viewthrough",
-        dates: ['2013-01-01', '2013-01-02', '2013-01-03', '2013-01-04', '2013-01-05', '2013-01-06'],
+        dates: Data.DailyStats.dates,
         columns: [['View Through', ...Data.DailyStats.vtr]],
         colors:[GraphPrimary],
         totalType:"View Throughs",
         total:Data.viewThroughs.source,
         rateType:"VTR",
         rate:Data.vtr+"%",
-        formatY:function (d) { return "%" + d.toFixed(3); }
+        formatY:function (d) { return d.toFixed(3)+"%"; }
       },
       DailyClickThrough:{
         title:"Daily Click Through",
         height:100,
         chartID:"clickthrough",
-        dates: ['2013-01-01', '2013-01-02', '2013-01-03', '2013-01-04', '2013-01-05', '2013-01-06'],
+        dates: Data.DailyStats.dates,
         columns: [['Click Through', ...Data.DailyStats.ctr]],
         colors:[GraphPrimary],
         totalType:"Click Throughs",
         total:Data.clicks,
         rateType:"CTR",
         rate:Data.ctr+"%",
-        formatY:function (d) { return "%" + d.toFixed(3); }
+        formatY:function (d) { return d.toFixed(3)+"%"; }
       },
       AvgUserCGC:Data.AvgUserCGC,
   };
