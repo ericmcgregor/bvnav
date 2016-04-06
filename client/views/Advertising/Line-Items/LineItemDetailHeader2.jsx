@@ -3,36 +3,11 @@ import { createContainer } from 'meteor/react-meteor-data';
 
 LineItemDetailHeaderClass = class LineItemDetailHeader extends PageHeaderComponent {
   details(){
+    let Data = Session.get('ABRdata')
     return (
-      <div>
-        {this.renderForm('Snapshot',this.props.name)}
-        {
-          //this.renderForm('Campaign',"Campaign Name")
-        }
-        {this.renderForm('Client',this.props.client)}
-        {
-          FlowRouter.current().queryParams.hvt ? this.renderForm('Type',"HVT Conversion") : null
-        }
-        {/*
-          this.renderForm('Status',<div className="btn-group btn-group-sm" role="group">
-                          <button
-                            id="btnGroupDrop1"
-                            type="button"
-                            className="btn btn-secondary dropdown-toggle"
-                            data-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false">
-                            Active
-                          </button>
-                          <div
-                            className="dropdown-menu dropdown-menu-right"
-                            aria-labelledby="btnGroupDrop1">
-                            <a className="dropdown-item" href="#">
-                              Complete
-                            </a>
-                          </div>
-                        </div>)
-                        */}
+      <div style={{minWidth:"70%!important"}}>
+        {this.renderForm('Audience Snapshot',Data.name)}
+
       </div>
     )
   }

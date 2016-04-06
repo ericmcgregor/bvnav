@@ -1,9 +1,9 @@
 {
   "servers": [
     {
-      "host": "54.187.236.243",
+      "host": "52.91.64.226",
       "username": "ubuntu",
-      "pem": "~/.ssh/recommendations.pem"
+      "pem": "~/.ssh/incubator"
     }
   ],
   "setupMongo": true,
@@ -14,7 +14,7 @@
   "appName": "navigation-demo",
   "app": "~/Dev/bv/nav",
   "env": {
-    "ROOT_URL": "http://54.187.236.243"
+    "ROOT_URL": "http://52.91.64.226"
   },
   "deployCheckWaitTime": 60
 }

@@ -6,7 +6,7 @@ AudienceReport = class AudienceReport extends React.Component{
     return (
       <div>
 
-        <AudienceShoppingBehavior {...this.props} />
+        <AudienceShoppingBehavior2 {...this.props} />
 
       </div>
     )

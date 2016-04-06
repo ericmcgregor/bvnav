@@ -6019,6 +6019,8 @@ div.page-header {
         -ms-flex: 1 0 450px;
             flex: 1 0 450px;
     min-width: 450px; }
+    div.page-header div.page-header-details label {
+      min-width: 150px !important; }
   div.page-header .form-group {
     font-size: 1rem;
     margin: 0; }
