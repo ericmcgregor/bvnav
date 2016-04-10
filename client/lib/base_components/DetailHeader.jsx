@@ -145,8 +145,8 @@ PageHeaderComponent = class PageHeaderComponent extends React.Component{
   renderForm(label, value) {
       return (
         <div className="form-group row">
-          <label className="col-sm-3 form-control-label">{label}:</label>
-          <div className="col-sm-9">
+          <label className="col-sm-4 form-control-label">{label}:</label>
+          <div className="col-sm-8">
             {typeof value === 'object' ? value : <p className="form-control-static">{value}</p>}
           </div>
         </div>

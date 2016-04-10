@@ -27,7 +27,9 @@ div.row.align-center, div.flex.align-center {
 body#print {
   overflow:inherit!important;
   display:block!important;
-
+  &::-webkit-scrollbar {
+    display: none;
+  }
   .print-bv-report {
     display:block!important;
     position:absolute;

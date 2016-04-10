@@ -5929,6 +5929,8 @@ div.row.align-center, div.flex.align-center {
 body#print {
   overflow: inherit !important;
   display: block !important; }
+  body#print::-webkit-scrollbar {
+    display: none; }
   body#print .print-bv-report {
     display: block !important;
     position: absolute;
@@ -6024,8 +6026,7 @@ div.page-header {
     font-size: 1rem;
     margin: 0; }
     div.page-header .form-group label.form-control-label {
-      padding: 0;
-      max-width: 120px; }
+      padding: 0; }
     div.page-header .form-group p.form-control-static {
       padding: 0;
       font-weight: 500; }

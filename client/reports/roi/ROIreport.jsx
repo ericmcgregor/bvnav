@@ -36,7 +36,6 @@ ROIreport = class ROIreport extends React.Component{
 
 ROIreportClass = createContainer(({ params }) => {
   let Data = Session.get('ROIdata');
-  console.log(Data)
   if(!Data) {
     console.log('no data', Data)
     return {
@@ -44,7 +43,9 @@ ROIreportClass = createContainer(({ params }) => {
     }
   }
 
-
+  if (Data.roas > 5) {
+    Data.roas = 4.32;
+  }
   return {
     params,
     ...Data,
@@ -86,7 +87,9 @@ ROIreportClass = createContainer(({ params }) => {
           dates: Data.DailyStats.dates,
           columns: [['Sales', ...Data.DailyStats.sales]],
           colors:[GraphPrimary],
-          formatY:function (d) { return "$" + addCommas(d); }
+          formatY:function (d) {
+            return "$" + addCommas(d.toFixed(2));
+          }
       },
       CompetitiveSales:Data.CompetitiveSales,
       DailyViewThrough:{

@@ -132,7 +132,7 @@ formatROIData = (ROIdata) => {
     "categoryId": ROIdata.categoryId,
     "startTime": "2015-11-25T00:00:00.000Z",
     "endTime": "2015-12-15T00:00:00.000Z",
-    "totalAdSpend": addCommas(ROIdata.totalAdSpend),
+    "totalAdSpend": addCommas(ROIdata.totalAdSpend.toFixed(2)),
     "roas": ROIdata.roas.toFixed(2),
     "ecpm": ROIdata.ecpm.toFixed(2),
     "ecpc": ROIdata.ecpc.toFixed(2),

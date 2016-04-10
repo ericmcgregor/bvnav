@@ -1,5 +1,20 @@
 import React from 'react';
 CampaignOnlineSales = class CampaignPerformance extends React.Component{
+  renderSimilarProducts(){
+    console.log(this.props.CompetitiveSales.CompetitiveProducts.online)
+    if(this.props.CompetitiveSales.CompetitiveProducts.online == "$0") {
+      return null;
+    } else {
+      return (
+        <tr>
+          <th>Similar Products</th>
+          <td className="text-xs-center">{this.props.CompetitiveSales.CompetitiveProducts.online}</td>
+          <td className="text-xs-center">{this.props.CompetitiveSales.CompetitiveProducts.offline}</td>
+          <td className="text-xs-center">{this.props.CompetitiveSales.CompetitiveProducts.total}</td>
+        </tr>
+      )
+    }
+  }
   render(){
     return (
       <div className="card report-card">
@@ -32,12 +47,7 @@ CampaignOnlineSales = class CampaignPerformance extends React.Component{
                           <td className="text-xs-center">{this.props.CompetitiveSales.MyProducts.offline}</td>
                           <td className="text-xs-center">{this.props.CompetitiveSales.MyProducts.total}</td>
                         </tr>
-                        <tr>
-                          <th>Similar Products</th>
-                          <td className="text-xs-center">{this.props.CompetitiveSales.CompetitiveProducts.online}</td>
-                          <td className="text-xs-center">{this.props.CompetitiveSales.CompetitiveProducts.offline}</td>
-                          <td className="text-xs-center">{this.props.CompetitiveSales.CompetitiveProducts.total}</td>
-                        </tr>
+                        {this.renderSimilarProducts()}
                       </tbody>
                     </table>
                   </ChartContainer>
