@@ -7,7 +7,8 @@ FlowRouter.route('/print/roi', {
       params.current='Advertising-Campaigns'
       ReactLayout.render(PrintView, {
         title:"Conversion",
-        pageHeader:<CampaignListHeader />,
+        pageHeader:<ConversionHeaderPrint  {...params}/>,
+        pageContent:FlowRouter.current().queryParams.hvt ? <NonCommerceRoi /> : <ROIreportClass />,
       });
     }
 });

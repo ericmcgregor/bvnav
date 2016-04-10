@@ -5932,8 +5932,8 @@ body#print {
   body#print .print-bv-report {
     display: block !important;
     position: absolute;
-    top: 20px;
-    right: 20px; }
+    top: 0px;
+    right: 0px; }
   body#print #application_header,
   body#print .page-header-location,
   body#print .task-nav-container,
@@ -6000,7 +6000,8 @@ The top of the report that usually contains flight dates,
 title, and other info
 */
 div.page-header {
-  margin-bottom: 3rem; }
+  margin-bottom: 3rem;
+  position: relative; }
   div.page-header .page-header-location {
     margin-bottom: 1rem;
     min-height: 44px; }
@@ -6019,8 +6020,6 @@ div.page-header {
         -ms-flex: 1 0 450px;
             flex: 1 0 450px;
     min-width: 450px; }
-    div.page-header div.page-header-details label {
-      min-width: 150px !important; }
   div.page-header .form-group {
     font-size: 1rem;
     margin: 0; }
