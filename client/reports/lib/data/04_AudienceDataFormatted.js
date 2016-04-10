@@ -44,7 +44,6 @@ Meteor.startup(function () {
 
 
 formatAudienceData = (AudienceData, SegmentData) => {
-
   BrandConsideration = {}
   BrandConsideration.categories = Object.keys(AudienceData.brandConsiderationByPercentageOfPeople).map((key, index)=>{
     return key;
@@ -64,11 +63,11 @@ formatAudienceData = (AudienceData, SegmentData) => {
     "updated": SegmentData.updated,
     "category": SegmentData.category,
     "lastAudienceEstimate":{},
-
     //AudienceData
     "audience": nFormatter(AudienceData.audience),
     "startDate": AudienceData.startDate,
     "updated": AudienceData.updated,
+    "location":AudienceData.location,
 
     "brandConsiderationByPercentageOfPeople":AudienceData.brandConsiderationByPercentageOfPeople,
     "shareOfVoiceByNumberOfPeople":{},

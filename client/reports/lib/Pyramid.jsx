@@ -8,7 +8,8 @@ GraphPyramid = class GraphPyramid extends React.Component {
       width:$('#'+this.props.data.chartID).width(),
       leftLabel:"With Shopper Advertising",
       rightLabel:"Without Shopper Advertising",
-      lift:this.props.lift
+      lift:this.props.lift,
+      shared:this.props.shared
     }
     Pyramid(this.props.data.chartID, data1, options1)
   }

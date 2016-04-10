@@ -132,6 +132,10 @@
 				.attr('fill', GraphPrimary)
 				.text('+ '+options.lift+'% lift');
 
+				let sharetext = "product sales"
+				if(options.shared == "Pageviews") {
+					sharetext = "pageviews"
+				}
 		var parent =	bar.append("text")
 		        .attr("class", "text-muted lift-description")
 						.attr("dx", w-innerMargin)
@@ -141,13 +145,13 @@
 
 						parent.append('tspan')
 						.attr("text-anchor", "end")
-						.text('Your share of product sales as compared to similar');
+						.text('Your share of '+sharetext+' as compared to similar products,');
 
 						parent.append('tspan')
 						.attr("x", w-innerMargin)
 						.attr("dy", 18)
 						.attr("text-anchor", "end")
-						.text(' products, when leveraging Bazaarvoice Shopper Advertising.')
+						.text('when leveraging Bazaarvoice Shopper Advertising.')
 
 
 

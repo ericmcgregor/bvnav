@@ -27,11 +27,11 @@ CampaignEngagement = class CampaignPerformance extends React.Component{
                   </thead>
                   <tbody>
                     <tr>
-                      <td>Reveiws Read</td>
+                      <td>Reviews Read</td>
                       <td className="text-xs-center">{this.props.AvgUserCGC.read}</td>
                     </tr>
                     <tr>
-                      <td>Page Views</td>
+                      <td>PageViews</td>
                       <td className="text-xs-center">{this.props.AvgUserCGC.pageviews}</td>
                     </tr>
                     <tr>

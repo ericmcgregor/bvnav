@@ -1,3 +1,5 @@
+import React from 'react';
+
 
 window.printView = ()=> {
   let view = Session.get('print');

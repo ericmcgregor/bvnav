@@ -61,7 +61,7 @@ FlowRouter.route('/Advertising/Campaigns', {
               ReactLayout.render(HomeView, {
                 title:"Advertising",
                 titleLink:"/advertising/campaigns/detail",
-                pageHeader:<LineItemDetailHeader  {...params}/>,
+                pageHeader:<LineItemDetailHeader2  {...params}/>,
                 nav:{
                   primary:[
                     {name:"Conversion Report"},

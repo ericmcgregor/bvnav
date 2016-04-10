@@ -5,16 +5,14 @@ LineItemDetailHeaderClass = class LineItemDetailHeader extends PageHeaderCompone
   details(){
     return (
       <div>
-        {this.renderForm('Snapshot',this.props.name)}
-        {
-          //this.renderForm('Campaign',"Campaign Name")
-        }
         {this.renderForm('Client',this.props.client)}
+        {this.renderForm('Campaign',"Campaign Name")}
+        {this.renderForm('Segment',this.props.name)}
         {
           FlowRouter.current().queryParams.hvt ? this.renderForm('Type',"HVT Conversion") : null
         }
-        {/*
-          this.renderForm('Status',<div className="btn-group btn-group-sm" role="group">
+        <div hidden>
+        {this.renderForm('Status',<div className="btn-group btn-group-sm" role="group">
                           <button
                             id="btnGroupDrop1"
                             type="button"
@@ -31,8 +29,8 @@ LineItemDetailHeaderClass = class LineItemDetailHeader extends PageHeaderCompone
                               Complete
                             </a>
                           </div>
-                        </div>)
-                        */}
+                        </div>)}
+          </div>
       </div>
     )
   }
@@ -50,10 +48,12 @@ LineItemDetailHeaderClass = class LineItemDetailHeader extends PageHeaderCompone
   }
   optional(){
     LineItemData.colors[0] = GraphSecondary;
+    let date1 = this.props.startTime.split("T")[0].substring(5);
+    console.log(date1)
     return (
-      <div hidden>
+      <div>
       {this.renderForm('Spend',"$"+this.props.totalAdSpend)}
-      {this.renderForm('Flight Dates',"xx/xx/xx - xx/xx/xx")}
+      {this.renderForm('Flight Dates',this.props.startTime.split("T")[0].substring(5)+" | "+this.props.endTime.split("T")[0].substring(5))}
       </div>
     )
   }

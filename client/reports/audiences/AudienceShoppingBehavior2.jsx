@@ -180,7 +180,7 @@ ReportLocationMap = class ReportLocationMap extends React.Component {
       <ChartContainer title="Audience Location">
       <div className="row">
         <div className="col-md-8">
-            <LocationMap />
+            <LocationMap {...this.props} />
         </div>
         <div className="col-md-4">
           <table className="table table-bordered table-striped">

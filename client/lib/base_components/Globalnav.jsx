@@ -1,4 +1,6 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+
 GlobalNav = class GlobalNav extends React.Component {
   constructor(props){
     super(props);
@@ -9,6 +11,9 @@ GlobalNav = class GlobalNav extends React.Component {
     }
   }
   renderDropdown(subnav, parent, index){
+    if(!subnav) {
+      return;
+    }
     let collapse = parent.active==FlowRouter.current().params.active ? "in" : "";
     return (
       <div id={"dropdown-"+index} className={"list-group sub-nav collapse "+collapse}>
@@ -27,6 +32,9 @@ GlobalNav = class GlobalNav extends React.Component {
     this.setState({
       closed:!this.state.closed
     })
+  }
+  renderPopover(name){
+
   }
   renderOpen(){
     return (
@@ -83,12 +91,12 @@ GlobalNav = class GlobalNav extends React.Component {
               let classname = item.active==FlowRouter.current().params.active ? "" : "collapsed";
               let expanded = item.active==FlowRouter.current().params.active ? "true" : "false";
               let link = item.subnav ? item.subnav[0].link : null
+              let html = this.renderDropdown(item.subnav, item, index)
               return (
                 <div key={index}>
                   {item.dividerTop ? <div className="divider"></div> : null}
                   <div>
-                  <a href={link} className="bordered-icon">
-
+                  <a href={link} className="bordered-icon" data-react="true" data-title={item.name} data-toggle="popover" >
                   </a>
                   </div>
                   {item.dividerBottom ? <div className="divider"></div> : null}
@@ -101,12 +109,17 @@ GlobalNav = class GlobalNav extends React.Component {
     )
   }
   componentDidUpdate(){
+
     switch (this.state.closed.toString()) {
       case 'true':
         $(this.refs.container).addClass('collapsed')
+        $('[data-toggle="popover"]').popover({
+           trigger: 'hover'
+        })
         break;
       case 'false':
         $(this.refs.container).removeClass('collapsed')
+        $('[data-toggle="popover"]').popover('dispose')
         break;
       default:
     }

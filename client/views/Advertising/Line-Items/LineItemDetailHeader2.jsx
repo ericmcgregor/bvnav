@@ -1,7 +1,7 @@
 import React from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 
-LineItemDetailHeaderClass = class LineItemDetailHeader extends PageHeaderComponent {
+LineItemDetailHeaderClass2 = class LineItemDetailHeaderClass2 extends PageHeaderComponent {
   details(){
     let Data = Session.get('ABRdata')
     return (
@@ -34,7 +34,7 @@ LineItemDetailHeaderClass = class LineItemDetailHeader extends PageHeaderCompone
   }
 }
 
-LineItemDetailHeader = createContainer(({ params }) => {
+LineItemDetailHeader2 = createContainer(({ params }) => {
   let Data = Session.get('ROIdata');
 
   if(!Data) {
@@ -46,7 +46,7 @@ LineItemDetailHeader = createContainer(({ params }) => {
   return {
     ...Data
   }
-}, LineItemDetailHeaderClass);
+}, LineItemDetailHeaderClass2);
 
 
 // LineItemDetailHeader = class LineItemDetailHeader extends React.Component {
