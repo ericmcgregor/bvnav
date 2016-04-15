@@ -26,7 +26,7 @@ Meteor.startup(function () {
       Session.set('ABRid', 'df845635-ead5-4380-a9c0-988a9f709348')
     }
     if(FlowRouter.current().queryParams.abr) {
-      Session.set('ABRid', FlowRouter.current().queryParams.abr)
+      Session.setPersistent('ABRid', FlowRouter.current().queryParams.abr)
     }
 
     Tracker.autorun(() => {

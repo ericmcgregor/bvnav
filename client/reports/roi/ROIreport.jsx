@@ -36,6 +36,7 @@ ROIreport = class ROIreport extends React.Component{
 
 ROIreportClass = createContainer(({ params }) => {
   let Data = Session.get('ROIdata');
+  getROIdata(Session.get('ROIid'), roas=4.21, spend=125000, conversions=451);
   if(!Data) {
     console.log('no data', Data)
     return {
@@ -43,9 +44,12 @@ ROIreportClass = createContainer(({ params }) => {
     }
   }
 
-  if (Data.roas > 5) {
-    Data.roas = 4.32;
-  }
+  // if (Data.roas > 5) {
+  //   Data.roas = 4.32;
+  // }
+  // if (Data.roas < 2) {
+  //   Data.roas = 4.32;
+  // }
   return {
     params,
     ...Data,
@@ -65,10 +69,11 @@ ROIreportClass = createContainer(({ params }) => {
         chartID:"roas",
         dates: Data.DailyStats.dates,
         columns: [['ROAS', ...Data.DailyStats.conversions]],
-          colors:[GraphPrimary]
+        colors:[GraphPrimary],
+        formatY:function (d) { return d.toFixed(0); }
       },
       ShareOfVoiceData: {
-        ...shareOfVoice,
+        ...Data.shareOfVoice,
         height:280,
         chartID:'bar2',
         categories: ["Without Bazaarvoice Advertising", "With Bazaarvoice Advertising"],
@@ -88,7 +93,7 @@ ROIreportClass = createContainer(({ params }) => {
           columns: [['Sales', ...Data.DailyStats.sales]],
           colors:[GraphPrimary],
           formatY:function (d) {
-            return "$" + addCommas(d.toFixed(2));
+            return "$" + addCommas(d.toFixed(0));
           }
       },
       CompetitiveSales:Data.CompetitiveSales,
@@ -97,26 +102,26 @@ ROIreportClass = createContainer(({ params }) => {
         height:100,
         chartID:"viewthrough",
         dates: Data.DailyStats.dates,
-        columns: [['ViewThrough', ...Data.DailyStats.vtr]],
+        columns: [['View-Through', ...Data.DailyStats.vtr]],
         colors:[GraphPrimary],
-        totalType:"ViewThroughs",
+        totalType:"View-Throughs",
         total:Data.viewThroughs.source,
         rateType:"VTR",
         rate:Data.vtr+"%",
-        formatY:function (d) { return d.toFixed(3)+"%"; }
+        formatY:function (d) { return d.toFixed(2)+"%"; }
       },
       DailyClickThrough:{
         title:"Daily Click Through",
         height:100,
         chartID:"clickthrough",
         dates: Data.DailyStats.dates,
-        columns: [['ClickThrough', ...Data.DailyStats.ctr]],
+        columns: [['Click-Through', ...Data.DailyStats.ctr]],
         colors:[GraphPrimary],
-        totalType:"ClickThroughs",
+        totalType:"Click-Throughs",
         total:Data.clicks,
         rateType:"CTR",
         rate:Data.ctr+"%",
-        formatY:function (d) { return d.toFixed(3)+"%"; }
+        formatY:function (d) { return d.toFixed(2)+"%"; }
       },
       AvgUserCGC:Data.AvgUserCGC,
   };

@@ -21,7 +21,7 @@ ExportReportHeader = class ExportReportHeader extends PageHeaderComponent {
             <div
               className="dropdown-menu dropdown-menu-right"
               aria-labelledby="btnGroupDrop1">
-              <a className="dropdown-item" href="#">
+              <a className="dropdown-item" href={this.props.print} target="_blank">
                 PDF
               </a>
               <a className="dropdown-item" href="#">

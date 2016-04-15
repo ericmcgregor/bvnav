@@ -26,3 +26,17 @@ FlowRouter.route('/print/abr', {
       });
     }
 });
+
+
+FlowRouter.route('/print/consideration', {
+    name:'Print-Consideration',
+    action: function(params, queryParams) {
+      params.active='Advertising'
+      params.current='Advertising-Campaigns'
+      ReactLayout.render(PrintView, {
+        title:"Conversion",
+        pageHeader:<ConversionHeaderPrint  {...params}/>,
+      pageContent:<ConsiderationReport />,
+      });
+    }
+});

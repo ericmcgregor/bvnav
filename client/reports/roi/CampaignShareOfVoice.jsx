@@ -5,7 +5,7 @@ CampaignShareOfVoice = class CampaignShareOfVoice extends React.Component{
     return (
       <div className="card report-card">
         <ReportCardHeader title="Share of Voice" />
-        <GraphPyramid data={{chartID:'shareofvoice'}} shared={"Pageviews"} with={shareOfVoice.viewedAd.percent} without={shareOfVoice.notViewedAd.percent} lift={shareOfVoice.lift} />
+        <GraphPyramid data={{chartID:'shareofvoice'}} shared={"Pageviews"} with={this.props.shareOfVoice.viewedAd.percent} without={this.props.shareOfVoice.notViewedAd.percent} lift={this.props.shareOfVoice.lift} />
 
         <div className="container-fluid">
           <div className="row">

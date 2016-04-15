@@ -6,10 +6,9 @@ ConversionHeaderPrintClass = class ConversionHeaderPrintClass extends PageHeader
     return (
       <div>
         {this.renderForm('Client',this.props.client)}
-        {this.renderForm('Campaign',"Campaign Name")}
-        {this.renderForm('Segment',this.props.name)}
+        {this.renderForm('Campaign',this.props.name)}
         {
-          FlowRouter.current().queryParams.hvt ? this.renderForm('Type',"HVT Conversion") : null
+          //FlowRouter.current().queryParams.hvt ? this.renderForm('Type',"HVT Conversion") : null
         }
         <div hidden>
         {this.renderForm('Status',<div className="btn-group btn-group-sm" role="group">
@@ -54,7 +53,7 @@ ConversionHeaderPrintClass = class ConversionHeaderPrintClass extends PageHeader
     return (
       <div>
       {this.renderForm('Spend',"$"+this.props.totalAdSpend)}
-      {this.renderForm('Flight Dates',this.props.startTime.split("T")[0].substring(5)+"-"+date1.slice(0, 4)+" | "+this.props.endTime.split("T")[0].substring(5)+"-"+date1.slice(0, 4))}
+      {this.renderForm('Flight Dates',this.props.flightdates)}
       </div>
     )
   }
@@ -94,7 +93,17 @@ ConversionHeaderPrint = createContainer(({ params }) => {
     }
   }
 
+  let fakeData = {};
+  if(FlowRouter.current().queryParams.hvt) {
+    fakeData = {
+      "name": "Honda_Find_Dealership_Event_Campaign",
+      "client": 'Honda',
+    }
+  }
+
+
   return {
-    ...Data
+    ...Data,
+    ...fakeData
   }
 }, ConversionHeaderPrintClass);

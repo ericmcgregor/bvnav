@@ -145,7 +145,7 @@
 
 						parent.append('tspan')
 						.attr("text-anchor", "end")
-						.text('Your share of '+sharetext+' as compared to similar products,');
+						.text('Your share of '+sharetext+' across the Bazaarvoice network,');
 
 						parent.append('tspan')
 						.attr("x", w-innerMargin)

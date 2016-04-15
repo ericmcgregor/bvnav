@@ -2,6 +2,7 @@ import React from 'react';
 NonCommercePerformance = class NonCommercePerformance extends React.Component{
   render(){
     return(
+      <div>
       <div className="card report-card">
         <ReportCardHeader title="Campaign Performance" />
           <div className="report-overview-row">
@@ -22,28 +23,39 @@ NonCommercePerformance = class NonCommercePerformance extends React.Component{
 
           <div className="flex flex-row">
             <div>
-              <h3 className="lead">Conversion Event: <strong>Signup Form</strong></h3>
+              <h3 className="lead">Conversion Metric: <strong>Find a Dealership</strong></h3>
             </div>
             <div className="p-x-1">|</div>
             <div>
-              <p className="">Description: "user submits form at http://site.com/submit"</p>
+              <p className="m-b-0">Description: user submits form at http://site.com/submit</p>
             </div>
           </div>
+          <div>
+            <small className="text-muted m-t-1">Conversion metric accounts for both click-through and view-through conversions.</small>
+          </div>
 
+          <div hidden>
+            <div>
+              <h3 className="lead m-b-0">Conversion Event: <strong>Find a Dealership</strong></h3>
+            </div>
+            <div>
+              <p className="m-b-0">Description: "user submits form at http://site.com/submit"</p>
+            </div>
+            <div>
+              <small className="text-muted m-t-1">* A conversion is a completed event after clicking on or viewing an ad impression.</small>
+            </div>
+          </div>
+          <br/>
           <ChartContainer title={"Daily Campaign Conversions"}>
             <GraphSpline data={this.props.DailyCampaignConversions}/>
           </ChartContainer>
 
-          <div>
-            <small className="text-muted m-t-1">* A conversion is a completed event after clicking on or viewing an ad impression.</small>
-          </div>
-
         </div>
 
+      </div>
 
-        <hr />
-
-
+      <div className="card report-card">
+        <ReportCardHeader title="Engagement" />
 
         <div className="card-block">
             <div className="flex flex-row">
@@ -58,7 +70,7 @@ NonCommercePerformance = class NonCommercePerformance extends React.Component{
                   </div>
                 </div>
 
-                <ChartContainer title={"Daily Campaign Clickthroughs"}>
+                <ChartContainer title={"Daily Campaign Click-throughs"}>
                   <GraphSpline data={this.props.DailyClickThrough}/>
                 </ChartContainer>
               </div>
@@ -74,7 +86,7 @@ NonCommercePerformance = class NonCommercePerformance extends React.Component{
                   </div>
                 </div>
 
-                <ChartContainer title={"Daily Campaign Viewthroughs"}>
+                <ChartContainer title={"Daily Campaign View-throughs"}>
                   <GraphSpline ref="graph" data={this.props.DailyViewThrough}/>
                 </ChartContainer>
               </div>
@@ -82,6 +94,7 @@ NonCommercePerformance = class NonCommercePerformance extends React.Component{
           </div>
         </div>
 
+      </div>
       </div>
     )
   }

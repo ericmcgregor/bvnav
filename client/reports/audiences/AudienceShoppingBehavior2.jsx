@@ -3,7 +3,7 @@ AudienceShoppingBehavior2 = class AudienceShoppingBehavior2 extends React.Compon
   render(){
     return(
       <div className="card report-card">
-        <ReportCardHeader title={"Audience Breakdown"} />
+        <ReportCardHeader title={"Audience Snapshot"} />
 
         <div className="card-block">
           <ChartContainer title="Brand: Consideration by Pageviews">
@@ -187,7 +187,7 @@ ReportLocationMap = class ReportLocationMap extends React.Component {
             <thead>
               <tr>
                 <th>City</th>
-                <th className="text-xs-center">Audience Size</th>
+                <th className="text-xs-center">Size</th>
               </tr>
             </thead>
             <tbody>

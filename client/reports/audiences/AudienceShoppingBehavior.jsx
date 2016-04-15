@@ -3,7 +3,7 @@ AudienceShoppingBehavior = class AudienceShoppingBehavior extends React.Componen
   render(){
     return(
       <div className="card report-card">
-        <ReportCardHeader title={"Audience Breakdown: "+this.props.name} />
+        <ReportCardHeader title={"Audience Snapshot: "+this.props.name} />
 
         <div className="card-block">
           <ChartContainer title="Brand: Consideration by Pageviews">

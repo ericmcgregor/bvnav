@@ -10,8 +10,8 @@ CampaignEngagement = class CampaignPerformance extends React.Component{
           <div className="row">
             <div className="col-xl-8 col-lg-8 col-xs-12 col-sm-12  col-md-12">
               <div className="chart-summary-container">
-                <ChartSummaryColumn data={this.props.DailyViewThrough}  title={"Daily Campaign Viewthroughs"} />
-                <ChartSummaryColumn data={this.props.DailyClickThrough} title={"Daily Campaign Clickthroughs"} />
+                <ChartSummaryColumn data={this.props.DailyViewThrough}  title={"Daily Campaign View-throughs"} />
+                <ChartSummaryColumn data={this.props.DailyClickThrough} title={"Daily Campaign Click-throughs"} />
               </div>
             </div>
 

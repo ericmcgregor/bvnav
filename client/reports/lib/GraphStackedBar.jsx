@@ -13,7 +13,7 @@ GraphStackedBar = class GraphStackedBar extends React.Component{
       console.log(this.props.data.columns.considered[0])
       console.log(this.props.data.columns.notConsidered[0])
       if(this.props.data.columns.considered[0] > this.props.data.columns.notConsidered[0]) {
-        order = "asc";
+        order = "desc";
       }
       console.log(order)
       var chart = c3.generate({

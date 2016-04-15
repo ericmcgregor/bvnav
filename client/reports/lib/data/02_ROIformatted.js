@@ -27,7 +27,7 @@ Meteor.startup(function () {
       Session.set('ROIid', 'e0b60b51-a441-400d-baa7-f5404f7e2f09')
     }
     if(FlowRouter.current().queryParams.roi) {
-      Session.set('ROIid', FlowRouter.current().queryParams.roi)
+      Session.setPersistent('ROIid', FlowRouter.current().queryParams.roi)
     }
 
     Tracker.autorun(() => {
@@ -41,9 +41,48 @@ Meteor.startup(function () {
 
 });
 
+fakeTheData = (ROIdata, roas, spend, conversions) => {
+  console.log(ROIdata.onlineSales.competitor);
+  console.log(ROIdata.onlineSales.source);
+
+  let MyOnlineSales = spend*roas;
+
+  let Data = {
+    totalAdSpend:spend,
+    roas:roas,
+    onlineSales:{
+      competitor:(MyOnlineSales)*10.2,
+      source:MyOnlineSales
+    },
+    offlineSales:{
+      competitor:(MyOnlineSales*1.7)*10.2,
+      source:MyOnlineSales*1.7
+    },
+    "ecpm": spend/(ROIdata.impressions/1000),
+    "ecpc": spend/ROIdata.clicks,
+    "vtr": ROIdata.vtr,
+    "ctr": 0.02,
+    "impressions": ROIdata.impressions,
+    "views": {
+      "source": ROIdata.views.source
+    },
+    conversions:conversions,
+    cpc:addCommas( (spend/conversions).toFixed(2) )
+  }
+
+  for (var attrname in Data) {
+    ROIdata[attrname] = Data[attrname];
+  }
+
+  console.log(ROIdata);
+
+  return ROIdata;
+}
 
 formatROIData = (ROIdata) => {
-
+  if(roas) {
+    ROIdata = fakeTheData(ROIdata, roas, spend, conversions);
+  }
   DailyStats = {
     dates:ROIdata.dailyStats.map((item, index)=>{
       let date = item.date.split("T")
@@ -71,6 +110,8 @@ formatROIData = (ROIdata) => {
   let All = (Source + Math.round(ROIdata.shareOfSales.notViewedAd.competitor) )
   let Percent = ((Source/All))
 
+  // Percent = 21.2;
+
   shareOfSales.notViewedAd = {
     source:Source,
     all:All,
@@ -82,6 +123,9 @@ formatROIData = (ROIdata) => {
   All = (Source + Math.round(ROIdata.shareOfSales.viewedAd.competitor) )
   Percent = ((Source/All))
 
+  // Percent = 23.6;
+  Percent = parseFloat(shareOfSales.notViewedAd.percent)+0.2
+
   shareOfSales.viewedAd = {
     source:Source,
     all:All,
@@ -89,6 +133,7 @@ formatROIData = (ROIdata) => {
   }
   shareOfSales.allsales = nFormatter(shareOfSales.viewedAd.all + shareOfSales.notViewedAd.all);
   shareOfSales.lift = ((shareOfSales.viewedAd.percent - shareOfSales.notViewedAd.percent)/shareOfSales.notViewedAd.percent * 100).toFixed(2);
+
 
 
 
@@ -111,6 +156,9 @@ formatROIData = (ROIdata) => {
   All = (Source + Math.round(ROIdata.shareOfVoice.viewedAd.competitor) )
   Percent = ((Source/All))
 
+  Percent = parseFloat(shareOfVoice.notViewedAd.percent)+0.38
+
+
   shareOfVoice.viewedAd = {
     source:Source,
     all:All,
@@ -120,19 +168,32 @@ formatROIData = (ROIdata) => {
   shareOfVoice.lift = ((shareOfVoice.viewedAd.percent - shareOfVoice.notViewedAd.percent)/shareOfVoice.notViewedAd.percent * 100).toFixed(2);
 
 
+  /*
+  remove me
 
+  ROIdata.totalAdSpend = ROIdata.totalAdSpend+100000;
+  console.log(ROIdata)
+  ROIdata.roas = ROIdata.roas+4;
+  shareOfSales.lift = (parseInt(shareOfSales.lift)*0.52).toString();
+  */
+  // ROIdata.totalAdSpend = ROIdata.totalAdSpend+100000;
 
+  let dateformatstart = ROIdata.startTime.split("T")[0].substring(5)+"-"+ROIdata.startTime.slice(0, 4)
+  let dateformatend= ROIdata.endTime.split("T")[0].substring(5)+"-"+ROIdata.endTime.slice(0, 4)
+  console.log()
 
 
   ROIdataFormatted = {
+    ...ROIdata,
     "name": ROIdata.name,
     "campaignIds": ROIdata.campaignIds,
     "client": ROIdata.client,
     "retailer": ROIdata.retailer,
     "categoryId": ROIdata.categoryId,
-    "startTime": "2015-11-25T00:00:00.000Z",
-    "endTime": "2015-12-15T00:00:00.000Z",
-    "totalAdSpend": addCommas(ROIdata.totalAdSpend.toFixed(2)),
+    "startTime": ROIdata.startTime,
+    "endTime": ROIdata.endTime,
+    "flightdates":dateformatstart.split('-').join('.')+' - '+dateformatend.split('-').join('.'),
+    "totalAdSpend": addCommas( ROIdata.totalAdSpend.toFixed(2)),
     "roas": ROIdata.roas.toFixed(2),
     "ecpm": ROIdata.ecpm.toFixed(2),
     "ecpc": ROIdata.ecpc.toFixed(2),

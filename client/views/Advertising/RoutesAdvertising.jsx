@@ -61,7 +61,7 @@ FlowRouter.route('/Advertising/Campaigns', {
               ReactLayout.render(HomeView, {
                 title:"Advertising",
                 titleLink:"/advertising/campaigns/detail",
-                pageHeader:<LineItemDetailHeader2  {...params}/>,
+                pageHeader:<LineItemDetailHeader  {...params}/>,
                 nav:{
                   primary:[
                     {name:"Conversion Report"},
@@ -73,9 +73,9 @@ FlowRouter.route('/Advertising/Campaigns', {
                   ],
                   secondary:[],
                   content:[
-                    <ContentView pageHeader={<ExportReportHeader />} pageContent={FlowRouter.current().queryParams.hvt ? <NonCommerceRoi /> : <ROIreportClass />} />,
-                    <ContentView pageHeader={<ExportReportHeader />} pageContent={<AudienceReportClass />} />,
-                    <ContentView pageHeader={<ExportReportHeader />} pageContent={<ConsiderationReport />} />,
+                    <ContentView pageHeader={<ExportReportHeader print="/print/roi"/>} pageContent={FlowRouter.current().queryParams.hvt ? <NonCommerceRoi /> : <ROIreportClass />} />,
+                    <ContentView pageHeader={<ExportReportHeader print="/print/abr"/>} pageContent={<AudienceReportClass />} />,
+                    <ContentView pageHeader={<ExportReportHeader print="/print/consideration"/>} pageContent={<ConsiderationReport />} />,
                     <ContentView pageHeader={<ExportReportHeader />} pageContent={<CreativesList />} />,
                   ]
                 }

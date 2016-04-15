@@ -1,7 +1,8 @@
 import React from 'react';
 LocationMap = class LocationMap extends React.Component {
   componentDidMount(){
-    var bubbles = this.props.location.map((item, index)=>{
+    // var bubbles = this.props.location.map((item, index)=>{
+    var bubbles = AudienceData.location.map((item, index)=>{
       item.radius = item.size/100;
       item.fillKey = 'BUBBLE';
       return item;

@@ -6001,64 +6001,6 @@ body#print {
 The top of the report that usually contains flight dates,
 title, and other info
 */
-div.page-header {
-  margin-bottom: 3rem;
-  position: relative; }
-  div.page-header .page-header-location {
-    margin-bottom: 1rem;
-    min-height: 44px; }
-  div.page-header .breadcrumb {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1 0 auto;
-        -ms-flex: 1 0 auto;
-            flex: 1 0 auto;
-    background: transparent;
-    padding-left: 0;
-    padding-top: 0;
-    margin: 0; }
-  div.page-header div.page-header-details {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1 0 450px;
-        -ms-flex: 1 0 450px;
-            flex: 1 0 450px;
-    min-width: 450px; }
-  div.page-header .form-group {
-    font-size: 1rem;
-    margin: 0; }
-    div.page-header .form-group label.form-control-label {
-      padding: 0; }
-    div.page-header .form-group p.form-control-static {
-      padding: 0;
-      font-weight: 500; }
-    div.page-header .form-group > div {
-      min-height: 1rem;
-      height: auto; }
-  div.page-header div.page-header-actions {
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 1 25%;
-        -ms-flex: 0 1 25%;
-            flex: 0 1 25%;
-    min-width: 200px;
-    max-width: 25%;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: end;
-    -webkit-justify-content: flex-end;
-        -ms-flex-pack: end;
-            justify-content: flex-end; }
-  div.page-header div.page-header-optional {
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 1 600px;
-        -ms-flex: 0 1 600px;
-            flex: 0 1 600px;
-    max-width: 600px;
-    min-width: 33%; }
-
-.tab-content div.page-header:first-of-type {
-  margin-bottom: 1rem; }
-
 .report-header {
   margin: 0 0 1rem;
   /*maintain auto height inside a flex-column.  do not fill or stretch*/
@@ -6181,6 +6123,64 @@ div.page-header {
       position: relative;
       top: 2px;
       margin-top: 2px; }
+
+div.page-header {
+  margin-bottom: 3rem;
+  position: relative; }
+  div.page-header .page-header-location {
+    margin-bottom: 1rem;
+    min-height: 44px; }
+  div.page-header .breadcrumb {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0 auto;
+        -ms-flex: 1 0 auto;
+            flex: 1 0 auto;
+    background: transparent;
+    padding-left: 0;
+    padding-top: 0;
+    margin: 0; }
+  div.page-header div.page-header-details {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0 450px;
+        -ms-flex: 1 0 450px;
+            flex: 1 0 450px;
+    min-width: 450px; }
+  div.page-header .form-group {
+    font-size: 1rem;
+    margin: 0; }
+    div.page-header .form-group label.form-control-label {
+      padding: 0; }
+    div.page-header .form-group p.form-control-static {
+      padding: 0;
+      font-weight: 500; }
+    div.page-header .form-group > div {
+      min-height: 1rem;
+      height: auto; }
+  div.page-header div.page-header-actions {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 25%;
+        -ms-flex: 0 1 25%;
+            flex: 0 1 25%;
+    min-width: 200px;
+    max-width: 25%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end; }
+  div.page-header div.page-header-optional {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 600px;
+        -ms-flex: 0 1 600px;
+            flex: 0 1 600px;
+    max-width: 600px;
+    min-width: 33%; }
+
+.tab-content div.page-header:first-of-type {
+  margin-bottom: 1rem; }
 
 svg g.c3-axis text {
   fill: #818a91 !important; }
