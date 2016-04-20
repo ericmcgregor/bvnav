@@ -23,6 +23,7 @@ AudienceReport = class AudienceReport extends React.Component{
 
 AudienceReportClass = createContainer(({ params }) => {
   let Data = Session.get('ABRdata');
+  getABRdata(Session.get('ABRid'));
 
   if(!Data) {
     return {

@@ -218,6 +218,20 @@ div.overview-cell {
 
 
   //modifiers
+  &.sm {
+    .block-number {
+      font-size:$fontsize-sm!important;
+    }
+    .block-name {
+    }
+    .block-description {
+      font-size:0.8rem!important;
+    }
+  }
+
+  &.align-top {
+    justify-content: flex-start;
+  }
 
   &.primary {
 

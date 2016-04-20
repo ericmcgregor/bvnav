@@ -6,7 +6,7 @@ AudienceHeaderPrintClass = class AudienceHeaderPrintClass extends PageHeaderComp
     let Data = Session.get('ABRdata')
     return (
       <div>
-        {this.renderForm('Audience',Data.name)}
+        {this.renderForm('Client',"Nike")}
       </div>
     )
   }
@@ -22,19 +22,24 @@ AudienceHeaderPrintClass = class AudienceHeaderPrintClass extends PageHeaderComp
   //       </div>
   //   )
   // }
-  // optional(){
-  //   LineItemData.colors[0] = GraphSecondary;
-  //   return (
-  //     <div hidden>
-  //     {this.renderForm('Spend',"$"+this.props.totalAdSpend)}
-  //     {this.renderForm('Flight Dates',"xx/xx/xx - xx/xx/xx")}
-  //     </div>
-  //   )
-  // }
+  optional(){
+    LineItemData.colors[0] = GraphSecondary;
+    return (
+      <div>
+        {this.renderForm('Date',Session.get('ROIdata').flightdates.substring(0,10))}
+      </div>
+    )
+  }
 
   render(){
     return(
-      <div className="page-header">
+      <div className="page-header m-b-1">
+        <div className="m-b-1">
+          <h3 className="lead">
+            <strong>Audience Snapshot</strong>
+          </h3>
+          <hr/>
+        </div>
         <div className="print-bv-report icon-bv color"></div>
 
         <div className="row">

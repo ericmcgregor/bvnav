@@ -193,7 +193,7 @@ formatROIData = (ROIdata) => {
     "startTime": ROIdata.startTime,
     "endTime": ROIdata.endTime,
     "flightdates":dateformatstart.split('-').join('.')+' - '+dateformatend.split('-').join('.'),
-    "totalAdSpend": addCommas( ROIdata.totalAdSpend.toFixed(2)),
+    "totalAdSpend": addCommas( ROIdata.totalAdSpend.toFixed(0)),
     "roas": ROIdata.roas.toFixed(2),
     "ecpm": ROIdata.ecpm.toFixed(2),
     "ecpc": ROIdata.ecpc.toFixed(2),

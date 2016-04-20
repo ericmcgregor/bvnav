@@ -9,7 +9,7 @@ CampaignPerformance = class CampaignPerformance extends React.Component{
 
         <div className="card-block">
           <ChartContainer title="Daily Conversions">
-            <GraphSpline data={this.props.DailyCampaignROAS}/>
+            <GraphSpline data={this.props.DailyCampaignConversions}/>
           </ChartContainer>
         </div>
 

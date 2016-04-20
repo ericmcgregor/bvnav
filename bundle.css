@@ -6366,6 +6366,15 @@ div.overview-cell {
   div.overview-cell .block-description {
     font-size: 0.8rem;
     margin: 0; }
+  div.overview-cell.sm .block-number {
+    font-size: 1.25rem !important; }
+  div.overview-cell.sm .block-description {
+    font-size: 0.8rem !important; }
+  div.overview-cell.align-top {
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start; }
   div.overview-cell.divider-left {
     border-left: 1px solid #d2d2d2; }
   div.overview-cell.divider-right {

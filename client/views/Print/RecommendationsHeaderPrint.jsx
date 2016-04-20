@@ -1,7 +1,7 @@
 import React from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 
-ConversionHeaderPrintClass = class ConversionHeaderPrintClass extends PageHeaderComponent {
+RecommendationsHeaderPrintClass = class RecommendationsHeaderPrintClass extends PageHeaderComponent {
   details(){
     return (
       <div>
@@ -61,13 +61,7 @@ ConversionHeaderPrintClass = class ConversionHeaderPrintClass extends PageHeader
 
   render(){
     return(
-      <div className="page-header m-b-1">
-        <div className="m-b-1">
-          <h3 className="lead">
-            <strong>Conversion Report</strong>
-          </h3>
-          <hr/>
-        </div>
+      <div className="page-header">
         <div className="print-bv-report icon-bv color"></div>
 
         <div className="row">
@@ -90,7 +84,7 @@ ConversionHeaderPrintClass = class ConversionHeaderPrintClass extends PageHeader
 
 }
 
-ConversionHeaderPrint = createContainer(({ params }) => {
+RecommendationsHeaderPrint = createContainer(({ params }) => {
   let Data = Session.get('ROIdata');
 
   if(!Data) {
@@ -112,4 +106,4 @@ ConversionHeaderPrint = createContainer(({ params }) => {
     ...Data,
     ...fakeData
   }
-}, ConversionHeaderPrintClass);
+}, RecommendationsHeaderPrintClass);

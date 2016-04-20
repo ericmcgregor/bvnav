@@ -32,7 +32,7 @@ FlowRouter.route('/Advertising/Campaigns', {
           ReactLayout.render(HomeView, {
             title:"Advertising",
             titleLink:"/advertising/campaigns",
-            pageHeader:<CampaignDetailHeader {...params}/>,
+            pageHeader:<div><CampaignDetailHeader {...params}/><ROIfrequencyClass  /></div>,
             nav:{
               primary:[
                 {name:"Line Items (10)"},
