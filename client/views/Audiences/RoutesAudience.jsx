@@ -1,4 +1,5 @@
 import React from 'react';
+import {mount} from 'react-mounter';
 FlowRouter.route('/audiences', {
     name:'audiences',
     action: function(params, queryParams) {
@@ -7,7 +8,7 @@ FlowRouter.route('/audiences', {
       params.title="Audiences"
 
 
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Audiences: Contributors",
       })
 
@@ -20,7 +21,7 @@ FlowRouter.route('/audiences/contributors', {
       params.active='Audiences'
       params.current='Audiences-Contributors'
       params.title="Audiences:Contributors"
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Audiences: Contributors",
         nav: {
           primary:[
@@ -43,7 +44,7 @@ FlowRouter.route('/audiences/Manage', {
       params.active='Audiences'
       params.current='Audiences-Manage'
       params.title="Audiences:Manage"
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Audiences: Manage",
       })
     }

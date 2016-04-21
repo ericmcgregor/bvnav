@@ -1,11 +1,12 @@
 import React from 'react';
+import {mount} from 'react-mounter';
 FlowRouter.route('/products', {
     name:'products',
     action: function(params, queryParams) {
       params.active='products'
       params.current='products'
       params.title="Products"
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Products:"
       });
     }
@@ -17,7 +18,7 @@ FlowRouter.route('/products/Families', {
       params.active='products'
       params.current='products-Families'
       params.title="Products:Families"
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Products:Families"
       });
     }
@@ -28,7 +29,7 @@ FlowRouter.route('/products/Migrate', {
       params.active='products'
       params.current='products-Migrate'
       params.title="Products:Migrate"
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Products:Migrate"
       });
     }
@@ -39,7 +40,7 @@ FlowRouter.route('/products/Sets', {
       params.active='products'
       params.current='products-Sets'
       params.title="Products:Sets"
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Products:Sets"
       });
     }
@@ -50,7 +51,7 @@ FlowRouter.route('/products/Reports', {
       params.active='products'
       params.current='products-Reports'
       params.title="Products:Reports"
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Products: Reports",
         nav: {
           primary:[

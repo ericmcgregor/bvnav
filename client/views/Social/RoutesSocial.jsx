@@ -1,11 +1,12 @@
 import React from 'react';
+import {mount} from 'react-mounter';
 FlowRouter.route('/Social', {
     name:'Social',
     action: function(params, queryParams) {
       params.active='Social'
       params.current='Social'
       params.title="Social"
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Social"
       });
     }
@@ -17,7 +18,7 @@ FlowRouter.route('/Social/Dashboard', {
       params.active='Social'
       params.current='Social-Dashboard'
       params.title="Social:Dashboard"
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Social:Dashboard"
       });
     }
@@ -29,7 +30,7 @@ FlowRouter.route('/Social/Content', {
       params.active='Social'
       params.current='Social-Content'
       params.title="Social:Content"
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Social:Content"
       });
     }
@@ -41,7 +42,7 @@ FlowRouter.route('/Social/Search', {
       params.active='Social'
       params.current='Social-Search'
       params.title="Social:Search"
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Social:Search"
       });
     }
@@ -53,7 +54,7 @@ FlowRouter.route('/Social/Groups', {
       params.active='Social'
       params.current='Social-Groups'
       params.title="Social:Groups"
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Social:"
       });
     }
@@ -65,7 +66,7 @@ FlowRouter.route('/Social/Tags', {
       params.active='Social'
       params.current='Social-Tags'
       params.title="Social:Tags"
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Social:Tags"
       });
     }
@@ -77,7 +78,7 @@ FlowRouter.route('/Social/Filters', {
       params.active='Social'
       params.current='Social-Filters'
       params.title="Social:Filters"
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Social:Filters"
       });
     }
@@ -89,7 +90,7 @@ FlowRouter.route('/Social/Rights', {
       params.active='Social'
       params.current='Social-Rights'
       params.title="Social:Rights"
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Social:Rights Management"
       });
     }
@@ -102,7 +103,7 @@ FlowRouter.route('/Social/Reports', {
       params.active='Social'
       params.current='Social-Reports'
       params.title="Social:Reports"
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Social:Reports"
       });
     }

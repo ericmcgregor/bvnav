@@ -1,11 +1,12 @@
 import React from 'react';
+import {mount} from 'react-mounter';
 
 FlowRouter.route('/print/roi', {
     name:'Print-Conversion',
     action: function(params, queryParams) {
       params.active='Advertising'
       params.current='Advertising-Campaigns'
-      ReactLayout.render(PrintView, {
+      mount(PrintView, {
         title:"Conversion",
         pageHeader:<ConversionHeaderPrint  {...params}/>,
         pageContent:FlowRouter.current().queryParams.hvt ? <NonCommerceRoi /> : <ROIreportClass />,
@@ -19,7 +20,7 @@ FlowRouter.route('/print/abr', {
     action: function(params, queryParams) {
       params.active='Advertising'
       params.current='Advertising-Campaigns'
-      ReactLayout.render(PrintView, {
+      mount(PrintView, {
         title:"Conversion",
         pageHeader:<AudienceHeaderPrint  {...params}/>,
         pageContent:<AudienceReportClass />,
@@ -33,7 +34,7 @@ FlowRouter.route('/print/consideration', {
     action: function(params, queryParams) {
       params.active='Advertising'
       params.current='Advertising-Campaigns'
-      ReactLayout.render(PrintView, {
+      mount(PrintView, {
         title:"Conversion",
         pageHeader:<ConsiderationHeaderPrint  {...params}/>,
       pageContent:<ConsiderationReport />,
@@ -47,7 +48,7 @@ FlowRouter.route('/print/recommendations', {
     action: function(params, queryParams) {
       params.active='Advertising'
       params.current='Advertising-Campaigns'
-      ReactLayout.render(PrintView, {
+      mount(PrintView, {
         title:"Conversion",
         pageHeader:<RecommendationsHeaderPrint  {...params}/>,
         pageContent:<RecommendationsReport {...params} />,

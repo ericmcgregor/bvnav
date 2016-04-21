@@ -1,11 +1,12 @@
 import React from 'react';
+import {mount} from 'react-mounter';
 
 FlowRouter.route('/Advertising/Campaigns', {
     name:'Advertising-Campaigns',
     action: function(params, queryParams) {
       params.active='Advertising'
       params.current='Advertising-Campaigns'
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Advertising",
         pageHeader:<CampaignListHeader />,
         nav:{
@@ -29,7 +30,7 @@ FlowRouter.route('/Advertising/Campaigns', {
           params.crumbs=[{name:"Campaigns", link:"/advertising/campaigns"}, {name:"Detail", className:"active"}]
           params.active='Advertising'
           params.current='Advertising-Campaigns'
-          ReactLayout.render(HomeView, {
+          mount(HomeView, {
             title:"Advertising",
             titleLink:"/advertising/campaigns",
             pageHeader:<div><CampaignDetailHeader {...params}/><ROIfrequencyClass  /></div>,
@@ -58,7 +59,7 @@ FlowRouter.route('/Advertising/Campaigns', {
                               {name:"Line-Item", className:"active"}
                             ]
 
-              ReactLayout.render(HomeView, {
+              mount(HomeView, {
                 title:"Advertising",
                 titleLink:"/advertising/campaigns/detail",
                 pageHeader:<LineItemDetailHeader  {...params}/>,
@@ -91,7 +92,7 @@ FlowRouter.route('/advertising/Advertisers', {
     action: function(params, queryParams) {
       params.active='Advertising'
       params.current='Advertising-Advertisers'
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Advertising:Advertisers",
       });
     }
@@ -103,7 +104,7 @@ FlowRouter.route('/advertising/Creatives', {
     action: function(params, queryParams) {
       params.active='Advertising'
       params.current='Advertising-Creatives'
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Advertising:Creatives",
          pageHeader:<CreativesHeader />,
         pageContent:<CreativesList />,

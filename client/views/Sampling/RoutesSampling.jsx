@@ -1,11 +1,12 @@
 import React from 'react';
+import {mount} from 'react-mounter';
 FlowRouter.route('/Sampling', {
     name:'Sampling',
     action: function(params, queryParams) {
       params.active='Sampling'
       params.current='Sampling'
       params.title="Sampling"
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Sampling"
       });
     }
@@ -17,7 +18,7 @@ FlowRouter.route('/Sampling/Campaigns', {
       params.active='Sampling'
       params.current='Sampling-Campaigns'
       params.title="Sampling:Campaigns"
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Sampling: Campaigns",
         nav: {
           primary:[
@@ -39,7 +40,7 @@ FlowRouter.route('/Sampling/Templates', {
       params.active='Sampling'
       params.current='Sampling-Templates'
       params.title="Sampling:Templates"
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Sampling:Templates"
       });
     }
@@ -52,7 +53,7 @@ FlowRouter.route('/Sampling/Members', {
       params.active='Sampling'
       params.current='Sampling-Members'
       params.title="Sampling:Members"
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Sampling: Members",
         nav: {
           primary:[
@@ -76,7 +77,7 @@ FlowRouter.route('/Sampling/Products', {
       params.active='Sampling'
       params.current='Sampling-Products'
       params.title="Sampling:Products"
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Sampling:Products"
       });
     }
@@ -89,7 +90,7 @@ FlowRouter.route('/Sampling/Vendors', {
       params.active='Sampling'
       params.current='Sampling-Vendors'
       params.title="Sampling:Vendors"
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Sampling: Vendors",
         nav: {
           primary:[

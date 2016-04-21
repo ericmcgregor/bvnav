@@ -1,11 +1,12 @@
 import React from 'react';
+import {mount} from 'react-mounter';
 
 FlowRouter.route('/Reviews/Dashboard', {
     name:'Reviews-Dashboard',
     action: function(params, queryParams) {
       params.active='Reviews'
       params.current='Reviews-Dashboard'
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Reviews: Manage Reviews",
         nav: {
           primary:[
@@ -22,7 +23,7 @@ FlowRouter.route('/Reviews/Collect', {
     action: function(params, queryParams) {
       params.active='Reviews'
       params.current='Reviews-Collect'
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Reviews: Collect"
       });
     }
@@ -32,7 +33,7 @@ FlowRouter.route('/Reviews/manage', {
     action: function(params, queryParams) {
       params.active='Reviews'
       params.current='Reviews-Manage'
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Reviews: Manage",
         nav: {
           primary:[
@@ -54,7 +55,7 @@ FlowRouter.route('/Reviews/manage', {
         params.active='Reviews'
         params.current='Reviews-Manage'
 
-        ReactLayout.render(HomeView, {
+        mount(HomeView, {
           title:"Reviews: Manage: Deteail",
           titleLink:"/Reviews/manage",
           pageHeader:<ReviewDetailHeader />,
@@ -80,7 +81,7 @@ FlowRouter.route('/Reviews/Configure', {
       params.active='Reviews'
       params.current='Reviews-Configure'
 
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Reviews: Configure",
         pageContent:<RRConfigureContent />,
         pageHeader:<RRConfigureHeader />
@@ -93,7 +94,7 @@ FlowRouter.route('/Reviews/Syndicate', {
       params.active='Reviews'
       params.current='Reviews-Syndicate'
 
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Reviews: Syndicate",
         pageContent:<div></div>,
         pageHeader:<div></div>
@@ -105,7 +106,7 @@ FlowRouter.route('/Reviews/Alerts', {
     action: function(params, queryParams) {
       params.active='Reviews'
       params.current='Reviews-Alerts'
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Reviews: Alerts",
         nav: {
           primary:[
@@ -126,7 +127,7 @@ FlowRouter.route('/Reviews/Reports', {
     action: function(params, queryParams) {
       params.active='Reviews'
       params.current='Reviews-Reports'
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Reviews: Reports",
         nav: {
           primary:[

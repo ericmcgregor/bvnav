@@ -1,3 +1,5 @@
+import React from 'react';
+import {mount} from 'react-mounter';
 
 FlowRouter.triggers.enter([(context)=>{
   $(()=>{
@@ -11,14 +13,14 @@ FlowRouter.route('/', {
     action: function(params, queryParams) {
       params.active='home'
       params.current='home'
-      ReactLayout.render(HomeView);
+      mount(HomeView);
     }
 });
 
 FlowRouter.route('/all', {
     name:'all',
     action: function(params, queryParams) {
-      ReactLayout.render(HomeView);
+      mount(HomeView);
     }
 });
 
@@ -29,6 +31,6 @@ FlowRouter.route('/products', {
     action: function(params, queryParams) {
       params.active='products'
       params.current='products'
-      ReactLayout.render(HomeView);
+      mount(HomeView);
     }
 });

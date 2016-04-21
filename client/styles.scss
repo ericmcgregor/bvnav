@@ -1,5 +1,5 @@
-@import "bvbootstrap/_variables";
-@import "bvbootstrap/_fonts";
+@import "{}/node_modules/bvbootstrap/_variables";
+@import "{}/node_modules/bvbootstrap/_fonts";
 // @import "{ericmcgregor:bvstrap}/bvbootstrap/_layout";
 @import "styles/_Layout.scss";
 
@@ -9,12 +9,18 @@ $font-size-lg:               1.1rem;
 $font-size-sm:               .8rem;
 $font-size-xs:               .75rem;
 
-@import "bootstrap/scss/bootstrap";
+@import '{}/node_modules/bootstrap/scss/bootstrap.scss';
 
-@import "bvbootstrap/_custom-styles.scss";
+@import "{}/node_modules/bvbootstrap/_custom-styles.scss";
 
 
-
+@font-face {
+  font-family: 'bvglyphsMedium';
+  src: url('/fonts/bvglyphs-webfont.eot');
+  src: url('/fonts/bvglyphs-webfont.svg#bvglyphsMedium') format('svg'), url('/fonts/bvglyphs-webfont.eot?#iefix') format('embedded-opentype'), url('/fonts/bvglyphs-webfont.woff') format('woff'), url('/fonts/bvglyphs-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 
 

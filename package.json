@@ -2,35 +2,25 @@
   "name": "nav",
   "private": true,
   "scripts": {
-    "start": "npm-run-all build:* --parallel watch:* meteor",
-    "meteor": "meteor run",
-    "meteor:build": "meteor build .",
-    "test": "meteor test-app --driver-package practicalmeteor:mocha",
-    "build:css": "node-sass --include-path node_modules client/styles.scss | postcss --local-plugins --use autoprefixer --output bundle.css",
-    "watch:css": "nodemon -e scss -x npm run build:css",
-    "deploy": "npm-run-all build:* meteor:build"
+    "start": "meteor run"
   },
   "dependencies": {
     "meteor-node-stubs": "^0.2.1",
     "bootstrap": "^4.0.0-alpha.2",
     "bvbootstrap": "git+ssh://git@github.com/bazaarvoice/bvbootstrap.git#v4",
-    "react": "^0.14.8",
-    "react-addons-create-fragment": "^0.14.8",
-    "react-addons-css-transition-group": "^0.14.8",
-    "react-addons-linked-state-mixin": "^0.14.8",
-    "react-addons-perf": "^0.14.8",
-    "react-addons-pure-render-mixin": "^0.14.8",
-    "react-addons-test-utils": "^0.14.8",
-    "react-addons-transition-group": "^0.14.8",
-    "react-addons-update": "^0.14.8",
-    "react-dom": "^0.14.8",
+    "react": "^15.0.1",
+    "react-addons-create-fragment": "^15.0.1",
+    "react-addons-css-transition-group": "^15.0.1",
+    "react-addons-linked-state-mixin": "^15.0.1",
+    "react-addons-perf": "^15.0.1",
+    "react-addons-pure-render-mixin": "^15.0.1",
+    "react-addons-test-utils": "^15.0.1",
+    "react-addons-transition-group": "^15.0.1",
+    "react-addons-update": "^15.0.1",
+    "react-dom": "^15.0.1",
+    "react-mounter": "^1.2.0",
     "tether": "^1.2.0"
   },
   "devDependencies": {
-    "node-sass": "^3.4.2",
-    "nodemon": "^1.9.1",
-    "autoprefixer": "^6.3.5",
-    "npm-run-all": "^1.7.0",
-    "postcss-cli": "^2.5.1"
   }
 }

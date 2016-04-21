@@ -1,10 +1,12 @@
+import React from 'react';
+import {mount} from 'react-mounter';
 FlowRouter.route('/account', {
     name:'account',
     action: function(params, queryParams) {
       params.active='account'
       params.current='account'
       params.title="Account"
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Account:"
       });
     }
@@ -16,7 +18,7 @@ FlowRouter.route('/account/billing', {
       params.active='account'
       params.current='account-billing'
       params.title="Account:billing"
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Account:Billing"
       });
     }
@@ -27,7 +29,7 @@ FlowRouter.route('/account/configure', {
       params.active='account'
       params.current='account-configure'
       params.title="Account:configure"
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Account:Configure"
       });
     }
@@ -38,7 +40,7 @@ FlowRouter.route('/account/profile', {
       params.active='account'
       params.current='account-profile'
       params.title="Account:profile"
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
       title:"Account:Profile"
     });
     }
@@ -49,7 +51,7 @@ FlowRouter.route('/account/roles', {
       params.active='account'
       params.current='account-roles'
       params.title="Account:roles"
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Account:Roles"
       });
     }
@@ -60,7 +62,7 @@ FlowRouter.route('/account/users', {
       params.active='account'
       params.current='account-users'
       params.title="Account:users"
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Account:Users"
       });
     }
@@ -71,7 +73,7 @@ FlowRouter.route('/account/validate', {
       params.active='account'
       params.current='account-validate'
       params.title="Account:validate"
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Account:Validate"
       });
     }

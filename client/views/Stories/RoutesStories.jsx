@@ -1,11 +1,12 @@
 import React from 'react';
+import {mount} from 'react-mounter';
 FlowRouter.route('/Stories', {
     name:'Stories',
     action: function(params, queryParams) {
       params.active='Stories'
       params.current='Stories'
       params.title="Stories"
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Stories:"
       });
     }
@@ -17,7 +18,7 @@ FlowRouter.route('/Stories/Dashboard', {
       params.active='Stories'
       params.current='Stories-Dashboard'
       params.title="Stories:Dashboard"
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Stories:Dashboard"
       });
     }
@@ -30,7 +31,7 @@ FlowRouter.route('/Stories/Manage', {
       params.active='Stories'
       params.current='Stories-Manage'
       params.title="Stories:Manage"
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Stories:Manage"
       });
     }
@@ -43,7 +44,7 @@ FlowRouter.route('/Stories/Reports', {
       params.active='Stories'
       params.current='Stories-Reports'
       params.title="Stories:Reports"
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Stories:Reports",
         nav: {
           primary:[

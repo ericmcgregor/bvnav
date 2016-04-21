@@ -1,11 +1,12 @@
 import React from 'react';
+import {mount} from 'react-mounter';
 FlowRouter.route('/questions', {
     name:'Questions',
     action: function(params, queryParams) {
       params.active='Questions'
       params.current='Questions'
       params.title="Questions"
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Questions:"
       });
     }
@@ -18,7 +19,7 @@ FlowRouter.route('/questions/Dashboard', {
       params.current='Questions-Dashboard'
       params.title="Questions:Dashboard"
 
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Questions:Dashboard"
       });
     }
@@ -30,7 +31,7 @@ FlowRouter.route('/questions/Manage', {
       params.active='Questions'
       params.current='Questions-Manage'
       params.title="Questions:Manage"
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Questions:Manage",
         nav: {
           primary:[
@@ -51,7 +52,7 @@ FlowRouter.route('/questions/Configure', {
       params.active='Questions'
       params.current='Questions-Configure'
       params.title="Questions:Configure"
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Questions:Configure",
         nav: {
           primary:[
@@ -71,7 +72,7 @@ FlowRouter.route('/questions/Reports', {
       params.active='Questions'
       params.current='Questions-Reports'
       params.title="Questions:Reports"
-      ReactLayout.render(HomeView, {
+      mount(HomeView, {
         title:"Questions:Reports",
         nav: {
           primary:[
