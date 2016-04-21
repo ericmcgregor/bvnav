@@ -4,7 +4,14 @@ AudienceShoppingBehavior2 = class AudienceShoppingBehavior2 extends React.Compon
     return(
       <div className="card report-card">
         <ReportCardHeader title={"Shopper Insights"} />
-          <div className="card-block">
+
+          <div  className="card-block">
+            <ChartContainer title="Brand: Consideration by Pageviews">
+              <GraphStackedBar data={this.props.brandConsiderationData}/>
+            </ChartContainer>
+          </div>
+
+          <div hidden className="card-block">
             <div className="row align-center">
               <div className="col-xs-8">
                 <ChartContainer title="Brand: Consideration by Pageviews">
@@ -36,11 +43,7 @@ AudienceShoppingBehavior2 = class AudienceShoppingBehavior2 extends React.Compon
             </div>
 
           </div>
-        <div hidden className="card-block">
-          <ChartContainer title="Brand: Consideration by Pageviews">
-            <GraphStackedBar data={this.props.brandConsiderationData}/>
-          </ChartContainer>
-        </div>
+
 
 
           <hr/>

@@ -5,31 +5,7 @@ RecommendationsHeaderPrintClass = class RecommendationsHeaderPrintClass extends 
   details(){
     return (
       <div>
-        {this.renderForm('Client',this.props.client)}
-        {this.renderForm('Campaign',this.props.name)}
-        {
-          //FlowRouter.current().queryParams.hvt ? this.renderForm('Type',"HVT Conversion") : null
-        }
-        <div hidden>
-        {this.renderForm('Status',<div className="btn-group btn-group-sm" role="group">
-                          <button
-                            id="btnGroupDrop1"
-                            type="button"
-                            className="btn btn-secondary dropdown-toggle"
-                            data-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false">
-                            Active
-                          </button>
-                          <div
-                            className="dropdown-menu dropdown-menu-right"
-                            aria-labelledby="btnGroupDrop1">
-                            <a className="dropdown-item" href="#">
-                              Complete
-                            </a>
-                          </div>
-                        </div>)}
-          </div>
+        {this.renderForm('Client',"QVC")}
       </div>
     )
   }
@@ -52,8 +28,6 @@ RecommendationsHeaderPrintClass = class RecommendationsHeaderPrintClass extends 
     console.log(date1.slice(0, 4))
     return (
       <div>
-      {this.renderForm('Spend',"$"+this.props.totalAdSpend)}
-      {this.renderForm('Flight Dates',this.props.flightdates)}
       </div>
     )
   }
@@ -61,7 +35,13 @@ RecommendationsHeaderPrintClass = class RecommendationsHeaderPrintClass extends 
 
   render(){
     return(
-      <div className="page-header">
+      <div className="page-header m-b-1">
+        <div className="m-b-1">
+          <h3 className="lead">
+            <strong>Recommendations Report</strong>
+          </h3>
+          <hr/>
+        </div>
         <div className="print-bv-report icon-bv color"></div>
 
         <div className="row">

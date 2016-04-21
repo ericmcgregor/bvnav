@@ -1,0 +1,164 @@
+{
+  "startDate": "4/18/16",
+  "endDate":"4/20/16",
+  "rendered" :1430692,
+  "impressions":206717,
+  "nonclick":35067,
+  "clicks":28430,
+  "orders":{
+    "viewthrough":278,
+    "clickthrough":271,
+  },
+  "totalOrders":278,
+  "avgOrder" :92.5,
+  "totalSales":25734,
+  "strategies":{
+      "vab":{
+        "orders": 184,
+        "orderAmount":15298.36
+      },
+      "vav" :{
+        "orders": 27,
+        "orderAmount":4062.68
+		},
+      "interests":{
+        "orders": 34,
+        "orderAmount": 2846
+		},
+      "clients":{
+        "orders": 33,
+        "orderAmount":3258
+	}
+  },
+  "products":[
+    {
+      "category":"Fashion",
+      "name":"Marc Fisher Suede Lace-up Block Heel Sandals - Paradox",
+      "orders":10
+    },
+    {
+      "category":"For the home",
+      "name":"Bernini Dancing Waters Rechargeable Fountain",
+      "orders":8
+    },
+    {
+      "category":"For the home",
+      "name":"Plow & Hearth Oversized Four Tiered Double Sided Garden Spinner",
+      "orders":6
+    },
+    {
+      "category":"Fashion",
+      "name":"Isaac Mizrahi Live! Regular 24/7 Stretch Ankle Pants w/ Seam",
+      "orders":4
+    },
+    {
+      "category":"N/A",
+      "name":"Isaac Mizrahi Live! 3/4 Sleeve Mixed Lace Tunic",
+      "orders":4
+    }
+  ],
+  "dailyStats" : [
+    {
+      "date":"4/18/16",
+	 "rendered" :410000,
+	  "impressions":60000,
+	  "nonclick":65000,
+	  "clicks":9200,
+	  "orders":{
+	    "viewthrough":77,
+	    "clickthrough":77,
+	  },
+	  "totalOrders":77,
+	  "avgOrder" :68.2,
+	  "totalSales":5252,
+	  "strategies":{
+	      "vab":{
+	        "orders": 54,
+	        "orderAmount":3738.36
+	      },
+	      "vav" :{
+	        "orders": 8,
+	        "orderAmount":464.68
+			},
+				      "clients":{
+	        "orders": 8,
+	        "orderAmount":647
+		   },
+	      "interests":{
+	        "orders": 7,
+	        "orderAmount": 403
+		}
+
+	  }
+    },
+	 {
+      "date":"4/19/16",
+	 "rendered" :583000,
+	  "impressions":85000,
+	  "nonclick":19000,
+	  "clicks":12000,
+	  "orders":{
+	    "viewthrough":112,
+	    "clickthrough":108,
+	  },
+	  "totalOrders":112,
+	  "avgOrder" :88.7,
+	  "totalSales":9936,
+	  "strategies":{
+	      "vab":{
+	        "orders": 67,
+	        "orderAmount": 5678
+	      },
+	      "vav" :{
+	        "orders": 11,
+	        "orderAmount":1155
+			},
+		"clients":{
+	        "orders": 15,
+	        "orderAmount": 1509
+		   },
+	      "interests":{
+	        "orders": 19,
+	        "orderAmount": 1594
+		}
+
+	  }
+    },
+
+        {
+      "date":"4/20/16",
+	 "rendered" :502000,
+	  "impressions":70759,
+	  "nonclick":10871,
+	  "clicks":8580,
+	  "orders":{
+	    "viewthrough":92,
+	    "clickthrough":86,
+	  },
+	  "totalOrders":92,
+	  "avgOrder" :114.6,
+	  "totalSales":10546,
+	  "strategies":{
+	      "vab":{
+	        "orders": 63,
+	        "orderAmount":3738.36
+	      },
+	      "vav" :{
+	        "orders": 8,
+	        "orderAmount":464.68
+			},
+				      "clients":{
+	        "orders": 10,
+	        "orderAmount":647
+		   },
+	      "interests":{
+	        "orders": 11,
+	        "orderAmount": 403
+		}
+
+	  }
+    },
+
+
+  ]
+}

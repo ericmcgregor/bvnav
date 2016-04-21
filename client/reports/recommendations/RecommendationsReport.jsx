@@ -3,6 +3,7 @@ import { createContainer } from 'meteor/react-meteor-data';
 
 RecommendationsReportClass = class RecommendationsReportClass extends React.Component{
     render() {
+      console.log(this.props)
       return (
         <div>
           <div className="card report-card">
@@ -10,11 +11,19 @@ RecommendationsReportClass = class RecommendationsReportClass extends React.Comp
 
             <ReportOverviewRow data={this.props.performanceOverview} />
 
+
             <div className="card-block">
-              <ChartContainer title="Daily Conversions">
-                <GraphSpline data={this.props.DailyCampaignROAS}/>
+              <ChartContainer title="Daily Impressions">
+                <GraphSpline data={this.props.DailyCampaignImpressions}/>
               </ChartContainer>
             </div>
+
+            <div className="card-block">
+              <ChartContainer title="Daily Orders">
+                <GraphSpline data={this.props.DailyCampaignOrders}/>
+              </ChartContainer>
+            </div>
+
 
           </div>
 
@@ -25,35 +34,20 @@ RecommendationsReportClass = class RecommendationsReportClass extends React.Comp
                   <tr>
                     <th>Category</th>
                     <th>Product</th>
-                    <th>Rating</th>
                     <th>Units Sold</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th>Apparel & Accessories</th>
-                    <td>The Foundry Supply Co.™ Long-Sleeve Flannel Shirt-Big & Tall</td>
-                    <td><i className="text-warning fa fa-star"></i><i className="text-warning fa fa-star"></i><i className="text-warning fa fa-star"></i><i className="text-warning fa fa-star"></i></td>
-                    <td>210</td>
-                  </tr>
-                  <tr>
-                    <th>Electronics</th>
-                    <td>Samsung - Galaxy S6 with 32GB Memory Cell Phone</td>
-                    <td><i className="text-warning fa fa-star"></i><i className="text-warning fa fa-star"></i><i className="text-warning fa fa-star"></i><i className="text-warning fa fa-star"></i></td>
-                    <td>110</td>
-                  </tr>
-                  <tr>
-                    <th>Home & Garden</th>
-                    <td>Lysol Power and Free Multi-Purpose Citrus Sparkle Cleaner - 32 oz</td>
-                    <td><i className="text-warning fa fa-star"></i><i className="text-warning fa fa-star"></i><i className="text-warning fa fa-star"></i><i className="text-warning fa fa-star"></i></td>
-                    <td>90</td>
-                  </tr>
-                  <tr>
-                    <th>Media</th>
-                    <td>Star Wars: The Force Awakens (Blu-ray/DVD/Digital HD)</td>
-                    <td><i className="text-warning fa fa-star"></i><i className="text-warning fa fa-star"></i><i className="text-warning fa fa-star"></i><i className="text-warning fa fa-star"></i></td>
-                    <td>70</td>
-                  </tr>
+                  {this.props.products.map((item, i)=>{
+                    return(
+                    <tr key={i}>
+                      <td>{item.category}</td>
+                      <td>{item.name}</td>
+                      <td>{item.orders}</td>
+                    </tr>
+                    )
+                  })}
+
                 </tbody>
               </table>
 
@@ -61,17 +55,41 @@ RecommendationsReportClass = class RecommendationsReportClass extends React.Comp
 
 
           <div className="card report-card">
-                  <ReportCardHeader title="BV Customer Insights" />
+                  <ReportCardHeader title="Recommendation Strategies from BV Customer Insights" />
 
-                  <div className="card-block">
+                    <table className="table table-bordered m-b-0">
+                      <thead>
+                        <tr>
+                          <th>Type</th>
+                          <th>Orders</th>
+                          <th>Sales</th>
+                        </tr>
+                      </thead>
+                      <tbody className="last-sm">
+                        {
+                          Object.keys(this.props.strategies).map((key, i)=>{
+                            let strategy = this.props.strategies[key];
+                            return (
+                              <tr key={i}>
+                                <td>{strategy.label}</td>
+                                <td>{strategy.orders}</td>
+                                <td>${addCommas(strategy.orderAmount)}</td>
+                              </tr>
+                            )
+                          })
+                        }
+                      </tbody>
+                    </table>
+
+                  <div hidden className="card-block">
                     <div className="row">
-                      <div className="col-xs-4 align-last text-xs-center p-t-3">
+                      <div hidden className="col-xs-4 align-last text-xs-center p-t-3">
                         <h4 className="lead">BV saw:</h4>
                         <h4>5M [yoursite] visitors</h4>
                         <p>before they arrived at your site on our network</p>
                       </div>
 
-                      <div className="col-xs-4">
+                      <div className="col-xs-12">
                         <ChartContainer title="Top Performing types of recommendations:">
                           <table className="table table-bordered">
                             <thead>
@@ -99,7 +117,7 @@ RecommendationsReportClass = class RecommendationsReportClass extends React.Comp
 
                         </div>
 
-                        <div className="col-xs-4">
+                        <div hidden className="col-xs-4">
 
 
                         <ChartContainer title="Interests of users who converted on Recommendations:">
@@ -153,69 +171,232 @@ RecommendationsReport = createContainer(({ params }) => {
   //   Data.roas = 4.32;
   // }
 
+
+  Data = {
+    "startDate": "4/18/16",
+    "endDate":"4/20/16",
+    "rendered" :1430692,
+    "impressions":206717,
+    "nonclick":35067,
+    "clicks":28430,
+    "orders":{
+      "viewthrough":278,
+      "clickthrough":271,
+    },
+    "totalOrders":278,
+    "avgOrder" :92.5,
+    "totalSales":25734,
+    "strategies":{
+        "vab":{
+          "label":"Viewed also Bought",
+          "orders": 184,
+          "orderAmount":15298.36
+        },
+        "vav" :{
+          "label":"Viewed also Viewed",
+          "orders": 27,
+          "orderAmount":4062.68
+  		},
+        "interests":{
+          "label":"BV Network Intersts",
+          "orders": 34,
+          "orderAmount": 2846
+  		},
+        "clients":{
+          "label":"BV Network Clients",
+          "orders": 33,
+          "orderAmount":3258
+  	}
+    },
+    "products":[
+      {
+        "category":"Fashion",
+        "name":"Marc Fisher Suede Lace-up Block Heel Sandals - Paradox",
+        "orders":10
+      },
+      {
+        "category":"For the home",
+        "name":"Bernini Dancing Waters Rechargeable Fountain",
+        "orders":8
+      },
+      {
+        "category":"For the home",
+        "name":"Plow & Hearth Oversized Four Tiered Double Sided Garden Spinner",
+        "orders":6
+      },
+      {
+        "category":"Fashion",
+        "name":"Isaac Mizrahi Live! Regular 24/7 Stretch Ankle Pants w/ Seam",
+        "orders":4
+      },
+      {
+        "category":"N/A",
+        "name":"Isaac Mizrahi Live! 3/4 Sleeve Mixed Lace Tunic",
+        "orders":4
+      }
+    ],
+    "dailyStats" : [
+      {
+        "date":"2016-4-18",
+  	 "rendered" :410000,
+  	  "impressions":60000,
+  	  "nonclick":65000,
+  	  "clicks":9200,
+  	  "orders":{
+  	    "viewthrough":77,
+  	    "clickthrough":77,
+  	  },
+  	  "totalOrders":77,
+  	  "avgOrder" :68.2,
+  	  "totalSales":5252,
+  	  "strategies":{
+  	      "vab":{
+  	        "orders": 54,
+  	        "orderAmount":3738.36
+  	      },
+  	      "vav" :{
+  	        "orders": 8,
+  	        "orderAmount":464.68
+  			},
+  				      "clients":{
+  	        "orders": 8,
+  	        "orderAmount":647
+  		   },
+  	      "interests":{
+  	        "orders": 7,
+  	        "orderAmount": 403
+  		}
+
+  	  }
+      },
+  	 {
+        "date":"2016-4-19",
+  	 "rendered" :583000,
+  	  "impressions":85000,
+  	  "nonclick":19000,
+  	  "clicks":12000,
+  	  "orders":{
+  	    "viewthrough":112,
+  	    "clickthrough":108,
+  	  },
+  	  "totalOrders":112,
+  	  "avgOrder" :88.7,
+  	  "totalSales":9936,
+  	  "strategies":{
+  	      "vab":{
+  	        "orders": 67,
+  	        "orderAmount": 5678
+  	      },
+  	      "vav" :{
+  	        "orders": 11,
+  	        "orderAmount":1155
+  			},
+  		"clients":{
+  	        "orders": 15,
+  	        "orderAmount": 1509
+  		   },
+  	      "interests":{
+  	        "orders": 19,
+  	        "orderAmount": 1594
+  		}
+
+  	  }
+      },
+
+          {
+        "date":"2016-4-20",
+  	 "rendered" :502000,
+  	  "impressions":70759,
+  	  "nonclick":10871,
+  	  "clicks":8580,
+  	  "orders":{
+  	    "viewthrough":92,
+  	    "clickthrough":86,
+  	  },
+  	  "totalOrders":92,
+  	  "avgOrder" :114.6,
+  	  "totalSales":10546,
+  	  "strategies":{
+  	      "vab":{
+  	        "orders": 63,
+  	        "orderAmount":3738.36
+  	      },
+  	      "vav" :{
+  	        "orders": 8,
+  	        "orderAmount":464.68
+  			},
+  				      "clients":{
+  	        "orders": 10,
+  	        "orderAmount":647
+  		   },
+  	      "interests":{
+  	        "orders": 11,
+  	        "orderAmount": 403
+  		}
+
+  	  }
+      },
+
+
+    ]
+  }
+  let dailydates = Data.dailyStats.map((item)=>{return item.date});
+  let dailyorders = Data.dailyStats.map((item)=>{return item.totalOrders})
+  let dailyimpressions = Data.dailyStats.map((item)=>{return item.impressions})
   return {
     params,
     ...Data,
-    DailyCampaignROAS:{
-        title:"Daily Campaign ROAS",
-        height:100,
-        chartID:"roas",
-        dates: Data.DailyStats.dates,
-        columns: [['ROAS', ...Data.DailyStats.conversions]],
-        colors:[GraphPrimary],
-        formatY:function (d) { return d.toFixed(0); }
-      },
+    // DailyCampaignROAS:{
+    //     title:"Daily Campaign ROAS",
+    //     height:100,
+    //     chartID:"roas",
+    //     dates: Data.DailyStats.dates,
+    //     columns: [['ROAS', ...Data.DailyStats.conversions]],
+    //     colors:[GraphPrimary],
+    //     formatY:function (d) { return d.toFixed(0); }
+    //   },
+
+      DailyCampaignOrders:{
+          title:"Daily Campaign Orders",
+          height:100,
+          chartID:"orders",
+          dates: dailydates,
+          columns: [['ROAS', ...dailyorders]],
+          colors:[GraphPrimary],
+          formatY:function (d) { return addCommas(d.toFixed(0)); }
+        },
+        DailyCampaignImpressions:{
+            title:"Daily Campaign impressions",
+            height:100,
+            chartID:"impressions",
+            dates: dailydates,
+            columns: [['ROAS', ...dailyimpressions]],
+            colors:[GraphPrimary],
+            formatY:function (d) { return addCommas(d.toFixed(0)); }
+          },
+    // performanceOverview:[
+    //   {name:'Carousel Impressions', num:Data.impressions,                 className:"sm secondary"},
+    //   {name:'Engagement Non CT Events', num:Data.views.source,            className:"sm secondary"},
+    //   {name:'Click-Throughs', num:Data.clicks,                            className:"sm align-top secondary  divider-right"},
+    //   {name:'Click-Through Conversions', num:"$"+Data.ecpm,               className:"sm secondary"},
+    //   {name:'View-Through Conversions', num:"$"+Data.ecpc,                className:"sm secondary"},
+    //   {name:'Orders', num:"$"+Data.ecpc,                                  className:"sm align-top primary"},
+    //   {name:'Avg Order', num:"$"+Data.ecpc,                               className:"sm align-top primary"},
+    //   {name:'Recommendation Sales', num:"$"+Data.ecpc,                    className:"sm primary"},
+    //   // {name:'Spend', num:"$"+ROIdata.totalAdSpend,                  className:"primary"},
+    // ],
     performanceOverview:[
-      {name:'Carousel Impressions', num:Data.impressions,                 className:"sm secondary"},
-      {name:'Engagement Non CT Events', num:Data.views.source,            className:"sm secondary"},
-      {name:'Click-Throughs', num:Data.clicks,                            className:"sm align-top secondary  divider-right"},
-      {name:'Click-Through Conversions', num:"$"+Data.ecpm,               className:"sm secondary"},
-      {name:'View-Through Conversions', num:"$"+Data.ecpc,                className:"sm secondary"},
-      {name:'Orders', num:"$"+Data.ecpc,                                  className:"sm align-top primary"},
-      {name:'Avg Order', num:"$"+Data.ecpc,                               className:"sm align-top primary"},
-      {name:'Recommendation Sales', num:"$"+Data.ecpc,                    className:"sm primary"},
+      {name:'Carousel Impressions', num:addCommas(Data.impressions),                 className:"sm secondary"},
+      {name:'Engagement Non CT Events', num:addCommas(Data.nonclick),            className:"sm secondary"},
+      {name:'Click-Throughs', num:addCommas(Data.clicks),                            className:"sm align-top secondary  divider-right"},
+      {name:'Click-Through Conversions', num:Data.orders.clickthrough,               className:"sm secondary"},
+      // {name:'View-Through Conversions', num:Data.orders.viewthrough,                className:"sm secondary"},
+      {name:'Orders', num:Data.totalOrders,                                  className:"sm align-top primary"},
+      {name:'Avg Order', num:"$"+Data.avgOrder,                               className:"sm align-top primary"},
+      {name:'Recommendation Sales', num:"$"+addCommas(Data.totalSales),                    className:"sm primary"},
       // {name:'Spend', num:"$"+ROIdata.totalAdSpend,                  className:"primary"},
     ],
-    ShareOfVoiceData: {
-      ...Data.shareOfVoice,
-      height:280,
-      chartID:'bar2',
-      categories: ["Without Bazaarvoice Advertising", "With Bazaarvoice Advertising"],
-      columns:[
-        ['My Product', Data.shareOfVoice.notViewedAd.percent, Data.shareOfVoice.viewedAd.percent],
-        ['Competitive Prducts', (100-Data.shareOfVoice.notViewedAd.percent), (100-Data.shareOfVoice.viewedAd.percent)]
-      ],
-      legend:{
-        show:true
-      }
-    },
-    DailyViewThrough:{
-      title:"Daily View Through",
-      height:100,
-      chartID:"viewthrough",
-      dates: Data.DailyStats.dates,
-      columns: [['View-Through', ...Data.DailyStats.vtr]],
-      colors:[GraphPrimary],
-      totalType:"View-Throughs",
-      total:Data.viewThroughs.source,
-      rateType:"VTR",
-      rate:Data.vtr+"%",
-      formatY:function (d) { return d.toFixed(2)+"%"; }
-    },
-    DailyClickThrough:{
-      title:"Daily Click Through",
-      height:100,
-      chartID:"clickthrough",
-      dates: Data.DailyStats.dates,
-      columns: [['Click-Through', ...Data.DailyStats.ctr]],
-      colors:[GraphPrimary],
-      totalType:"Click-Throughs",
-      total:Data.clicks,
-      rateType:"CTR",
-      rate:Data.ctr+"%",
-      formatY:function (d) { return d.toFixed(2)+"%"; }
-    },
-    AvgUserCGC:Data.AvgUserCGC,
+
   };
 
 }, RecommendationsReportClass);

@@ -6,7 +6,7 @@ AudienceHeaderPrintClass = class AudienceHeaderPrintClass extends PageHeaderComp
     let Data = Session.get('ABRdata')
     return (
       <div>
-        {this.renderForm('Client',"Nike")}
+        {this.renderForm('Client',this.props.name)}
       </div>
     )
   }
