@@ -1,4 +1,15 @@
 import React from 'react';
+
+let hvt = [
+  ["Product Detail Page HVT",	100,	10000,	300,	324,	"$129,454"],
+  ["Product Reviews HVT",	90,	9000,	350,	367,	"$154,234"],
+  ["Where to Buy HVT",	70,	7000,	50,	52,	"$21,322"],
+  ["Educational Browsing HVT",	50,	5000,	40,	41,	"$16,435"],
+  ["Any",	310,	31000,	740,	784,	"$321,445"],
+  ["None",	0,	0,	1850,	1960,	"$803,613"],
+]
+
+
 NonCommercePerformance = class NonCommercePerformance extends React.Component{
   render(){
     return(
@@ -49,8 +60,33 @@ NonCommercePerformance = class NonCommercePerformance extends React.Component{
           <ChartContainer title={"Daily Campaign Conversions"}>
             <GraphSpline data={this.props.DailyCampaignConversions}/>
           </ChartContainer>
-
         </div>
+
+
+                  <div className="m-t-1" hidden>
+                    <table className="table table-text-center table-bordered">
+                      <thead >
+                        <tr>
+                          <th>Task</th>
+                          <th>Ad Exposed Clicks</th>
+                          <th>Clicks</th>
+                          <th>Conversions</th>
+                        </tr>
+                      </thead>
+                      <tbody >
+                        {hvt.map((item, i)=>{
+                          return (
+                            <tr key={i}>
+                              <td>{item[0]}</td>
+                              <td>{item[1]}</td>
+                              <td>{item[2]}</td>
+                              <td>{item[3]}</td>
+                            </tr>
+                          )
+                        })}
+                      </tbody>
+                    </table>
+                  </div>
 
       </div>
 

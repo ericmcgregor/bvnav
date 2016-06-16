@@ -60,8 +60,6 @@ RecommendationsHeaderPrintClass = class RecommendationsHeaderPrintClass extends 
   }
 
 
-
-
 }
 
 RecommendationsHeaderPrint = createContainer(({ params }) => {

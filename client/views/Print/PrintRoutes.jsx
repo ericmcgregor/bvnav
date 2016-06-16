@@ -14,6 +14,19 @@ FlowRouter.route('/print/roi', {
     }
 });
 
+FlowRouter.route('/print/roihvt', {
+    name:'Print-Conversion',
+    action: function(params, queryParams) {
+      params.active='Advertising'
+      params.current='Advertising-Campaigns'
+      mount(PrintView, {
+        title:"Conversion",
+        pageHeader:<ConversionHeaderPrint  {...params}/>,
+      pageContent:FlowRouter.current().queryParams.hvt ? <NonCommerceRoi /> : <ROIHVTreportClass />,
+      });
+    }
+});
+
 
 FlowRouter.route('/print/abr', {
     name:'Print-Audience',

@@ -21,8 +21,8 @@ GraphSpline = class GraphSpline extends React.Component{
           type:'timeseries',
           tick: {
             centered: true,
-            // format: '%Y-%m-%d'
-            // format:"%yyyy-%MM-%dd"
+            // format: '%m-%d-%y',
+            // format:"%yyyy-%MM-%dd",
             values:[...this.props.data.dates]
           }
         },
@@ -38,11 +38,12 @@ GraphSpline = class GraphSpline extends React.Component{
       },
       data: {
             x: 'x',
+            // xFormat: '%m-%d-%y',
             columns: [
               ['x', ...this.props.data.dates],
               ...this.props.data.columns
             ],
-            type: 'area-spline',
+            type: this.props.type,
         }
     });
   }
@@ -56,5 +57,6 @@ GraphSpline = class GraphSpline extends React.Component{
 GraphSpline.defaultProps = {
   data: {
     height:400,
-  }
+  },
+  type:'area-spline'
 }

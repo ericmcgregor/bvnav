@@ -34,7 +34,7 @@ GraphStackedBar = class GraphStackedBar extends React.Component{
           groups:[
               ['% Brand Not Considered', '% Brand Considered',]
           ],
-          order:"desc"
+          order:null
         },
         grid: {
             y: {

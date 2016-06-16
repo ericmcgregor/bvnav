@@ -1,4 +1,404 @@
 {
+  //TOTAL AGGREGATE REPORTING DATA
+  "startDate": "4/18/16",
+  "endDate":"4/26/16",
+  "rendered" :4289727,
+  "impressions":665833,
+  "nonclick":162221,
+  "clicks":82378,
+  "orders":{
+    "viewthrough":1284,
+    "clickthrough":800,
+  },
+  "totalOrders":1284,
+  "avgOrder" :90.86,
+  "totalSales":116667.02,
+  "strategies": {
+      "vab":{
+	        "orders": 629,
+	        "orderAmount": 54780.10
+      },
+      "vav" :{
+	        "orders": 97,
+	        "orderAmount": 10864.38
+		},
+      "interests":{
+	        "orders": 160,
+	        "orderAmount": 27287.18
+		},
+      "clients":{
+	        "orders": 278,
+	        "orderAmount":15414.51
+		},
+		"bab": {
+			"orders": 119,
+			"orderAmount": 8289.85
+		},
+		"bav": {
+			"orders": 1,
+			"orderAmount": 31.00
+		}
+  },
+  "products":[
+		{"category": "Sunglasses", "name": "Jonathan Paul Ombre Fitover Sunglasses with PolarVue Lense & Case", "orders": 51},
+		{"category": "Wine", "name": "Vintage Wine Estates Kevin O'Leary Reserve 3-Bottle Set", "orders": 50},
+		{"category": "Treatments", "name": "Dr. Denese Mega-Size Hydrate & Firm Collection Auto-Delivery", "orders": 40},
+		{"category": "Digital Cameras", "name": "Canon Rebel T5 18MP DSLR Camera w/ 18-55mm & 75-300mm Lenses", "orders": 27},
+		{"category": "N/A", "name": "C. Wonder Embroidered Split V-neck Short Sleeve Knit Tunic", "orders": 26},
+		{"category": "Ankle Pants", "name": "Isaac Mizrahi Live! Regular 24/7 Stretch Ankle Pants w/ Seam", "orders": 20},
+		{"category": "Capri Pants", "name": "Denim & Co. Original Waist Stretch Capri Pants w/ Side Pockets", "orders": 20},
+		{"category": "Sun-Free Tanners", "name": "Josie Maran Argan Oil Self Tanning Body Butter Auto-Delivery", "orders": 19},
+		{"category": "Totes & Shoppers", "name": "Dooney & Bourke Leather Shopper with Accessories", "orders": 18},
+		{"category": "Food Storage", "name": "CooksEssentials Set of 8 Mesh Pop Up Food Covers", "orders": 18},
+		{"category": "Sandals", "name": "Vionic Orthotic Thong Sandals w/ Bow Detail - Cassie", "orders": 15},
+		{"category": "Body Lotions", "name": "Josie Maran Argan Oil Self Tanning Body Butter", "orders": 15},
+		{"category": "Water Fountains", "name": "Bernini Dancing Waters Rechargeable Fountain", "orders": 14},
+		{"category": "Wine", "name": "Vintage Wine Estates Kevin O'Leary Reserve 12-Bottle Set", "orders": 12},
+		{"category": "Pedal Pushers", "name": "Denim & Co. How Timeless Stretch Twill 2 Pocket Pedal Pushers", "orders": 11},
+		{"category": "Hats & Earmuffs", "name": "San Diego Hat Co. Striped Ribbon Sun Hat w/Chin Strap & UPF 50", "orders": 11},
+		{"category": "Cardigans", "name": "Denim & Co. Wrap Front Cardigan with Single Button Closure", "orders": 11},
+		{"category": "Cultured Pearl", "name": "Honora Cultured Pearl Necklace, Earrings and 3 Bracelets Boxed Gift Set", "orders": 11},
+		{"category": "Cultured Pearl", "name": "Honora Cultured Pearl 8.0mm Stainless Steel Station Necklace", "orders": 11},
+		{"category": "Sandals", "name": "Marc Fisher Suede Lace-up Block Heel Sandals - Paradox", "orders": 10}
+  ],
+  "dailyStats" : [
+    {
+      "date":"4/18/16",
+	 "rendered" :410000,
+	  "impressions":60000,
+	  "nonclick":65000,
+	  "clicks":9200,
+	  "orders":{
+	    "viewthrough":77,
+	    "clickthrough":77,
+	  },
+	  "totalOrders":77, //based on view through
+	  "avgOrder" :68.2, //dollars
+	  "totalSales":5252, //dollars
+	  "strategies":{
+	      "vab":{
+	        "orders": 54,
+	        "orderAmount":3738.36 //dollars
+	      },
+	      "vav" :{
+	        "orders": 8,
+	        "orderAmount":464.68 //dollars
+			},
+				      "clients":{
+	        "orders": 8,
+	        "orderAmount":647//dollars
+		   },
+	      "interests":{
+	        "orders": 7,
+	        "orderAmount": 403 //dollars
+		}
+
+	  }
+    },
+	 {
+      "date":"4/19/16",
+	 "rendered" :583000,
+	  "impressions":85000,
+	  "nonclick":19000,
+	  "clicks":12000,
+	  "orders":{
+	    "viewthrough":112,
+	    "clickthrough":108,
+	  },
+	  "totalOrders":112, //based on view through
+	  "avgOrder" :88.7, //dollars
+	  "totalSales":9936, //dollars
+	  "strategies":{
+	      "vab":{
+	        "orders": 67,
+	        "orderAmount": 5678 //dollars
+	      },
+	      "vav" :{
+	        "orders": 11,
+	        "orderAmount":1155 //dollars
+			},
+		"clients":{
+	        "orders": 15,
+	        "orderAmount": 1509//dollars
+		   },
+	      "interests":{
+	        "orders": 19,
+	        "orderAmount": 1594 //dollars
+		}
+
+	  }
+    },
+
+        {
+      "date":"4/20/16",
+	 "rendered" :502000,
+	  "impressions":70759,
+	  "nonclick":10871,
+	  "clicks":8580,
+	  "orders":{
+	    "viewthrough":92,
+	    "clickthrough":86,
+	  },
+	  "totalOrders":92, //based on view through
+	  "avgOrder" :114.6, //dollars
+	  "totalSales":10546, //dollars
+	  "strategies":{
+	      "vab":{
+	        "orders": 63,
+	        "orderAmount":3738.36 //dollars
+	      },
+	      "vav" :{
+	        "orders": 8,
+	        "orderAmount":464.68 //dollars
+			},
+				      "clients":{
+	        "orders": 10,
+	        "orderAmount":647//dollars
+		   },
+	      "interests":{
+	        "orders": 11,
+	        "orderAmount": 403 //dollars
+		}
+
+	  }
+    },
+        {
+      "date":"4/21/16",
+	 "rendered" :470667,
+	  "impressions":60674,
+	  "nonclick":12521,
+	  "clicks":10842,
+	  "orders":{
+	    "viewthrough":308,
+	    "clickthrough":116,
+	  },
+	  "totalOrders":308,
+	  "avgOrder" :81.9,
+	  "totalSales":25237.43,
+	  "strategies":{
+	      "vab":{
+	        "orders": 149,
+	        "orderAmount":12283.57
+	      },
+	      "vav" :{
+	        "orders": 19,
+	        "orderAmount":1696.91
+			},
+		  "clients":{
+	        "orders": 87,
+	        "orderAmount":7155.07
+		   },
+	      "interests":{
+	        "orders": 52,
+	        "orderAmount": 4101.88
+		},
+			      "bab":{
+	        "orders": 1,
+	        "orderAmount": 31.00
+		}
+
+	  }
+    },
+        {
+      "date":"4/22/16",
+	 "rendered" :497637,
+	  "impressions":84523,
+	  "nonclick":11786,
+	  "clicks":9293,
+	  "orders":{
+	    "viewthrough":136,
+	    "clickthrough":93,
+	  },
+	  "totalOrders":136,
+	  "avgOrder" :92.27,
+	  "totalSales":12549.98,
+	  "strategies":{
+	      "vab":{
+	        "orders": 64,
+	        "orderAmount":7690.86
+	      },
+	      "vav" :{
+	        "orders": 5,
+	        "orderAmount":360.92
+			},
+		  "clients":{
+	        "orders": 29,
+	        "orderAmount":1822.27
+		   },
+	      "interests":{
+	        "orders": 5,
+	        "orderAmount": 241.42
+		},
+			      "bab":{
+	        "orders": 33,
+	        "orderAmount": 2431.51
+		}
+
+	  }
+    },
+        {
+      "date":"4/23/16",
+	 "rendered" :465567,
+	  "impressions":70616,
+	  "nonclick":10402,
+	  "clicks":7141,
+	  "orders":{
+	    "viewthrough":120,
+	    "clickthrough":80,
+	  },
+	  "totalOrders":120,
+	  "avgOrder" :104.88,
+	  "totalSales": 12586.63,
+	  "strategies":{
+	      "vab":{
+	        "orders": 57,
+	        "orderAmount":5685.64
+	      },
+	      "vav" :{
+	        "orders": 12,
+	        "orderAmount":1058.97
+			},
+		  "clients":{
+	        "orders": 17,
+	        "orderAmount":2586.11
+		   },
+	      "interests":{
+	        "orders": 15,
+	        "orderAmount": 1396.45
+		},
+			      "bab":{
+	        "orders": 19,
+	        "orderAmount": 1859.46
+		}
+
+	  }
+    },
+        {
+      "date":"4/24/16",
+	 "rendered" :419257,
+	  "impressions":63980,
+	  "nonclick":9983,
+	  "clicks": 6978,
+	  "orders":{
+	    "viewthrough":115,
+	    "clickthrough":83,
+	  },
+	  "totalOrders":115,
+	  "avgOrder" :153.37,
+	  "totalSales": 17638.64,
+	  "strategies":{
+	      "vab":{
+	        "orders": 58,
+	        "orderAmount":7214.83
+	      },
+	      "vav" :{
+	        "orders": 11,
+	        "orderAmount":2406.08
+			},
+		  "clients":{
+	        "orders": 17,
+	        "orderAmount":4301.47
+		   },
+	      "interests":{
+	        "orders": 12,
+	        "orderAmount": 2560.02
+		},
+			      "bab":{
+	        "orders": 17,
+	        "orderAmount": 1156.24
+		}
+
+	  }
+    },
+        {
+      "date":"4/25/16",
+	 "rendered" :443894,
+	  "impressions":84073,
+	  "nonclick":11046,
+	  "clicks": 9059,
+	  "orders":{
+	    "viewthrough":139,
+	    "clickthrough":72,
+	  },
+	  "totalOrders":139,
+	  "avgOrder" :107.37,
+	  "totalSales": 14925.27,
+	  "strategies":{
+	      "vab":{
+	        "orders": 49,
+	        "orderAmount":3799.06
+	      },
+	      "vav" :{
+	        "orders": 12,
+	        "orderAmount":904.56
+			},
+		  "clients":{
+	        "orders": 35,
+	        "orderAmount":6512.94
+		   },
+	      "interests":{
+	        "orders": 17,
+	        "orderAmount": 2263.64
+		},
+		"bab":{
+	        "orders": 25,
+	        "orderAmount": 1414.07
+		},
+		"bav":{
+	        "orders": 1,
+	        "orderAmount": 31
+		}
+
+	  }
+    },
+        {
+      "date":"4/26/16",
+	 "rendered" :497705,
+	  "impressions":96569,
+	  "nonclick":11612,
+	  "clicks": 9285,
+	  "orders":{
+	    "viewthrough":185,
+	    "clickthrough":85,
+	  },
+	  "totalOrders":185,
+	  "avgOrder" :71.27,
+	  "totalSales": 13186.25,
+	  "strategies":{
+	      "vab":{
+	        "orders": 68,
+	        "orderAmount":4612.48
+	      },
+	      "vav" :{
+	        "orders": 11,
+	        "orderAmount":1491.94
+			},
+		  "clients":{
+	        "orders": 60,
+	        "orderAmount":2925.56
+		   },
+	      "interests":{
+	        "orders": 22,
+	        "orderAmount": 2730.7
+		},
+		"bab":{
+	        "orders": 24,
+	        "orderAmount": 1425.57
+		},
+		"bav":{
+	        "orders": 0,
+	        "orderAmount": 0
+		}
+
+	  }
+    }
+
+
+  ]
+}
+
+
+{
   "startDate": "4/18/16",
   "endDate":"4/20/16",
   "rendered" :1430692,
